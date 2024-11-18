@@ -2,9 +2,12 @@ import { createApp } from 'vue';
 
 const app = createApp({});
 
-import test from './components/hangman/test.vue';
+import searchRebus from './components/rebus/searchRebus.vue';
+import firstPopup from './components/firstPopup.vue';
 
-app.component('test', test);
+app.component('search-rebus', searchRebus);
+app.component('first-popup', firstPopup);;
 
-app.mount('#app'); // Ensure your Blade template has an element with this ID
+
+app.mount('#app');
 

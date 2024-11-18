@@ -1,0 +1,122 @@
+//reset
+@import "../css/reset.css";
+
+//variables
+@import "variables";
+h1 {
+    font-family: $borel-font;
+    font-size: 24px;
+    letter-spacing: 4px;
+    line-height: 100%;
+    color: $color-wit;
+}
+h2 {
+    font-family: $braah-font;
+    font-size: 24px;
+    line-height: 100%;
+    letter-spacing: 4px;
+    color: $color-turquoise-90;
+}
+p {
+    font-family: $red-hat-font;
+    font-size: 16px;
+    line-height: 24px;
+    color: $color-turquoise-60;
+}
+button {
+    background-color: $color-turquoise-10;
+    color: $color-turquoise-90;
+    font-family: $braah-font;
+    letter-spacing: 1.5px;
+    height: 60px;
+    font-weight: 200;
+    padding: 10px 20px;
+    font-size: 22px;
+    font-weight: 600;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+
+    &:hover {
+        transform: translateY(-4);
+    }
+
+    &:focus {
+    }
+}
+
+body {
+    background: linear-gradient(
+            to right,
+            $illustrations-medium-green 125px,
+            $illustrations-dark-green 125px
+        )
+        repeat-x;
+    height: 100vh;
+    margin: 0;
+    background-size: 250px 100%;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+#app {
+    position: relative;
+    min-height: 100vh; /* Ensure it takes up the full screen height */
+    max-width: 90%;
+    margin: 0 auto;
+}
+.footer {
+    position: fixed;
+    bottom: -16px;
+    left: 0;
+    width: 100vw;
+    height: 185px;
+    background-image: url("../../public/images/footer.png");
+    background-repeat: repeat;
+    background-position: center;
+    z-index: 10;
+}
+@media (min-width: 1024px) {
+    .gingerman,
+    .candy,
+    .snow {
+        display: none;
+    }
+}
+.gingerman {
+    position: fixed;
+    top: 50%;
+    right: -35px;
+    height: 105px;
+    width: 105px;
+    background-image: url("../../public/images/gingerbread.png");
+    background-size: cover; /* Ensures the background image covers the container */
+    background-position: center; /* Centers the background image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    z-index: 10;
+}
+.candy {
+    position: fixed;
+    top: 60%;
+    left: -30px;
+    height: 105px;
+    width: 105px;
+    background-image: url("../../public/images/candy-cane.png");
+    background-size: cover; /* Ensures the background image covers the container */
+    background-position: center; /* Centers the background image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    z-index: 10;
+}
+.snow {
+    position: fixed;
+    top: 15%;
+    left: -20px;
+    height: 105px;
+    width: 105px;
+    background-image: url("../../public/images/snow-globe.png");
+    background-size: cover; /* Ensures the background image covers the container */
+    background-position: center; /* Centers the background image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    z-index: 10;
+}
