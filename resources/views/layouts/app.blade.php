@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>@yield('title', 'Default Title')</title>
     @vite('resources/sass/app.scss')
+    <script src="https://kit.fontawesome.com/3e03a70aff.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -13,6 +14,7 @@
         @yield('content')
     </app-container> --}}
     <div id="app">
+        <navbar></navbar>
         <div class="snow"></div>
         <div class="gingerman">
         </div>
