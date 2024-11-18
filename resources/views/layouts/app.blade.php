@@ -7,6 +7,7 @@
     <title>@yield('title', 'Default Title')</title>
     @vite('resources/sass/app.scss')
     <script src="https://kit.fontawesome.com/3e03a70aff.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/26d2910850.js" crossorigin="anonymous"></script>
 </head>
 
 <body>

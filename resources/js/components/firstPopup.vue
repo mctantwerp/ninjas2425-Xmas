@@ -7,7 +7,7 @@
         </div>
         <div class="action">
             <button>
-                <slot name="action"></slot>
+                <slot name="action"></slot><i class="fa-solid fa-arrow-right"></i>
             </button>
         </div>
     </div>
@@ -59,9 +59,15 @@
 
     .action {
         width: 100%;
+        text-align: center;
+        display: flex;
 
         button {
             width: 100%;
+        }
+
+        i {
+            margin-left: 16px;
         }
     }
 }

@@ -5,27 +5,26 @@
                 <img src="../../../public/logo-xmas.png" alt="">
             </div>
             <div class="icon" @click="toggleMobileNav">
-                <i class="fa-solid fa-bars"></i>
-                <div class="mobile-nav">
+                <i class="fa-solid fa-bars" :class="{ 'icon-active': iconActive }"></i>
+                <div class="mobile-nav" @click.stop>
                     <transition name="mobile-nav">
-                        <ul class="dropdown-nav" v-if="mobileNav">
+                        <ul class="dropdown-nav" v-if="mobileNav" @click.stop>
+                            <h1>Christmas Hunt</h1>
                             <li class="underline">
-                                <a href="/home" class="link"><i class="fas fa-house icon-space"></i>Home</a>
+                                <img src="./assets/nav-tree.png">
+                                <a href="/home" class="link">Christmas Tree</a>
                             </li>
                             <li class="underline">
-                                <a href="/explore" class="link"><i class="fas fa-search icon-space"></i>Explore</a>
+                                <img src="./assets/nav-present.png">
+                                <a href="/explore" class="link">Search Game</a>
                             </li>
                             <li class="underline">
-                                <a href="/profile" class="link"><i class="far fa-user icon-space"></i>Profile</a>
+                                <img src="./assets/nav-cup.png">
+                                <a href="/profile" class="link">Rebus</a>
                             </li>
                             <li class="underline">
-                                <a href="/show_admin_dashboard" class="link"><i
-                                        class="fas fa-dashboard icon-space"></i>Admin
-                                    Dashboard</a>
-                            </li>
-                            <li class="underline">
-                                <a href="/logout" class="link"><i
-                                        class="fa-regular fa-circle-xmark icon-space"></i>Logout</a>
+                                <img src="./assets/nav-ginger.png">
+                                <a href="/show_admin_dashboard" class="link">Hangman</a>
                             </li>
                         </ul>
                     </transition>
@@ -42,20 +41,21 @@
 export default {
     data() {
         return {
-            mobileNav: false
+            mobileNav: false,
+            iconActive: false
         }
     },
     methods: {
         toggleMobileNav() {
             this.mobileNav = !this.mobileNav;
-            console.log(this.mobileNav);
+            this.iconActive = !this.iconActive;
         }
     }
 }
 </script>
 
 <style lang="scss" scoped>
-@import "/resources/sass/_variables.scss";
+@import "../../sass/_variables.scss";
 
 header {
     margin: 0 auto;
@@ -87,50 +87,67 @@ header {
             i {
                 color: $color-black;
                 font-size: 28px;
+                transition: 0.5s ease all
             }
         }
 
+        .icon-active {
+            transform: rotate(180deg);
+        }
+
         .mobile-nav {
-            z-index: 9999;
 
             .dropdown-nav {
                 z-index: 9999;
                 display: flex;
                 flex-direction: column;
-                justify-content: center;
+                justify-content: start;
                 align-items: center;
                 position: fixed;
-                width: 100%;
-                max-width: 250px;
+                width: 75%;
                 height: 100vh;
-                margin: 0;
                 background: linear-gradient(to right,
                         $illustrations-medium-green 125px,
                         $illustrations-dark-green 125px) repeat-x;
-                height: 100vh;
                 margin: 0;
                 background-size: 250px 100%;
-                height: 100vh;
-                margin: 0;
                 padding: 0;
                 top: 0;
                 left: 0;
                 transition: 0.5s ease all;
+                gap: 32px;
+
+                .underline {
+                    display: flex;
+                    flex-direction: row;
+                    gap: 16px;
+                    align-items: center;
+                }
 
                 li {
                     margin-right: 0;
 
                     .link {
-                        color: black;
+                        color: $color-wit;
                     }
+                }
+
+                h1 {
+                    margin: 128px 0px 228px 0px;
+                    border-bottom: 2px solid $color-wit;
+                    width: 100%;
+                    text-align: center;
                 }
             }
 
             .dropdown-nav-background {
-                background-color: black;
-                width: 100%;
-                height: 100%;
-                z-index: 10;
+                position: fixed;
+                top: 0;
+                left: 0;
+                background-color: rgba(0, 0, 0, 0.50);
+                width: 100vw;
+                height: 100vh;
+                z-index: -10;
             }
         }
     }
@@ -143,10 +160,20 @@ header {
 
 .mobile-nav-enter-from,
 .mobile-nav-leave-to {
-    transform: translateX(-250px);
+    transform: translateX(-100vw);
 }
 
 .mobile-nav-enter-to {
     transform: translateX(0px);
+}
+
+.fade-enter-active,
+.fade-leave-active {
+    transition: opacity 0.3s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+    opacity: 0;
 }
 </style>

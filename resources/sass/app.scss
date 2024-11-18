@@ -2,7 +2,7 @@
 @import "../css/reset.css";
 
 //variables
-@import "variables";
+@import "_variables";
 h1 {
     font-family: $borel-font;
     font-size: 24px;
@@ -24,6 +24,13 @@ p {
     font-size: 16px;
     line-height: 24px;
     color: $color-turquoise-60;
+}
+a {
+    font-family: $braah-font;
+    font-size: 20px;
+    line-height: 24px;
+    color: $color-wit;
+    text-decoration: none;
 }
 button {
     background-color: $color-turquoise-10;
@@ -121,4 +128,9 @@ body {
     background-position: center; /* Centers the background image */
     background-repeat: no-repeat; /* Prevents the image from repeating */
     z-index: 10;
+}
+.underline {
+    width: 90%;
+    padding: 16px 0px 16px 0px;
+    border-bottom: 2px solid $color-wit;
 }
