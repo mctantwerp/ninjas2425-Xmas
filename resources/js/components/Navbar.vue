@@ -86,8 +86,9 @@ header {
 
             i {
                 color: $color-black;
-                font-size: 28px;
-                transition: 0.5s ease all
+                font-size: 24px;
+                transition: 0.5s ease all;
+                cursor: pointer;
             }
         }
 
