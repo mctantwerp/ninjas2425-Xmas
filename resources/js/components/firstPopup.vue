@@ -6,15 +6,21 @@
             </div>
         </div>
         <div class="action">
-            <button>
+            <button @click="emitGameStart">
                 <slot name="action"></slot><i class="fa-solid fa-arrow-right"></i>
             </button>
         </div>
     </div>
 </template>
 
-<script setup>
-
+<script>
+export default {
+    methods: {
+        emitGameStart() {
+            this.$emit('game-start');
+        }
+    }
+}
 </script>
 
 <style lang="scss" scoped>

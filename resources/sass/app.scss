@@ -16,7 +16,6 @@ h2 {
     font-size: 24px;
     font-style: normal;
     font-weight: 400;
-    letter-spacing: 4px;
     color: $color-turquoise-90;
 }
 p {
@@ -46,6 +45,7 @@ button {
     border-radius: 20px;
     cursor: pointer;
     transition: background-color 0.3s, transform 0.2s;
+    box-shadow: inset 2px -4px 4px $color-turquoise-30;
 
     &:hover {
         transform: translateY(-4);
@@ -53,6 +53,19 @@ button {
 
     &:focus {
     }
+}
+input {
+    font-family: $red-hat-font;
+    font-size: 20px;
+    color: $color-turquoise-90;
+    background-color: $color-wit;
+    border: 2px solid $color-grijs;
+    outline: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    margin: 10px 0;
+    height: 68px;
+    width: 100%;
 }
 
 body {
@@ -133,4 +146,13 @@ body {
     width: 90%;
     padding: 16px 0px 16px 0px;
     border-bottom: 2px solid $color-wit;
+}
+.fade-enter-active,
+.fade-leave-active {
+    transition: opacity 0.3s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+    opacity: 0;
 }
