@@ -14,8 +14,8 @@
             </div>
         </div>
         <div class="input">
-            <input type="text" placeholder="Type the letters here!">
-            <i class="fa-regular fa-trash-can"></i>
+            <input type="text" placeholder="Type the letters here!" v-model="userInput">
+            <i class="fa-regular fa-trash-can" @click="clearInput"></i>
         </div>
         <div class="action">
             <button>Submit
@@ -27,6 +27,17 @@
 
 <script>
 export default {
+    data() {
+        return {
+            userInput: ''
+        }
+    },
+    methods: {
+        clearInput() {
+            console.log('clear input');
+            this.userInput = '';
+        }
+    }
 }
 </script>
 
@@ -95,6 +106,7 @@ export default {
             font-size: 16px;
             position: absolute;
             right: 24px;
+            padding: 8px;
         }
     }
 
