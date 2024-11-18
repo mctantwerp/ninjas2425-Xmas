@@ -12,19 +12,19 @@
                             <h1>Christmas Hunt</h1>
                             <li class="underline">
                                 <img src="./assets/nav-tree.png">
-                                <a href="/home" class="link">Christmas Tree</a>
+                                <a href="/tree" class="link">Christmas Tree</a>
                             </li>
                             <li class="underline">
                                 <img src="./assets/nav-present.png">
-                                <a href="/explore" class="link">Search Game</a>
+                                <a href="/search" class="link">Search Game</a>
                             </li>
                             <li class="underline">
                                 <img src="./assets/nav-cup.png">
-                                <a href="/profile" class="link">Rebus</a>
+                                <a href="/rebus" class="link">Rebus</a>
                             </li>
                             <li class="underline">
                                 <img src="./assets/nav-ginger.png">
-                                <a href="/show_admin_dashboard" class="link">Hangman</a>
+                                <a href="/hangman" class="link">Hangman</a>
                             </li>
                         </ul>
                     </transition>

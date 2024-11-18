@@ -3,5 +3,4 @@
 @section('title', 'XMAS | Hangman')
 
 @section('content')
-    <test></test>
 @endsection
