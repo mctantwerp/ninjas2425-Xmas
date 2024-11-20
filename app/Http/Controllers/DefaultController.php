@@ -15,6 +15,6 @@ class DefaultController extends Controller
      */
     public function __invoke(Request $request): View
     {
-        return view('rebus');
+        return view('welcome');
     }
 }

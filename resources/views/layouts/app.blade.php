@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>@yield('title', 'Default Title')</title>
     @vite('resources/sass/app.scss')
+    @yield('scss')
     <script src="https://kit.fontawesome.com/3e03a70aff.js" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/26d2910850.js" crossorigin="anonymous"></script>
 </head>
@@ -21,7 +22,9 @@
         </div>
         <div class="candy">
         </div>
-        @yield('content')
+        <div class="content">
+            @yield('content')
+        </div>
         <div class="footer">
         </div>
     </div>

@@ -1,0 +1,14 @@
+@import "_variables.scss";
+
+.window-intro {
+    padding: 32px;
+    background-color: $color-wit;
+    border-radius: 15px;
+    opacity: 0.75;
+    h1 {
+        color: $color-black;
+    }
+    p {
+        color: $color-black;
+    }
+}
