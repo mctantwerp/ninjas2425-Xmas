@@ -1,4 +1,16 @@
 <template>
+    <transition name="fade">
+        <div class="screen-popup" v-show="userIsOnDesktop">
+            <div class="box">
+                <h1>Hold! 🎄</h1>
+                <p class="larger-paragraph">We've noticed you're visiting the website on a desktop. This website is
+                    primarily
+                    designed for mobile and
+                    thus the website might not work as expected.</p>
+                <button @click="ignoreDesktopWarning">Continue anyway</button>
+            </div>
+        </div>
+    </transition>
     <header>
         <nav>
             <div class="branding">
@@ -42,20 +54,68 @@ export default {
     data() {
         return {
             mobileNav: false,
-            iconActive: false
+            iconActive: false,
+            userIsOnDesktop: false
         }
     },
     methods: {
         toggleMobileNav() {
             this.mobileNav = !this.mobileNav;
             this.iconActive = !this.iconActive;
+        },
+        ignoreDesktopWarning() {
+            this.userIsOnDesktop = false;
         }
-    }
+    },
+    mounted() {
+        if (window.innerWidth > 1024) {
+            this.userIsOnDesktop = true;
+        }
+    },
 }
 </script>
 
 <style lang="scss" scoped>
 @import "../../sass/_variables.scss";
+
+.screen-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: $color-wit;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    z-index: 9999;
+    text-align: center;
+
+    .box {
+        margin: 64px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 16px;
+
+        h1 {
+            font-size: 2rem;
+            color: $color-black;
+        }
+
+        p {
+            font-size: 24px;
+            text-align: center;
+        }
+
+        button {
+            margin-top: 16px;
+        }
+    }
+}
 
 header {
     margin: 0 auto;
