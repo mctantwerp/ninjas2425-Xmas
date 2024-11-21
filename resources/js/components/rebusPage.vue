@@ -23,6 +23,7 @@
 </template>
 
 <script>
+import confetti from "canvas-confetti";
 export default {
     data() {
         return {
@@ -41,9 +42,17 @@ export default {
         this.$bus.on('correct', () => {
             console.log('Correct word! Event listener works!');
             this.correctAnswer = true;
+            this.triggerConfetti();
         });
     },
     methods: {
+        triggerConfetti() {
+            confetti({
+                particleCount: 100,
+                spread: 70,
+                origin: { y: 0.6 },
+            });
+        },
         startGame() {
             this.gameStarted = true;
             document.getElementsByClassName('snow')[0].style.display = "none";
