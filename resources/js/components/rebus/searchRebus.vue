@@ -18,7 +18,7 @@
             <i class="fa-regular fa-trash-can" @click="clearInput"></i>
         </div>
         <div class="action">
-            <button>Submit
+            <button @click="checkWord">Submit
                 <i class="fa-regular fa-gift"></i>
             </button>
         </div>
@@ -26,6 +26,9 @@
 </template>
 
 <script>
+
+import axios from 'axios';
+
 export default {
     data() {
         return {
@@ -36,6 +39,26 @@ export default {
         clearInput() {
             console.log('clear input');
             this.userInput = '';
+        },
+        async checkWord() {
+            try {
+                const response = await axios.post('/api/checkRebus', {
+                    word: this.userInput,
+                });
+
+                const { result } = response.data;
+
+                if (result) {
+                    console.log('Word is correct!');
+                } else {
+                    console.log('Word is incorrect.');
+                }
+            } catch (error) {
+                console.error('Error sending data:', error);
+                this.responseMessage = 'Error submitting the word.';
+            }
+
+            this.clearInput();
         }
     }
 }
