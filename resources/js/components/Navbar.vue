@@ -105,7 +105,7 @@ header {
                 justify-content: start;
                 align-items: center;
                 position: fixed;
-                width: 75%;
+                width: 60%;
                 height: 100vh;
                 background: linear-gradient(to right,
                         $illustrations-medium-green 125px,
@@ -114,7 +114,7 @@ header {
                 background-size: 250px 100%;
                 padding: 0;
                 top: 0;
-                left: 0;
+                right: 0;
                 transition: 0.5s ease all;
                 gap: 32px;
 
@@ -123,6 +123,10 @@ header {
                     flex-direction: row;
                     gap: 16px;
                     align-items: center;
+
+                    img {
+                        margin-left: 16px;
+                    }
                 }
 
                 li {
@@ -144,7 +148,7 @@ header {
             .dropdown-nav-background {
                 position: fixed;
                 top: 0;
-                left: 0;
+                right: 0;
                 background-color: rgba(0, 0, 0, 0.50);
                 width: 100vw;
                 height: 100vh;
@@ -161,7 +165,7 @@ header {
 
 .mobile-nav-enter-from,
 .mobile-nav-leave-to {
-    transform: translateX(-100vw);
+    transform: translateX(100vw);
 }
 
 .mobile-nav-enter-to {

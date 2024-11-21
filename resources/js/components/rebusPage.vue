@@ -9,7 +9,16 @@
         </first-popup>
     </transition>
     <transition name="fade">
-        <search-rebus v-if="gameStarted"></search-rebus>
+        <search-rebus v-if="gameStarted && !correctAnswer"></search-rebus>
+    </transition>
+    <transition name="fade">
+        <final-popup v-if="correctAnswer">
+            <template v-slot:content>
+                <h2>Congrats!</h2>
+                <p>The words in this game are "NXT Media". Good luck with the rest of the game!</p>
+            </template>
+            <template v-slot:action>Submit sentence</template>
+        </final-popup>
     </transition>
 </template>
 
@@ -19,6 +28,7 @@ export default {
         return {
             gameStarted: false,
             isDesktop: window.innerWidth > 1024,
+            correctAnswer: false,
         }
     },
     computed: {
@@ -28,6 +38,10 @@ export default {
     },
     mounted() {
         window.addEventListener('resize', this.checkViewport);
+        this.$bus.on('correct', () => {
+            console.log('Correct word! Event listener works!');
+            this.correctAnswer = true;
+        });
     },
     methods: {
         startGame() {
@@ -41,9 +55,10 @@ export default {
             console.log(this.isLargeViewport);
         }
     },
-    destroyed() {
+    beforeUnmount() {
         // Remove event listener when the component is destroyed
         window.removeEventListener('resize', this.checkViewport);
+        this.$bus.off('correct');
     },
 }
 </script>

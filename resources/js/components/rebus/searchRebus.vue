@@ -50,6 +50,7 @@ export default {
 
                 if (result) {
                     console.log('Word is correct!');
+                    this.$bus.emit('correct');
                 } else {
                     console.log('Word is incorrect.');
                 }
@@ -57,7 +58,6 @@ export default {
                 console.error('Error sending data:', error);
                 this.responseMessage = 'Error submitting the word.';
             }
-
             this.clearInput();
         }
     }
