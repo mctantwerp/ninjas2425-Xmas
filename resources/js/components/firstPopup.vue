@@ -5,6 +5,10 @@
                 <slot name="content"></slot>
             </div>
         </div>
+        <div class="input">
+            <input type="text" placeholder="Enter code from poster" v-model="userInput">
+            <i class="fa-regular fa-trash-can" @click="clearInput"></i>
+        </div>
         <div class="action">
             <button @click="emitGameStart">
                 <slot name="action"></slot><i class="fa-solid fa-arrow-right"></i>
@@ -15,10 +19,25 @@
 
 <script>
 export default {
+    props: {
+        game: {
+            type: String,
+        }
+    },
+    data() {
+        return {
+            userInput: "",
+        }
+    },
     methods: {
         emitGameStart() {
-            this.$emit('game-start');
+            if (this.game === "rebus") {
+                this.$emit('game-start');
+            }
         }
+    },
+    mounted() {
+        console.log(this.game);
     }
 }
 </script>
@@ -33,6 +52,20 @@ export default {
     gap: 32px;
     width: 100%;
 
+    .input {
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        i {
+            color: $color-rood-40;
+            font-size: 16px;
+            position: absolute;
+            right: 24px;
+            padding: 8px;
+        }
+    }
 
     .box-wrapper {
         display: flex;

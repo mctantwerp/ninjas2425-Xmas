@@ -61,32 +61,35 @@ input {
     background-color: $color-wit;
     border: 2px solid $color-grijs;
     outline: none;
-    border-radius: 20px;
+    border-radius: 8px;
     padding: 10px 20px;
     margin: 10px 0;
     height: 68px;
     width: 100%;
 }
+.input-error {
+    border: 2px solid $color-input-error;
+}
 
 body {
     background: linear-gradient(
             to right,
-            $illustrations-medium-green 125px,
-            $illustrations-dark-green 125px
+            $illustrations-medium-green 100px,
+            $illustrations-dark-green 100px
         )
         repeat-x;
-    height: 100vh;
     margin: 0;
-    background-size: 250px 100%;
-    height: 100vh;
+    background-size: 200px 100%;
+    background-position: center;
     margin: 0;
     padding: 0;
 }
 #app {
     position: relative;
     min-height: 100vh; /* Ensure it takes up the full screen height */
-    max-width: 90%;
     margin: 0 auto;
+    display: flex;
+    flex-direction: column;
 }
 .footer {
     position: fixed;
@@ -98,6 +101,7 @@ body {
     background-repeat: repeat;
     background-position: center;
     z-index: 10;
+    pointer-events: none;
 }
 @media (min-width: 1024px) {
     .gingerman,
@@ -133,7 +137,7 @@ body {
 .snow {
     position: fixed;
     top: 15%;
-    left: -20px;
+    left: -50px;
     height: 105px;
     width: 105px;
     background-image: url("../../public/images/snow-globe.png");
@@ -141,12 +145,6 @@ body {
     background-position: center; /* Centers the background image */
     background-repeat: no-repeat; /* Prevents the image from repeating */
     z-index: 10;
-}
-.underline {
-    width: 80%;
-    margin: 0px 16px 0px 16px;
-    padding: 16px 0px 16px 0px;
-    border-bottom: 2px solid $color-wit;
 }
 .fade-enter-active,
 .fade-leave-active {
@@ -158,12 +156,10 @@ body {
     opacity: 0;
 }
 .content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    width: 100%;
+    margin-top: 76px;
+    overflow-y: auto;
+    padding: 1rem;
+    box-sizing: border-box;
+    height: calc(100vh - 76px);
+    box-sizing: border-box;
 }
