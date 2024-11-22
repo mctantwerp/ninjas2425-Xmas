@@ -43,7 +43,12 @@ export default {
             try {
                 //if input is empty, shake and return
                 if (this.userInput === "") {
+                    this.responseMessage = 'Please fill in the field.';
+                    this.userInput = "";
                     this.triggerShake();
+                    setTimeout(() => {
+                        this.responseMessage = null;
+                    }, 2250);
                     return;
                 }
                 const response = await axios.post('/api/checkEntry', {
@@ -128,7 +133,6 @@ export default {
         justify-content: center;
         background-color: $color-wit;
         border-radius: 20px;
-        padding: 16px;
         text-align: center;
         box-shadow: 2px -4px 4px #00000042;
 
@@ -137,6 +141,7 @@ export default {
             display: flex;
             flex-direction: column;
             gap: 16px;
+            padding: 32px;
         }
     }
 
