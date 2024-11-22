@@ -172,6 +172,9 @@ body {
     border: 2px solid $color-input-error-border;
     color: $color-input-error-text;
 }
+.error-text {
+    color: $color-input-error-highcontrast-text;
+}
 #app {
     position: relative;
     top: 76px;

@@ -16,8 +16,8 @@
     </window-popup>
     <negative-window-popup v-if="hasSubmitted && submittedSentence">
         <template v-slot:content>
-            <h2>Uh oh!</h2>
-            <p>Ah, that’s not quite what you’re looking for. You’re getting there, though, so don’t give up!</p>
+            <h2 class="error-text">Uh oh!</h2>
+            <p class>Ah, that’s not quite what you’re looking for. You’re getting there, though, so don’t give up!</p>
         </template>
         <template v-slot:action>
             Try again
@@ -36,6 +36,9 @@ export default {
     mounted() {
         this.$bus.on('submitSentence', () => {
             this.hasSubmitted = true;
+        });
+        this.$bus.on('submitRetry', () => {
+            this.hasSubmitted = false;
         });
     },
 }

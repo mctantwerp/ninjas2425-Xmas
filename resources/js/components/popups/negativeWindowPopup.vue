@@ -6,15 +6,22 @@
             </div>
         </div>
         <div class="action">
-            <button @click="emitGameStart">
+            <button @click="submitRetry">
                 <slot name="action"></slot>
+                <i class="fa-solid fa-arrow-right"></i>
             </button>
         </div>
     </div>
 </template>
 
 <script>
-
+export default {
+    methods: {
+        submitRetry() {
+            this.$bus.emit('submitRetry');
+        }
+    }
+}
 </script>
 
 <style lang="scss" scoped>
