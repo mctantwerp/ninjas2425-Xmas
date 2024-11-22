@@ -5,9 +5,14 @@
                 <slot name="content"></slot>
             </div>
         </div>
-        <div class="input" ref="shakeElement">
-            <input type="text" placeholder="Enter code from poster" v-model="userInput">
-            <i class="fa-regular fa-trash-can" @click="clearInput"></i>
+        <div class="container-input">
+            <div class="input" ref="shakeElement">
+                <input type="text" placeholder="Enter code from poster" v-model="userInput">
+                <i class="fa-regular fa-trash-can" @click="clearInput"></i>
+            </div>
+            <transition name="fade">
+                <span class="error" v-if="responseMessage !== null">{{ responseMessage }}</span>
+            </transition>
         </div>
         <div class="action">
             <button @click="emitGameStart">
@@ -29,6 +34,8 @@ export default {
     data() {
         return {
             userInput: "",
+            result: "",
+            responseMessage: null,
         }
     },
     methods: {
@@ -36,29 +43,47 @@ export default {
             try {
                 //if input is empty, shake and return
                 if (this.userInput === "") {
+                    this.responseMessage = 'Please fill in the field.';
+                    this.userInput = "";
                     this.triggerShake();
+                    setTimeout(() => {
+                        this.responseMessage = null;
+                    }, 2250);
                     return;
                 }
                 const response = await axios.post('/api/checkEntry', {
                     game: this.game,
                     enterd_key: this.userInput,
                 });
-                console.log(response);
-                // this.$emit('game-start');
+                this.result = response.data.passwordCorrect;
+                if (this.result) {
+                    this.$emit('game-start');
+                }
+                else {
+                    this.responseMessage = 'The code you entered is incorrect.';
+                    this.userInput = "";
+                    setTimeout(() => {
+                        this.responseMessage = null;
+                    }, 2250);
+                    this.triggerShake();
+                }
             } catch (error) {
                 console.error('Error sending data:', error);
                 this.responseMessage = 'Error submitting the word.';
             }
         },
-        triggerShake() {
-            //reset pos after animation
-            gsap.set(this.$refs.shakeElement, { x: 0 });
+        async triggerShake() {
             //animation
-            gsap.to(this.$refs.shakeElement, {
+            await gsap.to(this.$refs.shakeElement, {
                 duration: 0.1,
-                x: 5,
+                x: 3,
                 repeat: 4,
                 yoyo: true,
+                ease: "power2.inOut",
+            });
+            gsap.to(this.$refs.shakeElement, {
+                duration: 0.1,
+                x: 0,
                 ease: "power2.inOut",
             });
         },
@@ -81,6 +106,12 @@ export default {
     gap: 32px;
     width: 100%;
 
+    .container-input {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
     .input {
         position: relative;
         display: flex;
@@ -102,7 +133,6 @@ export default {
         justify-content: center;
         background-color: $color-wit;
         border-radius: 20px;
-        padding: 16px;
         text-align: center;
         box-shadow: 2px -4px 4px #00000042;
 
@@ -111,6 +141,7 @@ export default {
             display: flex;
             flex-direction: column;
             gap: 16px;
+            padding: 32px;
         }
     }
 

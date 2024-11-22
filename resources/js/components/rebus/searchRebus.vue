@@ -41,15 +41,18 @@ export default {
             console.log('clear input');
             this.userInput = '';
         },
-        triggerShake() {
-            //reset pos after animation
-            gsap.set(this.$refs.shakeElement, { x: 0 });
+        async triggerShake() {
             //animation
-            gsap.to(this.$refs.shakeElement, {
+            await gsap.to(this.$refs.shakeElement, {
                 duration: 0.1,
-                x: 5,
+                x: 3,
                 repeat: 4,
                 yoyo: true,
+                ease: "power2.inOut",
+            });
+            gsap.to(this.$refs.shakeElement, {
+                duration: 0.1,
+                x: 0,
                 ease: "power2.inOut",
             });
         },
