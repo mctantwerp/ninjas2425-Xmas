@@ -11,25 +11,38 @@ final class CheckEntryKeyAction
     public function execute( EntryKeyDto $entryKeyDto): bool
     {
         $gamePage = strtolower($entryKeyDto->game);
+        $entryKey = strtoupper($entryKeyDto->key);
         switch ($gamePage) {
             case 'hangman':
-                if ($entryKeyDto->key === '18M12') {
+                if ($entryKey === '18M12') {
                     return true;
+                }
+                if ($entryKey !== '18M12') {
+                    return false;
                 }
                 break;
             case 'rebus':
-                if ($entryKeyDto->key === 'B5TKC') {
+                if ($entryKey === 'B5TKC') {
                     return true;
+                }
+                if ($entryKey !== 'B5TKC') {
+                    return false;
                 }
                 break;
             case 'search':
-                if ($entryKeyDto->key === 'BTF41') {
+                if ($entryKey === 'BTF41') {
                     return true;
+                }
+                if ($entryKey !== 'BTF41') {
+                    return false;
                 }
                 break;
             case 'tree':
-                if ($entryKeyDto->key === 'WOZG3') {
+                if ($entryKey === 'WOZG3') {
                     return true;
+                }
+                if ($entryKey !== 'WOZG3') {
+                    return false;
                 }
                 break;
             default:
