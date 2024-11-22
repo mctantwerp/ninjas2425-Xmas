@@ -1,7 +1,7 @@
 <template>
     <div class="rebus-wrapper">
         <div class="images-rebus">
-            <div class="top-row">
+            <!-- <div class="top-row">
                 <img src="../assets/rebus-first.png" alt="">
                 <i class="fa-light fa-plus"></i>
                 <img src="../assets/rebus-second.png" alt="">
@@ -11,7 +11,8 @@
             <div class="bottom-row">
                 <i class="fa-light fa-plus"></i>
                 <img src="../assets/rebus-fourth.png" alt="">
-            </div>
+            </div> -->
+            <img src="../assets/rebus-problem.png" alt="rebus game">
         </div>
         <div class="input" ref="shakeElement">
             <input type="text" :placeholder="inputPlaceholder" v-model="userInput">
@@ -108,6 +109,11 @@ export default {
         gap: 32px;
         justify-content: center;
         align-items: center;
+
+        img {
+            width: 100%;
+        }
+
 
         .top-row {
             display: flex;

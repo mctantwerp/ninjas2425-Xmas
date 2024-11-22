@@ -19,7 +19,7 @@
             <final-popup v-if="correctAnswer" class="absolute-center">
                 <template v-slot:content>
                     <h2>Congrats!</h2>
-                    <p>The words in this game are "NXT Media". Good luck with the rest of the game!</p>
+                    <p>The word in this game is "Happy". Good luck with the rest of the games!</p>
                 </template>
                 <template v-slot:action>Submit sentence</template>
             </final-popup>
