@@ -163,6 +163,7 @@ body {
     //margin-top: 96px;
     justify-content: center;
     align-items: center;
+    width: 100%;
 }
 .error {
     background-color: $color-input-error-background;
@@ -190,4 +191,18 @@ body {
         )
         repeat-x;
     background-size: 200px 100%;
+}
+.window-intro {
+    padding: 32px;
+    background-color: $color-wit;
+    border-radius: 15px;
+    opacity: 0.75;
+    margin-bottom: 82px;
+    text-align: center;
+    h1 {
+        color: $color-black;
+    }
+    p {
+        color: $color-black;
+    }
 }

@@ -40,7 +40,8 @@ export default {
     },
     methods: {
         async submitSentence() {
-
+            //this.triggerShake();
+            this.$bus.emit('submitSentence');
         },
         async triggerShake() {
             //animation

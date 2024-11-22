@@ -16,6 +16,8 @@ import finalPopup from './components/popups/finalPopup.vue';
 import screenModalPopup from './components/popups/screenModalPopup.vue';
 import windowPopup from './components/popups/windowPopup.vue';
 import submitPopup from './components/popups/submitPopup.vue';
+import submitPage from './components/pages/submitPage.vue';
+import negativeWindowPopup from './components/popups/negativeWindowPopup.vue';
 
 
 import Navbar from './components/Navbar.vue';
@@ -30,6 +32,8 @@ app.component('screen-modal-popup', screenModalPopup);
 app.component('navbar', Navbar);
 app.component('window-popup', windowPopup);
 app.component('submit-popup', submitPopup);
+app.component('submit-page', submitPage);
+app.component('negative-window-popup', negativeWindowPopup);
 
 
 app.mount('#app');
