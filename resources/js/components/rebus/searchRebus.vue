@@ -14,7 +14,7 @@
             </div>
         </div>
         <div class="input">
-            <input type="text" placeholder="Type the letters here!" v-model="userInput">
+            <input type="text" :placeholder="inputPlaceholder" v-model="userInput">
             <i class="fa-regular fa-trash-can" @click="clearInput"></i>
         </div>
         <div class="action">
@@ -32,7 +32,8 @@ import axios from 'axios';
 export default {
     data() {
         return {
-            userInput: ''
+            userInput: '',
+            inputPlaceholder: 'Type your word here!',
         }
     },
     methods: {
@@ -53,12 +54,23 @@ export default {
                     this.$bus.emit('correct');
                 } else {
                     console.log('Word is incorrect.');
+                    this.generateRandomPlaceholder();
                 }
             } catch (error) {
                 console.error('Error sending data:', error);
                 this.responseMessage = 'Error submitting the word.';
             }
             this.clearInput();
+        },
+        generateRandomPlaceholder() {
+            const placeholders = [
+                "Nice try!",
+                "Keep going!",
+                "Don't quit now!",
+                "Don't give up!",
+            ];
+            const randomIndex = Math.floor(Math.random() * placeholders.length);
+            this.inputPlaceholder = placeholders[randomIndex];
         }
     }
 }
@@ -68,13 +80,9 @@ export default {
 @import "/resources/sass/_variables.scss";
 
 .rebus-wrapper {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     display: flex;
     flex-direction: column;
-    gap: 64px;
+    gap: 32px;
     width: 100%;
     text-align: center;
 

@@ -1,25 +1,30 @@
 <template>
-    <transition name="fade">
-        <first-popup @game-start="startGame" v-if="!gameStarted">
-            <template v-slot:content>
-                <h2>Rebus</h2>
-                <p>Can you figure out what message is encoded in these images? Find the secret two words!</p>
-            </template>
-            <template v-slot:action>Continue</template>
-        </first-popup>
-    </transition>
-    <transition name="fade">
-        <search-rebus v-if="gameStarted && !correctAnswer"></search-rebus>
-    </transition>
-    <transition name="fade">
-        <final-popup v-if="correctAnswer">
-            <template v-slot:content>
-                <h2>Congrats!</h2>
-                <p>The words in this game are "NXT Media". Good luck with the rest of the game!</p>
-            </template>
-            <template v-slot:action>Submit sentence</template>
-        </final-popup>
-    </transition>
+    <div class="game-container">
+        <transition name="fade">
+            <first-popup v-if="!gameStarted" class="absolute-center" @game-start="startGame">
+                <template v-slot:content>
+                    <h2>Rebus</h2>
+                    <p>Can you figure out what message is encoded in these images? Find the secret two words!</p>
+                </template>
+                <template v-slot:action>Continue</template>
+            </first-popup>
+        </transition>
+
+        <transition name="fade">
+            <search-rebus v-if="gameStarted && !correctAnswer" class="absolute-center">
+            </search-rebus>
+        </transition>
+
+        <transition name="fade">
+            <final-popup v-if="correctAnswer" class="absolute-center">
+                <template v-slot:content>
+                    <h2>Congrats!</h2>
+                    <p>The words in this game are "NXT Media". Good luck with the rest of the game!</p>
+                </template>
+                <template v-slot:action>Submit sentence</template>
+            </final-popup>
+        </transition>
+    </div>
 </template>
 
 <script>
@@ -58,6 +63,7 @@ export default {
             document.getElementsByClassName('snow')[0].style.display = "none";
             document.getElementsByClassName('gingerman')[0].style.display = "none";
             document.getElementsByClassName('candy')[0].style.display = "none";
+            document.getElementsByClassName('footer')[0].style.display = "none";
         },
         checkViewport() {
             this.isLargeViewport = window.innerWidth > 1024;
@@ -72,4 +78,36 @@ export default {
 }
 </script>
 
-<style lang="scss"></style>
+<style>
+.game-container {
+    position: relative;
+    height: 75vh;
+    /* Prevent layout shifts */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    overflow-y: auto;
+}
+
+.absolute-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+}
+
+/* Fade Transition */
+.fade-enter-active,
+.fade-leave-active {
+    transition: opacity 0.5s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+    opacity: 0;
+}
+</style>

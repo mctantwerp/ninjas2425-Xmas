@@ -6,7 +6,7 @@
                 <p class="larger-paragraph">We've noticed you're visiting the website on a desktop. This website is
                     primarily
                     designed for mobile and
-                    thus the website might not work as expected.</p>
+                    thus the website might not work and/or look as expected.</p>
                 <button @click="ignoreDesktopWarning">Continue anyway</button>
             </div>
         </div>

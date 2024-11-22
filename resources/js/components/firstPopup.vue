@@ -27,22 +27,11 @@ export default {
 @import "/resources/sass/_variables.scss";
 
 .wrapper {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     display: flex;
     flex-direction: column;
-    gap: 164px;
+    justify-content: center;
+    gap: 32px;
     width: 100%;
-
-    @media (min-width: 768px) {
-        width: 75%;
-    }
-
-    @media (min-width: 1024px) {
-        width: 40%;
-    }
 
 
     .box-wrapper {
