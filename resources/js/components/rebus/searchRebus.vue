@@ -59,6 +59,11 @@ export default {
         },
         async checkWord() {
             try {
+                if (this.userInput === '') {
+                    this.triggerShake();
+                    return;
+
+                }
                 const response = await axios.post('/api/checkRebus', {
                     word: this.userInput,
                 });

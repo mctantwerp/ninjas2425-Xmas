@@ -11,14 +11,14 @@ const eventBus = mitt();
 //make globally accessible
 app.config.globalProperties.$bus = eventBus;
 
-import firstPopup from './components/firstPopup.vue';
-import finalPopup from './components/finalPopup.vue';
-import screenModalPopup from './components/screenModalPopup.vue';
+import firstPopup from './components/popups/firstPopup.vue';
+import finalPopup from './components/popups/finalPopup.vue';
+import screenModalPopup from './components/popups/screenModalPopup.vue';
 
 
 import Navbar from './components/Navbar.vue';
 
-import rebusPage from './components/rebusPage.vue';
+import rebusPage from './components/pages/rebusPage.vue';
 
 app.component('search-rebus', searchRebus);
 app.component('final-popup', finalPopup);
