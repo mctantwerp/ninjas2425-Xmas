@@ -128,11 +128,11 @@ export default {
 header {
     margin: 0 auto;
     width: 100%;
-    top: 0px;
     z-index: 99;
     position: fixed;
+    top: 0;
+    left: 0;
     height: 76px;
-    left: 0px;
     background-color: rgba(16, 107, 92, 0.335);
     backdrop-filter: blur(10px);
 

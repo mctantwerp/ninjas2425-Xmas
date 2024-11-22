@@ -11,7 +11,7 @@
         </transition>
 
         <transition name="fade">
-            <search-rebus v-if="gameStarted && !correctAnswer" class="absolute-center">
+            <search-rebus v-if="gameStarted && !correctAnswer">
             </search-rebus>
         </transition>
 

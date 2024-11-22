@@ -85,7 +85,6 @@ body {
         )
         repeat-x;
     background-size: 200px 100%;
-    background-position: center;
 }
 .footer {
     position: fixed;
@@ -161,11 +160,32 @@ body {
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    margin-top: 76px;
+    //margin-top: 96px;
     justify-content: center;
+    align-items: center;
 }
 .error {
     background-color: $color-rood-20;
     padding: 8px;
     border-radius: 5px;
+}
+#app {
+    position: relative;
+    top: 76px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    min-height: calc(100vh - 76px);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    overflow-y: auto;
+    background: linear-gradient(
+            to right,
+            $illustrations-medium-green 100px,
+            $illustrations-dark-green 100px
+        )
+        repeat-x;
+    background-size: 200px 100%;
 }
