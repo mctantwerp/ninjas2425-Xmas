@@ -1,7 +1,7 @@
 <template>
     <div class="game-container">
         <transition name="fade">
-            <first-popup v-if="!gameStarted" class="absolute-center" @game-start="startGame">
+            <first-popup v-if="!gameStarted" class="absolute-center" @game-start="startGame" :game="'rebus'">
                 <template v-slot:content>
                     <h2>Rebus</h2>
                     <p>Can you figure out what message is encoded in these images? Find the secret two words!</p>
@@ -81,13 +81,10 @@ export default {
 <style>
 .game-container {
     position: relative;
-    height: 75vh;
-    /* Prevent layout shifts */
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow: hidden;
-    overflow-y: auto;
+    height: 100%;
 }
 
 .absolute-center {

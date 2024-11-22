@@ -22,7 +22,9 @@
         </div>
         <div class="candy">
         </div>
-        @yield('content')
+        <div class="content">
+            @yield('content')
+        </div>
         <div class="footer">
         </div>
     </div>

@@ -85,6 +85,7 @@ export default {
     gap: 32px;
     width: 100%;
     text-align: center;
+    height: calc(100vh - 80px);
 
     .images-rebus {
         display: flex;

@@ -127,17 +127,19 @@ export default {
 
 header {
     margin: 0 auto;
-    position: fixed;
-    width: 90%;
-    top: 0;
+    width: 100%;
+    top: 0px;
     z-index: 99;
+    position: fixed;
+    height: 76px;
+    left: 0px;
 
     nav {
-        height: auto;
         display: flex;
         justify-content: space-between;
         align-items: center;
         padding: 16px;
+        border-bottom: 1px solid $color-wit;
 
         .branding {}
 
@@ -191,10 +193,12 @@ header {
                     flex-direction: row;
                     gap: 16px;
                     align-items: center;
+                    justify-content: start;
+                    width: 90%;
+                    padding: 16px 0px 16px 8px;
+                    border-bottom: 2px solid $color-wit;
 
-                    img {
-                        margin-left: 16px;
-                    }
+                    img {}
                 }
 
                 li {
@@ -206,7 +210,7 @@ header {
                 }
 
                 h1 {
-                    margin: 32px 0px 32px 0px;
+                    margin: 32px 0px 0px 0px;
                     border-bottom: 2px solid $color-wit;
                     width: 100%;
                     text-align: center;
