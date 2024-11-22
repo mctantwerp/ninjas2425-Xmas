@@ -80,14 +80,12 @@ export default {
 
 <style>
 .game-container {
-    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100%;
 }
 
-.absolute-center {
+/* .absolute-center {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -95,7 +93,7 @@ export default {
     width: 100%;
     max-width: 600px;
     text-align: center;
-}
+} */
 
 /* Fade Transition */
 .fade-enter-active,

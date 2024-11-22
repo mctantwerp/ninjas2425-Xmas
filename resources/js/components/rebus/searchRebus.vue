@@ -13,7 +13,7 @@
                 <img src="../assets/rebus-fourth.png" alt="">
             </div>
         </div>
-        <div class="input">
+        <div class="input" ref="shakeElement">
             <input type="text" :placeholder="inputPlaceholder" v-model="userInput">
             <i class="fa-regular fa-trash-can" @click="clearInput"></i>
         </div>
@@ -26,8 +26,8 @@
 </template>
 
 <script>
-
 import axios from 'axios';
+import { gsap } from "gsap";
 
 export default {
     data() {
@@ -41,6 +41,18 @@ export default {
             console.log('clear input');
             this.userInput = '';
         },
+        triggerShake() {
+            //reset pos after animation
+            gsap.set(this.$refs.shakeElement, { x: 0 });
+            //animation
+            gsap.to(this.$refs.shakeElement, {
+                duration: 0.1,
+                x: 5,
+                repeat: 4,
+                yoyo: true,
+                ease: "power2.inOut",
+            });
+        },
         async checkWord() {
             try {
                 const response = await axios.post('/api/checkRebus', {
@@ -53,6 +65,7 @@ export default {
                     console.log('Word is correct!');
                     this.$bus.emit('correct');
                 } else {
+                    this.triggerShake();
                     console.log('Word is incorrect.');
                     this.generateRandomPlaceholder();
                 }
@@ -85,7 +98,6 @@ export default {
     gap: 32px;
     width: 100%;
     text-align: center;
-    height: calc(100vh - 80px);
 
     .images-rebus {
         display: flex;

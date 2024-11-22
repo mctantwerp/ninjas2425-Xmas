@@ -133,6 +133,8 @@ header {
     position: fixed;
     height: 76px;
     left: 0px;
+    background-color: rgba(16, 107, 92, 0.335);
+    backdrop-filter: blur(10px);
 
     nav {
         display: flex;
@@ -187,6 +189,7 @@ header {
                 right: 0;
                 transition: 0.5s ease all;
                 gap: 16px;
+                overflow-y: auto;
 
                 .underline {
                     display: flex;

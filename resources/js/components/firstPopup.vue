@@ -5,7 +5,7 @@
                 <slot name="content"></slot>
             </div>
         </div>
-        <div class="input">
+        <div class="input" ref="shakeElement">
             <input type="text" placeholder="Enter code from poster" v-model="userInput">
             <i class="fa-regular fa-trash-can" @click="clearInput"></i>
         </div>
@@ -18,6 +18,8 @@
 </template>
 
 <script>
+import axios from 'axios';
+import gsap from 'gsap';
 export default {
     props: {
         game: {
@@ -30,11 +32,39 @@ export default {
         }
     },
     methods: {
-        emitGameStart() {
-            if (this.game === "rebus") {
-                this.$emit('game-start');
+        async emitGameStart() {
+            try {
+                //if input is empty, shake and return
+                if (this.userInput === "") {
+                    this.triggerShake();
+                    return;
+                }
+                const response = await axios.post('/api/checkEntry', {
+                    game: this.game,
+                    enterd_key: this.userInput,
+                });
+                console.log(response);
+                // this.$emit('game-start');
+            } catch (error) {
+                console.error('Error sending data:', error);
+                this.responseMessage = 'Error submitting the word.';
             }
-        }
+        },
+        triggerShake() {
+            //reset pos after animation
+            gsap.set(this.$refs.shakeElement, { x: 0 });
+            //animation
+            gsap.to(this.$refs.shakeElement, {
+                duration: 0.1,
+                x: 5,
+                repeat: 4,
+                yoyo: true,
+                ease: "power2.inOut",
+            });
+        },
+        clearInput() {
+            this.userInput = "";
+        },
     },
     mounted() {
         console.log(this.game);
@@ -48,7 +78,6 @@ export default {
 .wrapper {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     gap: 32px;
     width: 100%;
 
