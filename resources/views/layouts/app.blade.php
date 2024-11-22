@@ -9,6 +9,26 @@
     @yield('scss')
     <script src="https://kit.fontawesome.com/3e03a70aff.js" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/26d2910850.js" crossorigin="anonymous"></script>
+
+    <!-- Standard Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+
+    <!-- Apple Touch Icon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+    <!-- Android Chrome -->
+    <link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/android-chrome-512x512.png">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourwebsite.com/">
+    <meta property="og:title" content="XMAS 2024 | KdG">
+    <meta property="og:description"
+        content="Find the posters, complete the challenges and win fun prizes! Made by the MCT students of KdG for the holidays.">
+    <meta property="og:image" content="https://i.imgur.com/yD0hMm4.png">
+    <meta property="og:image:alt" content="Christmas wallpaper with pattern related to christmas">
 </head>
 
 <body>
