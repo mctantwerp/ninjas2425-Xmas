@@ -5,11 +5,15 @@
                 <slot name="content"></slot>
             </div>
         </div>
-        <div class="input" ref="shakeElement">
-            <input type="text" placeholder="Enter code from poster" v-model="userInput">
-            <i class="fa-regular fa-trash-can" @click="clearInput"></i>
+        <div class="container-input">
+            <div class="input" ref="shakeElement">
+                <input type="text" placeholder="Enter code from poster" v-model="userInput">
+                <i class="fa-regular fa-trash-can" @click="clearInput"></i>
+            </div>
+            <transition name="fade">
+                <span class="error" v-if="responseMessage !== null">{{ responseMessage }}</span>
+            </transition>
         </div>
-        <!-- <span class="error" v-if="responseMessage !== null">{{ responseMessage }}</span> -->
         <div class="action">
             <button @click="emitGameStart">
                 <slot name="action"></slot><i class="fa-solid fa-arrow-right"></i>
@@ -52,6 +56,10 @@ export default {
                 }
                 else {
                     this.responseMessage = 'The code you entered is incorrect.';
+                    this.userInput = "";
+                    setTimeout(() => {
+                        this.responseMessage = null;
+                    }, 2250);
                     this.triggerShake();
                 }
             } catch (error) {
@@ -92,6 +100,12 @@ export default {
     flex-direction: column;
     gap: 32px;
     width: 100%;
+
+    .container-input {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
 
     .input {
         position: relative;
