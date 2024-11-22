@@ -9,6 +9,7 @@
             <input type="text" placeholder="Enter code from poster" v-model="userInput">
             <i class="fa-regular fa-trash-can" @click="clearInput"></i>
         </div>
+        <!-- <span class="error" v-if="responseMessage !== null">{{ responseMessage }}</span> -->
         <div class="action">
             <button @click="emitGameStart">
                 <slot name="action"></slot><i class="fa-solid fa-arrow-right"></i>
@@ -29,6 +30,8 @@ export default {
     data() {
         return {
             userInput: "",
+            result: "",
+            responseMessage: null,
         }
     },
     methods: {
@@ -43,22 +46,31 @@ export default {
                     game: this.game,
                     enterd_key: this.userInput,
                 });
-                console.log(response);
-                // this.$emit('game-start');
+                this.result = response.data.passwordCorrect;
+                if (this.result) {
+                    this.$emit('game-start');
+                }
+                else {
+                    this.responseMessage = 'The code you entered is incorrect.';
+                    this.triggerShake();
+                }
             } catch (error) {
                 console.error('Error sending data:', error);
                 this.responseMessage = 'Error submitting the word.';
             }
         },
-        triggerShake() {
-            //reset pos after animation
-            gsap.set(this.$refs.shakeElement, { x: 0 });
+        async triggerShake() {
             //animation
-            gsap.to(this.$refs.shakeElement, {
+            await gsap.to(this.$refs.shakeElement, {
                 duration: 0.1,
-                x: 5,
+                x: 3,
                 repeat: 4,
                 yoyo: true,
+                ease: "power2.inOut",
+            });
+            gsap.to(this.$refs.shakeElement, {
+                duration: 0.1,
+                x: 0,
                 ease: "power2.inOut",
             });
         },
