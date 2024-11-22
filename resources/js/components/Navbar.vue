@@ -40,11 +40,11 @@
                             </li>
                             <li class="underline">
                                 <img src="./assets/nav-bell.png">
-                                <a href="/hangman" class="link">How to play</a>
+                                <a href="/howtoplay" class="link">How to play</a>
                             </li>
                             <li class="underline">
                                 <img src="./assets/nav-santa.png">
-                                <a href="/hangman" class="link">Submit Sentence</a>
+                                <a href="/submit" class="link">Submit Sentence</a>
                             </li>
                         </ul>
                     </transition>
