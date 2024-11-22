@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CheckEntryKeyController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DefaultController;
 use App\Http\Controllers\tree\ShowTreeController;
