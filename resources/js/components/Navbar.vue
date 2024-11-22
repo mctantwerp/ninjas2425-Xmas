@@ -38,6 +38,14 @@
                                 <img src="./assets/nav-ginger.png">
                                 <a href="/hangman" class="link">Hangman</a>
                             </li>
+                            <li class="underline">
+                                <img src="./assets/nav-bell.png">
+                                <a href="/hangman" class="link">How to play</a>
+                            </li>
+                            <li class="underline">
+                                <img src="./assets/nav-santa.png">
+                                <a href="/hangman" class="link">Submit Sentence</a>
+                            </li>
                         </ul>
                     </transition>
                     <transition name="fade">
@@ -162,7 +170,7 @@ header {
                 z-index: 9999;
                 display: flex;
                 flex-direction: column;
-                justify-content: start;
+                justify-content: space-evenly;
                 align-items: center;
                 position: fixed;
                 width: 60%;
@@ -176,7 +184,7 @@ header {
                 top: 0;
                 right: 0;
                 transition: 0.5s ease all;
-                gap: 32px;
+                gap: 16px;
 
                 .underline {
                     display: flex;
@@ -198,7 +206,7 @@ header {
                 }
 
                 h1 {
-                    margin: 128px 0px 228px 0px;
+                    margin: 32px 0px 32px 0px;
                     border-bottom: 2px solid $color-wit;
                     width: 100%;
                     text-align: center;
@@ -212,7 +220,7 @@ header {
                 background-color: rgba(0, 0, 0, 0.50);
                 width: 100vw;
                 height: 100vh;
-                z-index: -10;
+                z-index: 0;
             }
         }
     }
