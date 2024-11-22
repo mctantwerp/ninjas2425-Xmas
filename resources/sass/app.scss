@@ -165,9 +165,11 @@ body {
     align-items: center;
 }
 .error {
-    background-color: $color-rood-20;
+    background-color: $color-input-error-background;
     padding: 8px;
     border-radius: 5px;
+    border: 2px solid $color-input-error-border;
+    color: $color-input-error-text;
 }
 #app {
     position: relative;
