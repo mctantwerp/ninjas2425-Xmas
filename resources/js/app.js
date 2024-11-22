@@ -15,6 +15,7 @@ import firstPopup from './components/popups/firstPopup.vue';
 import finalPopup from './components/popups/finalPopup.vue';
 import screenModalPopup from './components/popups/screenModalPopup.vue';
 import windowPopup from './components/popups/windowPopup.vue';
+import submitPopup from './components/popups/submitPopup.vue';
 
 
 import Navbar from './components/Navbar.vue';
@@ -28,6 +29,7 @@ app.component('rebus-page', rebusPage);
 app.component('screen-modal-popup', screenModalPopup);
 app.component('navbar', Navbar);
 app.component('window-popup', windowPopup);
+app.component('submit-popup', submitPopup);
 
 
 app.mount('#app');
