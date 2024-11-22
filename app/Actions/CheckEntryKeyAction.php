@@ -8,8 +8,9 @@ use App\DataTransferObjects\EntryKeyDto;
 
 final class CheckEntryKeyAction
 {
-    public function execute(string $gamePage, EntryKeyDto $entryKeyDto): bool
+    public function execute( EntryKeyDto $entryKeyDto): bool
     {
+        $gamePage = strtolower($entryKeyDto->game);
         switch ($gamePage) {
             case 'hangman':
                 if ($entryKeyDto->key === '18M12') {

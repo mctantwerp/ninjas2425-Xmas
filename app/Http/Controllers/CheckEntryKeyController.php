@@ -18,13 +18,12 @@ class CheckEntryKeyController extends Controller
     }
     public function __invoke(Request $request) : JsonResponse
     {
-        $game = request()->segment(count(request()->segments()));
-
         $entrykeydto = new EntryKeyDto(
+            game: $request->input('game'),
             key: $request->input('enterd_key'),
         );
 
-        $response = $this->checkEntryKeyAction->execute($game, $entrykeydto);
+        $response = $this->checkEntryKeyAction->execute($entrykeydto);
         return response()->json([
             'passwordCorrect' => $response
         ]);
