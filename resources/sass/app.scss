@@ -149,7 +149,6 @@ body {
 .snow,
 .candy,
 .gingerman {
-    pointer-events: none;
 }
 .fade-enter-active,
 .fade-leave-active {
@@ -161,7 +160,7 @@ body {
     opacity: 0;
 }
 .content {
-    padding: 1rem;
+    padding: 1.5rem;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
