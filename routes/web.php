@@ -7,7 +7,7 @@ use App\Http\Controllers\rebus\ShowRebusController;
 use App\Http\Controllers\search\ShowSearchController;
 use App\Http\Controllers\hangman\ShowHangmanController;
 use App\Http\Controllers\ShowHowToPlayController;
-use App\Http\Controllers\ShowSubmitController;
+use App\Http\Controllers\submit\ShowSubmitController;
 
 
 
