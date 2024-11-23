@@ -57,7 +57,7 @@ export default {
                 });
                 this.result = response.data.passwordCorrect;
                 if (this.result) {
-                    this.$emit('game-start');
+                    this.$emit('code-correct');
                 }
                 else {
                     this.responseMessage = 'The code you entered is incorrect.';

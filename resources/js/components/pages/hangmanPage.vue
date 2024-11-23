@@ -1,9 +1,9 @@
 <template>
     <div class="game-container">
         <transition name="fade">
-            <first-popup v-if="!gameStarted && !codeCorrect" class="absolute-center" @code-correct="checkCode" :game="'rebus'">
+            <first-popup v-if="!gameStarted && !codeCorrect" class="absolute-center" @code-correct="checkCode" :game="'hangman'">
                 <template v-slot:content>
-                    <h2>Rebus</h2>
+                    <h2>Hangman</h2>
                     <p>Please type in the code you found on the poster. With this code you can start the game.</p>
                 </template>
                 <template v-slot:action>Continue</template>
@@ -12,25 +12,11 @@
         <transition name="fade">
             <second-popup v-if="!gameStarted && codeCorrect" class="absolute-center" @game-start="startGame">
                 <template v-slot:content>
-                    <h2>Rebus</h2>
-                    <p>Can you figure out what message is encoded in these images? Find the secret two words!</p>
+                    <h2>Hangman</h2>
+                    <p>Type a letter and see if it occurs anywhere in the word. With this word you can continue your search!</p>
                 </template>
                 <template v-slot:action>Start game</template>
             </second-popup>
-        </transition>
-        <transition name="fade">
-            <search-rebus v-if="gameStarted && !correctAnswer">
-            </search-rebus>
-        </transition>
-
-        <transition name="fade">
-            <final-popup v-if="correctAnswer" class="absolute-center">
-                <template v-slot:content>
-                    <h2>Congrats!</h2>
-                    <p>The word in this game is "Happy". Good luck with the rest of the games!</p>
-                </template>
-                <template v-slot:action>Submit sentence</template>
-            </final-popup>
         </transition>
     </div>
 </template>
@@ -43,7 +29,7 @@ export default {
             gameStarted: false,
             isDesktop: window.innerWidth > 1024,
             correctAnswer: false,
-            codeCorrect:false,
+            codeCorrect: false
         }
     },
     computed: {
@@ -89,32 +75,3 @@ export default {
     },
 }
 </script>
-
-<style>
-.game-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-/* .absolute-center {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 100%;
-    max-width: 600px;
-    text-align: center;
-} */
-
-/* Fade Transition */
-.fade-enter-active,
-.fade-leave-active {
-    transition: opacity 0.5s ease;
-}
-
-.fade-enter-from,
-.fade-leave-to {
-    opacity: 0;
-}
-</style>
