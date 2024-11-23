@@ -174,7 +174,7 @@ header {
                 z-index: 9999;
                 display: flex;
                 flex-direction: column;
-                justify-content: space-evenly;
+                justify-content: start;
                 align-items: center;
                 position: fixed;
                 width: 60%;
@@ -188,8 +188,8 @@ header {
                 top: 0;
                 right: 0;
                 transition: 0.5s ease all;
-                gap: 16px;
                 overflow-y: auto;
+
 
                 .underline {
                     display: flex;
@@ -200,8 +200,18 @@ header {
                     width: 90%;
                     padding: 16px 0px 16px 8px;
                     border-bottom: 2px solid $color-wit;
+                    margin-bottom: 8px;
 
                     img {}
+
+                    a {
+                        font-size: 16px
+                    }
+
+                    &:last-child {
+                        border-bottom: none;
+                        margin-bottom: none;
+                    }
                 }
 
                 li {
@@ -213,7 +223,7 @@ header {
                 }
 
                 h1 {
-                    margin: 32px 0px 0px 0px;
+                    margin: 32px 0px 32px 0px;
                     border-bottom: 2px solid $color-wit;
                     width: 100%;
                     text-align: center;
