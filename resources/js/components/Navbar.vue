@@ -13,7 +13,7 @@
     </transition>
     <header>
         <nav>
-            <div class="branding">
+            <div class="branding" @click="backToHome">
                 <img src="../../../public/logo-xmas.png" alt="">
             </div>
             <div class="icon" @click="toggleMobileNav">
@@ -73,6 +73,9 @@ export default {
         },
         ignoreDesktopWarning() {
             this.userIsOnDesktop = false;
+        },
+        backToHome() {
+            window.location.href = '/';
         }
     },
     mounted() {
@@ -143,7 +146,9 @@ header {
         padding: 16px;
         border-bottom: 1px solid $color-wit;
 
-        .branding {}
+        .branding {
+            cursor: pointer;
+        }
 
         .icon {
             height: 39px;
