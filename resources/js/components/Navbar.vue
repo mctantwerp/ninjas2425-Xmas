@@ -146,21 +146,20 @@ header {
         .branding {}
 
         .icon {
-            height: 35px;
-            width: 35px;
+            height: 39px;
+            width: 39px;
             display: flex;
             justify-content: center;
             align-items: center;
             background-color: $color-wit;
-            padding: 4px;
             box-shadow: inset 2px -4px 3px rgba(0, 0, 0, 0.253);
             border-radius: 12px;
+            cursor: pointer;
 
             i {
                 color: $color-black;
                 font-size: 24px;
                 transition: 0.5s ease all;
-                cursor: pointer;
             }
         }
 
