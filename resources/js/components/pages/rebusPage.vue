@@ -16,7 +16,7 @@
                     <h2>Congrats!</h2>
                     <p>The word in this game is "Happy". Good luck with the rest of the games!</p>
                 </template>
-                <template v-slot:action>Submit sentence</template>
+                <template v-slot:action><button @click="redirectSubmitPage">Submit sentence</button></template>
             </final-popup>
         </transition>
     </div>
@@ -64,6 +64,9 @@ export default {
         checkViewport() {
             this.isLargeViewport = window.innerWidth > 1024;
             console.log(this.isLargeViewport);
+        },
+        redirectSubmitPage() {
+            window.location.href = '/submit';
         }
     },
     beforeUnmount() {

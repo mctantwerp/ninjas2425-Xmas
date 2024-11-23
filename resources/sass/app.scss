@@ -52,6 +52,7 @@ button {
     cursor: pointer;
     transition: background-color 0.3s, transform 0.2s;
     box-shadow: inset 2px -4px 4px $color-turquoise-30;
+    width: 100%;
 
     &:hover {
         transform: translateY(-4);
