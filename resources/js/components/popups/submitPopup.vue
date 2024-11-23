@@ -41,7 +41,27 @@ export default {
     methods: {
         async submitSentence() {
             //this.triggerShake();
-            this.$bus.emit('submitSentence');
+            ///checkFinalSentence
+            try {
+                if (this.userInput === '') {
+                    this.triggerShake();
+                    return;
+                }
+                const response = await axios.post('/api/checkFinalSentence', {
+                    finalSentence: this.userInput,
+                });
+                const result = response.data.result;
+                console.log(result);
+                if (result) {
+                    this.$bus.emit('submitSentence');
+                }
+                else {
+                    this.$bus.emit('submitRetry');
+                }
+            }
+            catch (error) {
+
+            }
         },
         async triggerShake() {
             //animation
@@ -59,12 +79,10 @@ export default {
             });
         },
         clearInput() {
+            console.log("clear input");
             this.userInput = "";
         },
     },
-    mounted() {
-        console.log(this.game);
-    }
 }
 </script>
 
