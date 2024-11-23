@@ -1,10 +1,7 @@
 import { gsap } from "gsap";
 
 document.addEventListener("DOMContentLoaded", () => {
-    // Select elements
     const elements = document.querySelectorAll(".snow, .gingerman, .candy");
-
-    // Add click event listeners
     elements.forEach(element => {
         element.addEventListener("click", async () => {
             await triggerShake(element);
@@ -14,7 +11,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 async function triggerShake(element) {
-    // Use GSAP to animate the shake
     await gsap.to(element, {
         duration: 0.1,
         x: 3,
