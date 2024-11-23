@@ -208,13 +208,23 @@ body {
     }
 }
 
+.fade-with-slide-enter-active,
+.fade-with-slide-leave-active {
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.fade-with-slide-enter-from,
+.fade-with-slide-leave-to {
+    opacity: 0;
+    transform: translateY(-10px);
+}
+
 .fade-enter-active,
 .fade-leave-active {
-    transition: opacity 0.5s ease, transform 0.5s ease;
+    transition: opacity 0.5s ease;
 }
 
 .fade-enter-from,
 .fade-leave-to {
     opacity: 0;
-    transform: translateY(-10px);
 }

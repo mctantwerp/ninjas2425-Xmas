@@ -1,6 +1,6 @@
 <template>
     <div class="game-container">
-        <transition name="fade" mode="out-in">
+        <transition name="fade-with-slide" mode="out-in">
             <first-popup v-if="!gameStarted" @game-start="startGame" :game="'rebus'">
                 <template v-slot:content>
                     <h2>Rebus</h2>
