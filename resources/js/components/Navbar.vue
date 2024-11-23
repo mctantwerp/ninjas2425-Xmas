@@ -183,11 +183,12 @@ header {
                 position: fixed;
                 width: 60%;
                 height: 100vh;
-                background: linear-gradient(to right,
-                        $illustrations-medium-green 125px,
-                        $illustrations-dark-green 125px) repeat-x;
+                // background: linear-gradient(to right,
+                //         $illustrations-medium-green 50%,
+                //         $illustrations-dark-green 50%) repeat-x;
                 margin: 0;
-                background-size: 250px 100%;
+                // background-size: 125px 100%;
+                background-color: $illustrations-dark-green;
                 padding: 0;
                 top: 0;
                 right: 0;
