@@ -150,15 +150,6 @@ body {
 .candy,
 .gingerman {
 }
-.fade-enter-active,
-.fade-leave-active {
-    transition: opacity 0.3s ease;
-}
-
-.fade-enter-from,
-.fade-leave-to {
-    opacity: 0;
-}
 .content {
     padding: 1.5rem;
     box-sizing: border-box;
@@ -214,4 +205,15 @@ body {
     p {
         color: $color-black;
     }
+}
+
+.fade-enter-active,
+.fade-leave-active {
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+    opacity: 0;
+    transform: translateY(-10px);
 }

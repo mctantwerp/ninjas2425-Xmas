@@ -1,22 +1,17 @@
 <template>
     <div class="game-container">
-        <transition name="fade">
-            <first-popup v-if="!gameStarted" class="absolute-center" @game-start="startGame" :game="'rebus'">
+        <transition name="fade" mode="out-in">
+            <first-popup v-if="!gameStarted" @game-start="startGame" :game="'rebus'">
                 <template v-slot:content>
                     <h2>Rebus</h2>
                     <p>Can you figure out what message is encoded in these images? Find the secret two words!</p>
                 </template>
                 <template v-slot:action>Continue</template>
             </first-popup>
-        </transition>
 
-        <transition name="fade">
-            <search-rebus v-if="gameStarted && !correctAnswer">
-            </search-rebus>
-        </transition>
+            <search-rebus v-else-if="gameStarted && !correctAnswer"></search-rebus>
 
-        <transition name="fade">
-            <final-popup v-if="correctAnswer" class="absolute-center">
+            <final-popup v-else>
                 <template v-slot:content>
                     <h2>Congrats!</h2>
                     <p>The word in this game is "Happy". Good luck with the rest of the games!</p>
@@ -26,6 +21,7 @@
         </transition>
     </div>
 </template>
+
 
 <script>
 import confetti from "canvas-confetti";
@@ -78,31 +74,13 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss" scoped>
 .game-container {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-}
-
-/* .absolute-center {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    overflow: hidden;
     width: 100%;
-    max-width: 600px;
-    text-align: center;
-} */
-
-/* Fade Transition */
-.fade-enter-active,
-.fade-leave-active {
-    transition: opacity 0.5s ease;
-}
-
-.fade-enter-from,
-.fade-leave-to {
-    opacity: 0;
 }
 </style>
