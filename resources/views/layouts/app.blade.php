@@ -23,7 +23,7 @@
 
     <!-- Open Graph Meta Tags -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://yourwebsite.com/">
+    <meta property="og:url" content="https://happyholidays.mctantwerp.be">
     <meta property="og:title" content="XMAS 2024 | KdG">
     <meta property="og:description"
         content="Find the posters, complete the challenges and win fun prizes! Made by the MCT students of KdG for the holidays.">
