@@ -26,6 +26,7 @@
 </template>
 
 <script>
+import confetti from "canvas-confetti";
 export default {
     data() {
         return {
@@ -37,6 +38,7 @@ export default {
         this.$bus.on('submitSentence', () => {
             this.hasSubmitted = true;
             this.submittedSentenceCorrect = true;
+            this.triggerConfetti();
         });
         this.$bus.on('submitRetry', () => {
             this.hasSubmitted = true;
@@ -47,6 +49,15 @@ export default {
             this.submittedSentenceCorrect = false;
         });
     },
+    methods: {
+        triggerConfetti() {
+            confetti({
+                particleCount: 100,
+                spread: 70,
+                origin: { y: 0.6 },
+            });
+        },
+    }
 }
 </script>
 
