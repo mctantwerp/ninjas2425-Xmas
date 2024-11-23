@@ -18,7 +18,7 @@
 export default {
     methods: {
         submitRetry() {
-            this.$bus.emit('submitRetry');
+            this.$bus.emit('submitRetryReset');
         }
     }
 }

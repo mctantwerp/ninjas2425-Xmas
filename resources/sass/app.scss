@@ -146,6 +146,11 @@ body {
     background-repeat: no-repeat; /* Prevents the image from repeating */
     z-index: 10;
 }
+.snow,
+.candy,
+.gingerman {
+    pointer-events: none;
+}
 .fade-enter-active,
 .fade-leave-active {
     transition: opacity 0.3s ease;

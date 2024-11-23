@@ -6,7 +6,7 @@
         </template>
         <template v-slot:action>Submit</template>
     </submit-popup>
-    <window-popup v-if="hasSubmitted && !submittedSentence">
+    <window-popup v-if="hasSubmitted && submittedSentenceCorrect">
         <template v-slot:content>
             <h2>Good Job!</h2>
             <p>E-mail your answer to <a
@@ -14,7 +14,7 @@
             <p>Keep an eye on your inbox! Maybe you’ll be the lucky winner of a special prize 😉.</p>
         </template>
     </window-popup>
-    <negative-window-popup v-if="hasSubmitted && submittedSentence">
+    <negative-window-popup v-if="hasSubmitted && !submittedSentenceCorrect">
         <template v-slot:content>
             <h2 class="error-text">Uh oh!</h2>
             <p class>Ah, that’s not quite what you’re looking for. You’re getting there, though, so don’t give up!</p>
@@ -26,21 +26,38 @@
 </template>
 
 <script>
+import confetti from "canvas-confetti";
 export default {
     data() {
         return {
             hasSubmitted: false,
-            submittedSentence: true,
+            submittedSentenceCorrect: null,
         }
     },
     mounted() {
         this.$bus.on('submitSentence', () => {
             this.hasSubmitted = true;
+            this.submittedSentenceCorrect = true;
+            this.triggerConfetti();
         });
         this.$bus.on('submitRetry', () => {
+            this.hasSubmitted = true;
+            this.submittedSentenceCorrect = false;
+        });
+        this.$bus.on('submitRetryReset', () => {
             this.hasSubmitted = false;
+            this.submittedSentenceCorrect = false;
         });
     },
+    methods: {
+        triggerConfetti() {
+            confetti({
+                particleCount: 100,
+                spread: 70,
+                origin: { y: 0.6 },
+            });
+        },
+    }
 }
 </script>
 
