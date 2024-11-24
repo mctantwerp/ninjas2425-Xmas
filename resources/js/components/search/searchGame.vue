@@ -1,7 +1,6 @@
 <template>
     <div class="image-container" @click="handleClick" ref="shakeElement">
-        <img src="../assets/search-background.png"
-            alt="search game background image with many icons like presents and others" class="image" />
+        <div class="image" />
         <div class="overlay-box"></div>
     </div>
 </template>
@@ -47,49 +46,34 @@ export default {
 <style lang="scss" scoped>
 .image-container {
     position: relative;
-    display: inline-block;
+    /* Adjust height as needed */
+    width: 100%;
+    max-width: 320px;
+    max-height: 590px;
     height: 80vh;
+    /* Ensures container spans full width */
+    /* Center the background image */
 }
 
 .image {
+    background-image: url('../assets/search-background.png');
+    background-size: contain;
+    /* Ensures image scales correctly */
+    background-repeat: no-repeat;
+    background-position: center;
     width: 100%;
     height: 100%;
-    object-fit: contain;
 }
 
 .overlay-box {
     position: absolute;
-    bottom: 22%;
-    right: 11%;
-    width: 70px;
-    height: 70px;
+    width: 50px;
+    height: 50px;
     cursor: pointer;
     z-index: 10;
     background-color: red;
     opacity: 0.5;
-
-    @media(max-width: 410px) {
-        width: 65px;
-        height: 65px;
-        bottom: 23%;
-    }
-
-    @media(max-width: 360px) {
-        width: 65px;
-        height: 65px;
-        bottom: 26%;
-    }
-
-    @media(max-width: 340px) {
-        width: 50px;
-        height: 50px;
-        bottom: 29%;
-    }
-
-    @media(max-width: 320px) {
-        width: 50px;
-        height: 50px;
-        bottom: 28%;
-    }
+    right: 40px;
+    bottom: 140px;
 }
 </style>
