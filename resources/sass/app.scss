@@ -182,6 +182,13 @@ body {
     align-items: flex-start;
     flex-direction: column;
     overflow-y: auto;
+    background: linear-gradient(
+            to right,
+            $illustrations-medium-green 100px,
+            $illustrations-dark-green 100px
+        )
+        repeat-x;
+    background-size: 200px 100%;
 }
 .window-intro {
     padding: 32px;
