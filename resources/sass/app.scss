@@ -86,6 +86,8 @@ body {
         )
         repeat-x;
     background-size: 200px 100%;
+    background-color: $illustrations-medium-green;
+    background-position: center;
 }
 .footer {
     position: fixed;
@@ -157,6 +159,8 @@ body {
     align-items: center;
     width: 100%;
     z-index: 10;
+    max-width: 1140px;
+    margin: 0 auto;
 }
 .error {
     background-color: $color-input-error-background;
@@ -175,7 +179,6 @@ body {
     right: 0;
     bottom: 0;
     min-height: calc(100vh - 76px);
-    max-width: 1140px;
     margin: 0 auto;
     display: flex;
     justify-content: center;
