@@ -52,6 +52,7 @@ button {
     cursor: pointer;
     transition: background-color 0.3s, transform 0.2s;
     box-shadow: inset 2px -4px 4px $color-turquoise-30;
+    width: 100%;
 
     &:hover {
         transform: translateY(-4);
@@ -68,7 +69,7 @@ input {
     border: 2px solid $color-grijs;
     outline: none;
     border-radius: 8px;
-    padding: 10px 20px;
+    padding: 10px 50px 10px 20px;
     margin: 10px 0;
     height: 68px;
     width: 100%;
@@ -105,7 +106,7 @@ body {
         display: none;
     }
 }
-@media (max-height: 540px) {
+@media (max-height: 770px) {
     .footer {
         display: none;
     }
@@ -146,22 +147,8 @@ body {
     background-repeat: no-repeat; /* Prevents the image from repeating */
     z-index: 10;
 }
-.snow,
-.candy,
-.gingerman {
-    pointer-events: none;
-}
-.fade-enter-active,
-.fade-leave-active {
-    transition: opacity 0.3s ease;
-}
-
-.fade-enter-from,
-.fade-leave-to {
-    opacity: 0;
-}
 .content {
-    padding: 1rem;
+    padding: 1.5rem;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
@@ -169,6 +156,7 @@ body {
     justify-content: center;
     align-items: center;
     width: 100%;
+    z-index: 10;
 }
 .error {
     background-color: $color-input-error-background;
@@ -215,4 +203,25 @@ body {
     p {
         color: $color-black;
     }
+}
+
+.fade-with-slide-enter-active,
+.fade-with-slide-leave-active {
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.fade-with-slide-enter-from,
+.fade-with-slide-leave-to {
+    opacity: 0;
+    transform: translateY(-10px);
+}
+
+.fade-enter-active,
+.fade-leave-active {
+    transition: opacity 0.5s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+    opacity: 0;
 }

@@ -6,9 +6,7 @@
             </div>
         </div>
         <div class="action">
-            <button @click="emitGameStart">
-                <slot name="action"></slot>
-            </button>
+            <slot name="action"></slot>
         </div>
     </div>
 </template>
