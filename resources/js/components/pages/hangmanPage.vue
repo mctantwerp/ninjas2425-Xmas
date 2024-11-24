@@ -9,6 +9,7 @@
                 <template v-slot:action>Continue</template>
             </first-popup>
         </transition>
+
         <transition name="fade">
             <second-popup v-if="!gameStarted && codeCorrect" class="absolute-center" @game-start="startGame">
                 <template v-slot:content>
@@ -17,6 +18,11 @@
                 </template>
                 <template v-slot:action>Start game</template>
             </second-popup>
+        </transition>
+
+        <transition name="fade">
+            <search-hangman v-if="gameStarted && !correctAnswer">
+            </search-hangman>
         </transition>
     </div>
 </template>
