@@ -48,21 +48,48 @@ export default {
 .image-container {
     position: relative;
     display: inline-block;
+    height: 80vh;
 }
 
 .image {
-    display: block;
     width: 100%;
-    height: auto;
+    height: 100%;
+    object-fit: contain;
 }
 
 .overlay-box {
     position: absolute;
-    bottom: 130px;
-    right: 32px;
+    bottom: 22%;
+    right: 11%;
     width: 70px;
     height: 70px;
     cursor: pointer;
     z-index: 10;
+    background-color: red;
+    opacity: 0.5;
+
+    @media(max-width: 410px) {
+        width: 65px;
+        height: 65px;
+        bottom: 23%;
+    }
+
+    @media(max-width: 360px) {
+        width: 65px;
+        height: 65px;
+        bottom: 26%;
+    }
+
+    @media(max-width: 340px) {
+        width: 50px;
+        height: 50px;
+        bottom: 29%;
+    }
+
+    @media(max-width: 320px) {
+        width: 50px;
+        height: 50px;
+        bottom: 28%;
+    }
 }
 </style>
