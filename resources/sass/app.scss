@@ -160,6 +160,7 @@ body {
     justify-content: center;
     align-items: center;
     width: 100%;
+    z-index: 10;
 }
 .error {
     background-color: $color-input-error-background;
@@ -185,13 +186,6 @@ body {
     align-items: flex-start;
     flex-direction: column;
     overflow-y: auto;
-    background: linear-gradient(
-            to right,
-            $illustrations-medium-green 100px,
-            $illustrations-dark-green 100px
-        )
-        repeat-x;
-    background-size: 200px 100%;
 }
 .window-intro {
     padding: 32px;
