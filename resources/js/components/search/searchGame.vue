@@ -50,7 +50,7 @@ export default {
     width: 100%;
     max-width: 320px;
     max-height: 590px;
-    height: 80vh;
+    height: 590px;
     /* Ensures container spans full width */
     /* Center the background image */
 }
@@ -75,5 +75,30 @@ export default {
     opacity: 0.5;
     right: 40px;
     bottom: 140px;
+
+    // @media (max-height: 740px) {
+    //     bottom: 140px;
+    // }
+
+    // @media (max-height: 705px) {
+    //     bottom: 135px;
+    // }
+
+    // @media (max-height: 670px) {
+    //     bottom: 120px;
+    //     right: 45px;
+    // }
+
+    // @media (max-height: 600px) {
+    //     bottom: 105px;
+    //     right: 55px;
+    // }
+
+    // @media (max-height: 550px) {
+    //     height: 40px;
+    //     width: 40px;
+    //     right: 68px;
+    //     bottom: 100px;
+    // }
 }
 </style>
