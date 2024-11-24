@@ -18,6 +18,7 @@ import windowPopup from './components/popups/windowPopup.vue';
 import submitPopup from './components/popups/submitPopup.vue';
 import submitPage from './components/pages/submitPage.vue';
 import negativeWindowPopup from './components/popups/negativeWindowPopup.vue';
+import snowFlakes from './components/decorations/snowFlakes.vue';
 
 
 import Navbar from './components/Navbar.vue';
@@ -34,6 +35,7 @@ app.component('window-popup', windowPopup);
 app.component('submit-popup', submitPopup);
 app.component('submit-page', submitPage);
 app.component('negative-window-popup', negativeWindowPopup);
+app.component('snow-flakes', snowFlakes);
 
 
 app.mount('#app');
