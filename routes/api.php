@@ -9,3 +9,4 @@ use App\Http\Controllers\submit\CheckFinalSentenceController;
 Route::post('/checkRebus', CheckRebusController::class)->name('checkRebus');
 Route::post('/checkEntry', CheckEntryKeyController::class)->name('checkEntry');
 Route::post('/checkFinalSentence', CheckFinalSentenceController::class)->name('checkFinalSentence');
+Route::post('/checkHangmanLetter', CheckHangmanLetterController::class)->name('checkHangmanLetter');
