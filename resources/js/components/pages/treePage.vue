@@ -16,8 +16,7 @@
             <final-popup v-else>
                 <template v-slot:content>
                     <h2>Congrats!</h2>
-                    <p>The word in this game is 'MCT'. Complete the other challenges to reveal the entire sentence. Good
-                        luck!</p>
+                    <p>The word in this game is 'FROM'. Good luck with the rest of the challenges!</p>
                 </template>
                 <template v-slot:action><button @click="redirectSubmitPage">Submit sentence</button></template>
             </final-popup>
