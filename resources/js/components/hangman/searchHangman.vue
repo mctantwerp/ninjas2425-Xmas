@@ -3,12 +3,16 @@
         <div class="wrapper">
             <div class="box-wrapper">
                 <div class="box">
-                    <img src="../assets/hangman/hangman-1.png">
+                    <img :src="`./images/hangman/hangman-${amountOfWrongTries + 1}.png`" alt="Hangman">
                 </div>
             </div>
             <div class="word">
-                <span class="letter" v-for="(letter, i) in letters" :key="i">
-                    {{  correctLetters.includes(letter) ? letter : '' }}
+                <span 
+                    class="letter" 
+                    :class="{ 'correct': correctLetters[i] && correctLetters[i] !== ' ' }"
+                    v-for="(letter, i) in letters" 
+                    :key="i">
+                    {{ correctLetters[i] }}
                 </span>
 
             </div>
@@ -22,15 +26,18 @@ export default {
     props: {
         letters: {
             type: Array, // Ensure the type matches the expected data structure
-            default: () => ['c', 'h', 'r', 'i', 's', 't', 'm', 'a', 's'] // Default value is an array of letters
+            default: () => ['c', 'h', 'r', 'i', 's', 't', 'm', 'a', 's']
         },
-        correctLetters: {
-            type: Array,
-            default: () => []
-        }
+        
     },
     data() {
         return {
+            amountOfWrongTries: 0,
+            correctLetters:
+            {
+                type: Array,
+                default: () => [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']
+            },
             amountOfWrongTries: 0,
         }
     },
@@ -38,31 +45,33 @@ export default {
     methods:{
         async checkLetter(event){
             const letter = event.key.toLowerCase();
+            //console.log(letter);
             try {
-                if (this.userInput === '') {
-                    this.triggerShake();
-                    return;
-
-                }
                 const response = await axios.post('/api/checkHangmanLetter', {
-                    word: this.userInput,
+                    letter: letter,
                 });
 
                 const { result } = response.data;
+                //console.log(result)
+                this.addLetterToArray(letter, result);
+                console.log(this.correctLetters);
 
-                if (result) {
-                    console.log('Word is correct!');
-                    this.$bus.emit('correct');
-                } else {
-                    this.triggerShake();
-                    console.log('Word is incorrect.');
-                    this.generateRandomPlaceholder();
-                }
+                
             } catch (error) {
                 console.error('Error sending data:', error);
                 this.responseMessage = 'Error submitting the word.';
             }
-            this.clearInput();
+        },
+
+        addLetterToArray(inputletter, response){
+            if(response.length > 0){
+                response.forEach((index) => {
+                    this.correctLetters[index] = inputletter;
+                });
+            }
+            if(response.length == 0){
+                this.amountOfWrongTries++;
+            }
         }
     },
 
@@ -108,11 +117,15 @@ export default {
         border-bottom: 3px solid $color-wit;
         display: inline-flex;
         font-size: 30px;
-        align-items: center;
+        align-items: end;
         justify-content: center;
         margin: 0 3px;
         height: 50px;
         width: 20px;
+            &.correct{
+                border-bottom: none;
+                color: $color-wit;
+            }
         }
     }
 }

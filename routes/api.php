@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\rebus\CheckRebusController;
 use App\Http\Controllers\CheckEntryKeyController;
 use App\Http\Controllers\submit\CheckFinalSentenceController;
+use App\Http\Controllers\hangman\CheckHangmanLetterController;
 
 Route::post('/checkRebus', CheckRebusController::class)->name('checkRebus');
 Route::post('/checkEntry', CheckEntryKeyController::class)->name('checkEntry');

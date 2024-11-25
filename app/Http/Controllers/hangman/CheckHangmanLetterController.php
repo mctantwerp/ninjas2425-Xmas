@@ -23,7 +23,7 @@ class CheckHangmanLetterController extends Controller
         $hangmanLetterDto = new HangmanLetterDto(
             letter: $request->input('letter')
         );
-
+        //dd($hangmanLetterDto);
         $data = $this->checkhangmanletteraction->execute($hangmanLetterDto);
 
         return response()->json([

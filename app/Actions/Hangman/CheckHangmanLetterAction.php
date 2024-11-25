@@ -8,7 +8,7 @@ use App\DataTransferObjects\HangmanLetterDto;
 
 final class CheckHangmanLetterAction
 {
-    public function execute( HangmanLetterDto $hangmanLetterDto)
+    public function execute( HangmanLetterDto $hangmanLetterDto): array
     {
         $word = "christmas";
         $letter = strtolower($hangmanLetterDto->letter);
