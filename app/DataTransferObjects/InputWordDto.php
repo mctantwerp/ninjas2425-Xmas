@@ -2,7 +2,7 @@
 
 namespace App\DataTransferObjects;
 
-class RebusWordDto
+class InputWordDto
 {
     public function __construct(
         public string $word,

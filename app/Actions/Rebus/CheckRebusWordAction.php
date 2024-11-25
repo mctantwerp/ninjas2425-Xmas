@@ -4,17 +4,17 @@ declare(strict_types=1);
 
 namespace App\Actions\Rebus;
 
-use App\DataTransferObjects\RebusWordDto;
+use App\DataTransferObjects\InputWordDto;
 
 final class CheckRebusWordAction
 {
-    public function execute(RebusWordDto $rebusWordDto): bool
+    public function execute(InputWordDto $inputWordDto): bool
     {
-        if(strtolower($rebusWordDto->word) === 'happy') {
+        if(strtolower($inputWordDto->word) === 'happy') {
             return true;
         }
 
-        if(strtolower($rebusWordDto->word) !== 'happy') {
+        if(strtolower($inputWordDto->word) !== 'happy') {
             return false;
         }
     }
