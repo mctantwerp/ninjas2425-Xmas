@@ -17,6 +17,7 @@
 </template>
 
 <script>
+import axios from 'axios';
 export default {
     props: {
         letters: {
@@ -35,9 +36,33 @@ export default {
     },
 
     methods:{
-        checkLetter(event){
+        async checkLetter(event){
             const letter = event.key.toLowerCase();
-            console.log(letter);
+            try {
+                if (this.userInput === '') {
+                    this.triggerShake();
+                    return;
+
+                }
+                const response = await axios.post('/api/checkHangmanLetter', {
+                    word: this.userInput,
+                });
+
+                const { result } = response.data;
+
+                if (result) {
+                    console.log('Word is correct!');
+                    this.$bus.emit('correct');
+                } else {
+                    this.triggerShake();
+                    console.log('Word is incorrect.');
+                    this.generateRandomPlaceholder();
+                }
+            } catch (error) {
+                console.error('Error sending data:', error);
+                this.responseMessage = 'Error submitting the word.';
+            }
+            this.clearInput();
         }
     },
 
