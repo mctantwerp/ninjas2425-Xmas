@@ -3,7 +3,7 @@
         <transition name="fade-with-slide" mode="out-in">
             <first-popup v-if="!gameStarted" @game-start="startGame" :game="'search'">
                 <template v-slot:content>
-                    <h2>Christmas search</h2>
+                    <h2>Christmas search 🕵️</h2>
                     <p>Find Santa's frozen present and reveal one of the words for the Christmas Challenge. BTF41</p>
                 </template>
                 <template v-slot:action>Continue</template>

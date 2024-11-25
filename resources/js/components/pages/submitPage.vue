@@ -3,8 +3,8 @@
         <template v-if="!hasSubmitted">
             <submit-popup>
                 <template v-slot:content>
-                    <h2>Submit sentence</h2>
-                    <p>In the input field below, enter the sentence you found and see if you won!</p>
+                    <h2>Submit sentence 🚀</h2>
+                    <p>In the input field below, make the sentence with the 4 words!</p>
                 </template>
                 <template v-slot:action>Submit</template>
             </submit-popup>

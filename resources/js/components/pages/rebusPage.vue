@@ -3,7 +3,7 @@
         <transition name="fade-with-slide" mode="out-in">
             <first-popup v-if="!gameStarted" @game-start="startGame" :game="'rebus'">
                 <template v-slot:content>
-                    <h2>Rebus</h2>
+                    <h2>Rebus 🧩</h2>
                     <p>Can you figure out what message is encoded in these images? Find the secret two words!</p>
                 </template>
                 <template v-slot:action>Continue</template>

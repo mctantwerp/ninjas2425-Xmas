@@ -3,7 +3,7 @@
         <transition name="fade-with-slide" mode="out-in">
             <first-popup v-if="!gameStarted" @game-start="startGame" :game="'tree'">
                 <template v-slot:content>
-                    <h2>What is Karel's favourite color?</h2>
+                    <h2>What is Karel's favourite color? 🎨</h2>
                     <p>Press the christmas ornament matching with that color and reveal the letters to assemble a word.
                         WOZG3
                     </p>
