@@ -102,7 +102,7 @@ export default {
                     return;
 
                 }
-                const response = await axios.post('/api/checkRebus', {
+                const response = await axios.post('/api/checkTree', {
                     word: this.userInput,
                 });
 

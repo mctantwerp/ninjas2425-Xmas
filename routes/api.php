@@ -5,7 +5,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\rebus\CheckRebusController;
 use App\Http\Controllers\CheckEntryKeyController;
 use App\Http\Controllers\submit\CheckFinalSentenceController;
+use App\Http\Controllers\tree\CheckTreeController;
 
 Route::post('/checkRebus', CheckRebusController::class)->name('checkRebus');
+Route::post('/checkTree', CheckTreeController::class)->name('checkTree');
 Route::post('/checkEntry', CheckEntryKeyController::class)->name('checkEntry');
 Route::post('/checkFinalSentence', CheckFinalSentenceController::class)->name('checkFinalSentence');
