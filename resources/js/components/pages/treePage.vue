@@ -1,15 +1,17 @@
 <template>
     <div class="game-container">
         <transition name="fade-with-slide" mode="out-in">
-            <first-popup v-if="!gameStarted" @game-start="startGame" :game="'search'">
+            <first-popup v-if="!gameStarted" @game-start="startGame" :game="'tree'">
                 <template v-slot:content>
-                    <h2>Christmas search</h2>
-                    <p>Find Santa's frozen present and reveal one of the words for the Christmas Challenge. BTF41</p>
+                    <h2>What is Karel's favourite color?</h2>
+                    <p>Press the christmas ornament matching with that color and reveal the letters to assemble a word.
+                        WOZG3
+                    </p>
                 </template>
                 <template v-slot:action>Continue</template>
             </first-popup>
 
-            <search-game v-else-if="gameStarted && !correctAnswer"></search-game>
+            <tree-game v-else-if="gameStarted && !correctAnswer"></tree-game>
 
             <final-popup v-else>
                 <template v-slot:content>
@@ -38,8 +40,6 @@ export default {
         viewportWidth() {
             return window.innerWidth;
         }
-    },
-    watch: {
     },
     mounted() {
         window.addEventListener('resize', this.checkViewport);
@@ -70,9 +70,10 @@ export default {
         },
         redirectSubmitPage() {
             window.location.href = '/submit';
-        },
+        }
     },
     beforeUnmount() {
+        // Remove event listener when the component is destroyed
         window.removeEventListener('resize', this.checkViewport);
         this.$bus.off('correct');
     },
@@ -84,7 +85,7 @@ export default {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: start;
+    justify-content: center;
     overflow: hidden;
     width: 100%;
 }

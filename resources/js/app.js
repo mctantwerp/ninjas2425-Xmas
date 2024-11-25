@@ -20,12 +20,14 @@ import submitPage from './components/pages/submitPage.vue';
 import negativeWindowPopup from './components/popups/negativeWindowPopup.vue';
 import snowFlakes from './components/decorations/snowFlakes.vue';
 import searchGame from './components/search/searchGame.vue';
+import treeGame from './components/tree/treeGame.vue';
 
 
 import Navbar from './components/Navbar.vue';
 
 import rebusPage from './components/pages/rebusPage.vue';
 import searchPage from './components/pages/searchPage.vue';
+import treePage from './components/pages/treePage.vue';
 
 app.component('search-rebus', searchRebus);
 app.component('final-popup', finalPopup);
@@ -40,6 +42,8 @@ app.component('negative-window-popup', negativeWindowPopup);
 app.component('snow-flakes', snowFlakes);
 app.component('search-page', searchPage);
 app.component('search-game', searchGame);
+app.component('tree-game', treeGame);
+app.component('tree-page', treePage);
 
 
 app.mount('#app');

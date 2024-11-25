@@ -3,10 +3,8 @@
         <div class="screen-popup" v-show="userIsOnDesktop">
             <div class="box">
                 <h1>Hold! 🎄</h1>
-                <p class="larger-paragraph">We've noticed you're visiting the website on a desktop. This website is
-                    primarily
-                    designed for mobile and
-                    thus the website might not work and/or look as expected.</p>
+                <p class="larger-paragraph">This website is optimized for mobile devices. For the best experience,
+                    please visit this website on your mobile device.</p>
                 <button @click="ignoreDesktopWarning">Continue anyway</button>
             </div>
         </div>
