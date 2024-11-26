@@ -13,37 +13,47 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     const triggerShakeLoop = async () => {
+        let randomNumber;
+
+        //4000 = max and 2500 = min
+        randomNumber = Math.floor(Math.random() * (4000 - 2500 + 1)) + 2500;
         await triggerShake(snow);
-        await delay(2500);
+        await delay(randomNumber);
+
+        //4500 = max and 3000 = min
+        randomNumber = Math.floor(Math.random() * (4500 - 3000 + 1)) + 3000;
         await triggerShake(gingerman);
-        await delay(3250);
+        await delay(randomNumber);
+
+        //1250 = max and 600 = min
+        randomNumber = Math.floor(Math.random() * (1250 - 600 + 1)) + 600;
         await triggerShake(snow);
-        await delay(750);
+        await delay(randomNumber);
         await triggerShake(candy);
 
-        setTimeout(triggerShakeLoop, 2500); //repeat every 7 seconds
+        setTimeout(triggerShakeLoop, 5000);
     };
 
-    //start loop
     triggerShakeLoop();
 });
 
 async function triggerShake(element) {
     await gsap.to(element, {
-        duration: 0.1,
+        duration: 0.15,
         x: 3,
         repeat: 4,
         yoyo: true,
-        ease: "power2.inOut",
+        ease: "bounce.inOut",
     });
-    gsap.to(element, {
-        duration: 0.1,
+    await gsap.to(element, {
+        duration: 0.15,
         x: 0,
-        ease: "power2.inOut",
+        ease: "bounce.inOut",
     });
 }
 
 function delay(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
+
 
