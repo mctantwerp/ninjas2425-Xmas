@@ -72,7 +72,6 @@ export default {
     position: absolute;
     width: 50px;
     height: 50px;
-    cursor: pointer;
     z-index: 10;
     opacity: 0.5;
     right: 40px;

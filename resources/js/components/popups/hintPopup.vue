@@ -59,6 +59,7 @@ export default {
     align-items: center;
     border-radius: 5px;
     z-index: 1000;
+    cursor: pointer;
 
     i {
         color: $color-wit;
