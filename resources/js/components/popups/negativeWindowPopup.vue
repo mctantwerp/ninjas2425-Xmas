@@ -31,7 +31,8 @@ export default {
     display: flex;
     flex-direction: column;
     gap: 32px;
-    width: 100%;
+    width: 80vw;
+    max-width: 600px;
 
     .box-wrapper {
         display: flex;

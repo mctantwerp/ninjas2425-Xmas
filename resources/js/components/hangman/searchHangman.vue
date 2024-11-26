@@ -1,41 +1,44 @@
 <template>
-    <div class="hangman-wrapper">
-        <div class="wrapper">
-            <div class="box-wrapper">
-                <div class="box">
-                    <img :src="`./images/hangman/hangman-${amountOfWrongTries + 1}.png`" alt="Hangman">
-                </div>
-            </div>
-            <div class="word">
-                <span 
-                    class="letter" 
-                    :class="{ 'correct': correctLetters[i] && correctLetters[i] !== ' ' }"
-                    v-for="(letter, i) in letters" 
-                    :key="i">
-                    {{ correctLetters[i] }}
-                </span>
-            </div>
-        <div v-if="gameOver" class="popup-overlay">
-            <div class="popup">
-                <h2>Game Over</h2>
-                <p>Would you like to try again?</p>
-                <button @click="resetGame">Restart</button>
+    <div class="wrapper">
+        <div class="box-wrapper">
+            <div class="box">
+                <img :src="`./images/hangman/hangman-${amountOfWrongTries + 1}.png`" alt="Hangman">
             </div>
         </div>
+        <div class="word">
+            <span class="letter" :class="{ 'correct': correctLetters[i] && correctLetters[i] !== ' ' }"
+                v-for="(letter, i) in letters" :key="i">
+                {{ correctLetters[i] }}
+            </span>
+        </div>
+        <div class="input">
+            <input type="text" placeholder="Type in a letter here.">
+        </div>
+        <div v-if="gameOver" class="popup-overlay">
+            <negative-window-popup @submitRetryReset="resetGame">
+                <template v-slot:content>
+                    <h2 class="error-text">Uh oh!</h2>
+                    <p>You failed the challenge. No worries though, you can retry as many times as you want!</p>
+                </template>
+                <template v-slot:action>
+                    Retry
+                </template>
+            </negative-window-popup>
         </div>
     </div>
 </template>
 
 <script>
 import axios from 'axios';
+
 export default {
     props: {
-        
+
         letters: {
             type: Array,
             default: () => ['c', 'h', 'r', 'i', 's', 't', 'm', 'a', 's']
         }
-        
+
     },
     data() {
         return {
@@ -46,8 +49,8 @@ export default {
         }
     },
 
-    methods:{
-        async checkLetter(event){
+    methods: {
+        async checkLetter(event) {
             const letter = event.key.toLowerCase();
             //console.log(letter);
             try {
@@ -64,19 +67,19 @@ export default {
             }
         },
 
-        addLetterToArray(inputletter, response){
-            if(response.length > 0 && this.amountOfWrongTries < 10){
+        addLetterToArray(inputletter, response) {
+            if (response.length > 0 && this.amountOfWrongTries < 10) {
                 response.forEach((index) => {
                     this.correctLetters[index] = inputletter;
                     this.checkIfGameIsFinished();
                 });
             }
-            if(response.length == 0 && this.amountOfWrongTries < 10){
+            if (response.length == 0 && this.amountOfWrongTries < 10) {
                 this.amountOfWrongTries++;
                 this.checkIfGameIsFinished();
             }
 
-            if(this.amountOfWrongTries >= 10){
+            if (this.amountOfWrongTries >= 10) {
                 console.log('Game Over');
                 this.gameOver = true;
             }
@@ -88,7 +91,7 @@ export default {
             this.gameOver = false;
         },
 
-        checkIfGameIsFinished(){            
+        checkIfGameIsFinished() {
             if (this.correctLetters.join('') === this.letters.join('')) {
                 console.log('You have guessed the word!');
                 this.$bus.emit('correct');
@@ -96,9 +99,12 @@ export default {
         }
     },
 
-    mounted(){
+    mounted() {
         console.log('mounted');
         window.addEventListener('keydown', this.checkLetter);
+        this.$bus.on('submitRetryReset', () => {
+            this.resetGame();
+        });
     }
 }
 </script>
@@ -106,35 +112,31 @@ export default {
 <style lang="scss" scoped>
 @import "/resources/sass/_variables.scss";
 
-.hangman-wrapper{
-    position: absolute;
-    top: 50;
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    width: 100%;
 
-    .wrapper {
+    .box-wrapper {
         display: flex;
-        flex-direction: column;
-        gap: 32px;
-        width: 100%;
+        align-items: center;
+        justify-content: center;
+        background-color: $color-wit;
+        border-radius: 20px;
+        text-align: center;
+        box-shadow: 2px -4px 4px #00000042;
 
-        .box-wrapper {
+
+        .box {
             display: flex;
-            align-items: center;
-            justify-content: center;
-            background-color: $color-wit;
-            border-radius: 20px;
-            text-align: center;
-            box-shadow: 2px -4px 4px #00000042;
-
-
-            .box {
-                display: flex;
-                flex-direction: column;
-                gap: 16px;
-                padding: 32px;
-            }
+            flex-direction: column;
+            gap: 16px;
+            padding: 32px;
         }
+    }
 
-        .letter {
+    .letter {
         border-bottom: 3px solid $color-wit;
         display: inline-flex;
         font-size: 30px;
@@ -143,10 +145,10 @@ export default {
         margin: 0 3px;
         height: 50px;
         width: 20px;
-            &.correct{
-                border-bottom: none;
-                color: $color-wit;
-            }
+
+        &.correct {
+            border-bottom: none;
+            color: $color-wit;
         }
     }
 }
@@ -162,22 +164,5 @@ export default {
     justify-content: center;
     align-items: center;
     z-index: 1000;
-
-    .popup {
-        background: $color-wit;
-        padding-right: 48px;
-        padding-left: 48px;
-        padding-top: 20px;
-        padding-bottom: 20px;
-        border-radius: 8px;
-        text-align: center;
-        display: flex;
-        flex-direction: column;
-        gap: 24px;
-
-        h2 {
-            margin-bottom: 10px;
-        }
-    }
 }
 </style>
