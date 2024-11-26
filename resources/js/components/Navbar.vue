@@ -204,6 +204,7 @@ header {
                 right: 0;
                 transition: 0.5s ease all;
                 overflow-y: auto;
+                max-width: 250px;
 
 
                 .underline {
