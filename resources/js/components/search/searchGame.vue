@@ -53,19 +53,15 @@ export default {
 <style lang="scss" scoped>
 .image-container {
     position: relative;
-    /* Adjust height as needed */
     width: 100%;
     max-width: 320px;
     max-height: 590px;
     height: 590px;
-    /* Ensures container spans full width */
-    /* Center the background image */
 }
 
 .image {
     background-image: url('../assets/search-background.png');
     background-size: contain;
-    /* Ensures image scales correctly */
     background-repeat: no-repeat;
     background-position: center;
     width: 100%;
@@ -78,7 +74,6 @@ export default {
     height: 50px;
     cursor: pointer;
     z-index: 10;
-    background-color: red;
     opacity: 0.5;
     right: 40px;
     bottom: 140px;

@@ -70,7 +70,7 @@ export default {
         }
     },
     beforeUnmount() {
-        // Remove event listener when the component is destroyed
+        //remove event listener when the component is destroyed
         window.removeEventListener('resize', this.checkViewport);
         this.$bus.off('correct');
     },

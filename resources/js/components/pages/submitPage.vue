@@ -61,6 +61,11 @@ export default {
             this.submittedSentenceCorrect = false;
         });
     },
+    beforeUnmount() {
+        this.$bus.off('submitSentence', this.handleSubmitSentence);
+        this.$bus.off('submitRetry', this.handleSubmitRetry);
+        this.$bus.off('submitRetryReset', this.handleSubmitRetryReset);
+    },
     methods: {
         triggerConfetti() {
             confetti({
