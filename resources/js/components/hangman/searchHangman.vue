@@ -107,8 +107,8 @@ export default {
 @import "/resources/sass/_variables.scss";
 
 .hangman-wrapper{
-    position: absolute;
-    top: 50;
+    position: relative;
+    top: -200;
 
     .wrapper {
         display: flex;

@@ -31,9 +31,10 @@
                     <h2>Congrats!</h2>
                     <p>The word from this game is "CHRISTMAS". How does it fit in the sentence with the other words of your quest. <br><br><strong>Good luck!</strong></p>
                 </template>
-                <template v-slot:action>Submit sentence</template>
+                <template v-slot:action><button @click="redirectSubmitPage">Submit sentence</button></template>
             </final-popup>
         </transition>
+
     </div>
 </template>
 
@@ -82,6 +83,9 @@ export default {
         checkViewport() {
             this.isLargeViewport = window.innerWidth > 1024;
             console.log(this.isLargeViewport);
+        },
+        redirectSubmitPage() {
+            window.location.href = '/submit';
         }
     },
     beforeUnmount() {
