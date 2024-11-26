@@ -42,7 +42,6 @@ app.component('second-popup', secondPopup);
 app.component('rebus-page', rebusPage);
 app.component('hangman-page', hangmanPage);
 
-app.component('screen-modal-popup', screenModalPopup);
 app.component('navbar', Navbar);
 app.component('window-popup', windowPopup);
 app.component('submit-popup', submitPopup);
