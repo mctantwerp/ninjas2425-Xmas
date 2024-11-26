@@ -23,6 +23,13 @@
                 <i class="fa-regular fa-gift"></i>
             </button>
         </div>
+        <teleport to=".game-container">
+            <hint-popup>
+                <template v-slot:bottom-text>
+                    Don't overthink it!
+                </template>
+            </hint-popup>
+        </teleport>
     </div>
 </template>
 

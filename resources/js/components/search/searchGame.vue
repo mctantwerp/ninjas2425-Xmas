@@ -2,6 +2,13 @@
     <div class="image-container" @click="handleClick" ref="shakeElement">
         <div class="image" />
         <div class="overlay-box"></div>
+        <teleport to=".game-container">
+            <hint-popup>
+                <template v-slot:bottom-text>
+                    Tap on Santa’s items to reveal his frozen present.
+                </template>
+            </hint-popup>
+        </teleport>
     </div>
 </template>
 

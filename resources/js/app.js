@@ -21,6 +21,7 @@ import negativeWindowPopup from './components/popups/negativeWindowPopup.vue';
 import snowFlakes from './components/decorations/snowFlakes.vue';
 import searchGame from './components/search/searchGame.vue';
 import treeGame from './components/tree/treeGame.vue';
+import hintPopup from './components/popups/hintPopup.vue';
 
 
 import Navbar from './components/Navbar.vue';
@@ -44,6 +45,7 @@ app.component('search-page', searchPage);
 app.component('search-game', searchGame);
 app.component('tree-game', treeGame);
 app.component('tree-page', treePage);
+app.component('hint-popup', hintPopup);
 
 
 app.mount('#app');

@@ -15,6 +15,13 @@
             <div class="overlay-box fourth" @click="revealLetters">
                 <span class="tree-game-letter"></span>
             </div>
+            <teleport to=".game-container">
+                <hint-popup>
+                    <template v-slot:bottom-text>
+                        To reveal a letter, press on one of the balls in the tree.
+                    </template>
+                </hint-popup>
+            </teleport>
         </div>
         <div class="image-container" ref="shakeElement" v-else>
             <img src="../assets/tree-filled.png"
@@ -134,17 +141,16 @@ export default {
 @import "/resources/sass/_variables.scss";
 
 .image-container {
-    position: relative;
     display: inline-block;
     width: 100%;
     max-width: 500px;
+    position: relative;
 }
 
 .image {
     display: block;
     width: 75%;
     margin: 0 auto;
-    padding: 16px;
 }
 
 .overlay-box {
@@ -153,8 +159,8 @@ export default {
     text-align: center;
     justify-content: center;
     position: absolute;
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
     z-index: 10;
 
     span {
@@ -163,26 +169,26 @@ export default {
 }
 
 .first {
-    top: 30%;
-    right: 45%;
+    top: 33%;
+    right: 47.5%;
 }
 
 .second {
-    bottom: 40%;
-    left: 31.75%;
+    bottom: 39%;
+    left: 35%;
 }
 
 .third {
-    bottom: 40%;
-    right: 33.5%;
+    bottom: 39%;
+    right: 36%;
 }
 
 .fourth {
     bottom: 25%;
-    left: 43.5%;
+    left: 46.5%;
 }
 
-@media (min-width:420px) {
+@media (max-width:420px) {
     .first {
         top: 32%;
         right: 46%;
@@ -201,6 +207,28 @@ export default {
     .fourth {
         bottom: 25%;
         left: 45.5%;
+    }
+}
+
+@media (max-width:370px) {
+    .first {
+        top: 31%;
+        right: 46%;
+    }
+
+    .second {
+        bottom: 38%;
+        left: 33%;
+    }
+
+    .third {
+        bottom: 38%;
+        right: 34%;
+    }
+
+    .fourth {
+        bottom: 23%;
+        left: 44%;
     }
 }
 
