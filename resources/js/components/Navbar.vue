@@ -21,28 +21,40 @@
                         <ul class="dropdown-nav" v-if="mobileNav" @click.stop>
                             <h1>Christmas Hunt</h1>
                             <li class="underline">
-                                <img src="./assets/nav-tree.png">
-                                <a href="/tree" class="link">Christmas Tree</a>
+                                <a href="/tree" class="link">
+                                    <img src="./assets/nav-tree.png">
+                                    <span>Christmas Tree</span>
+                                </a>
                             </li>
                             <li class="underline">
-                                <img src="./assets/nav-present.png">
-                                <a href="/search" class="link">Search Game</a>
+                                <a href="/search" class="link">
+                                    <img src="./assets/nav-present.png">
+                                    <span>Search Game</span>
+                                </a>
                             </li>
                             <li class="underline">
-                                <img src="./assets/nav-cup.png">
-                                <a href="/rebus" class="link">Rebus</a>
+                                <a href="/rebus" class="link">
+                                    <img src="./assets/nav-cup.png">
+                                    <span>Rebus</span>
+                                </a>
                             </li>
                             <li class="underline">
-                                <img src="./assets/nav-ginger.png">
-                                <a href="/hangman" class="link">Hangman</a>
+                                <a href="/hangman" class="link">
+                                    <img src="./assets/nav-ginger.png">
+                                    <span>Hangman</span>
+                                </a>
                             </li>
                             <li class="underline">
-                                <img src="./assets/nav-bell.png">
-                                <a href="/howtoplay" class="link">How to play</a>
+                                <a href="/howtoplay" class="link">
+                                    <img src="./assets/nav-bell.png">
+                                    <span>How to play</span>
+                                </a>
                             </li>
                             <li class="underline">
-                                <img src="./assets/nav-santa.png">
-                                <a href="/submit" class="link">Submit Sentence</a>
+                                <a href="/submit" class="link">
+                                    <img src="./assets/nav-santa.png">
+                                    <span>Submit Sentence</span>
+                                </a>
                             </li>
                         </ul>
                     </transition>
@@ -195,20 +207,25 @@ header {
 
 
                 .underline {
-                    display: flex;
-                    flex-direction: row;
-                    gap: 16px;
-                    align-items: center;
-                    justify-content: start;
                     width: 90%;
                     padding: 16px 0px 16px 8px;
                     border-bottom: 2px solid $color-wit;
                     margin-bottom: 8px;
 
-                    img {}
+                    .link {
+                        display: flex;
+                        align-items: center;
+                        gap: 10px;
+                        text-decoration: none;
+                        color: inherit;
 
-                    a {
-                        font-size: 16px
+                        span {
+                            font-family: $braah-font;
+                            font-size: 16px;
+                            line-height: 24px;
+                            color: $color-wit;
+                            text-decoration: none;
+                        }
                     }
 
                     &:last-child {
