@@ -7,7 +7,6 @@
     <title>@yield('title', 'Default Title')</title>
     @vite('resources/sass/app.scss')
     @yield('scss')
-    <script src="https://kit.fontawesome.com/3e03a70aff.js" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/26d2910850.js" crossorigin="anonymous"></script>
 
     <!-- Standard Favicon -->
@@ -36,6 +35,7 @@
         @yield('content')
     </app-container> --}}
     <div id="app">
+        <snow-flakes></snow-flakes>
         <navbar></navbar>
         <div class="snow"></div>
         <div class="gingerman">
@@ -49,6 +49,7 @@
         </div>
     </div>
     @vite('resources/js/app.js')
+    @vite('resources/js/shakeDecoration.js')
 </body>
 
 </html>

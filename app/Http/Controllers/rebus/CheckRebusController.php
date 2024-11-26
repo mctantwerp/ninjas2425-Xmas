@@ -7,7 +7,7 @@ namespace App\Http\Controllers\rebus;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Actions\Rebus\CheckRebusWordAction;
-use App\DataTransferObjects\RebusWordDto;
+use App\DataTransferObjects\InputWordDto;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Response;
 
@@ -21,11 +21,11 @@ class CheckRebusController extends Controller
     }
     public function __invoke(Request $request): JsonResponse
     {
-        $rebusWordDto = new RebusWordDto(
+        $inputWordDto = new InputWordDto(
             word: $request->input('word'),
         );
 
-        $data = $this->checkrebusaction->execute($rebusWordDto);
+        $data = $this->checkrebusaction->execute($inputWordDto);
 
         return response()->json([
             'result' => $data

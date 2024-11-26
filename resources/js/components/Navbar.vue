@@ -3,17 +3,15 @@
         <div class="screen-popup" v-show="userIsOnDesktop">
             <div class="box">
                 <h1>Hold! 🎄</h1>
-                <p class="larger-paragraph">We've noticed you're visiting the website on a desktop. This website is
-                    primarily
-                    designed for mobile and
-                    thus the website might not work and/or look as expected.</p>
+                <p class="larger-paragraph">This website is optimized for mobile devices. For the best experience,
+                    please visit this website on your mobile device.</p>
                 <button @click="ignoreDesktopWarning">Continue anyway</button>
             </div>
         </div>
     </transition>
     <header>
         <nav>
-            <div class="branding">
+            <div class="branding" @click="backToHome">
                 <img src="../../../public/logo-xmas.png" alt="">
             </div>
             <div class="icon" @click="toggleMobileNav">
@@ -23,28 +21,40 @@
                         <ul class="dropdown-nav" v-if="mobileNav" @click.stop>
                             <h1>Christmas Hunt</h1>
                             <li class="underline">
-                                <img src="./assets/nav-tree.png">
-                                <a href="/tree" class="link">Christmas Tree</a>
+                                <a href="/tree" class="link">
+                                    <img src="./assets/nav-tree.png">
+                                    <span>Christmas Tree</span>
+                                </a>
                             </li>
                             <li class="underline">
-                                <img src="./assets/nav-present.png">
-                                <a href="/search" class="link">Search Game</a>
+                                <a href="/search" class="link">
+                                    <img src="./assets/nav-present.png">
+                                    <span>Search Game</span>
+                                </a>
                             </li>
                             <li class="underline">
-                                <img src="./assets/nav-cup.png">
-                                <a href="/rebus" class="link">Rebus</a>
+                                <a href="/rebus" class="link">
+                                    <img src="./assets/nav-cup.png">
+                                    <span>Rebus</span>
+                                </a>
                             </li>
                             <li class="underline">
-                                <img src="./assets/nav-ginger.png">
-                                <a href="/hangman" class="link">Hangman</a>
+                                <a href="/hangman" class="link">
+                                    <img src="./assets/nav-ginger.png">
+                                    <span>Hangman</span>
+                                </a>
                             </li>
                             <li class="underline">
-                                <img src="./assets/nav-bell.png">
-                                <a href="/howtoplay" class="link">How to play</a>
+                                <a href="/howtoplay" class="link">
+                                    <img src="./assets/nav-bell.png">
+                                    <span>How to play</span>
+                                </a>
                             </li>
                             <li class="underline">
-                                <img src="./assets/nav-santa.png">
-                                <a href="/submit" class="link">Submit Sentence</a>
+                                <a href="/submit" class="link">
+                                    <img src="./assets/nav-santa.png">
+                                    <span>Submit Sentence</span>
+                                </a>
                             </li>
                         </ul>
                     </transition>
@@ -73,6 +83,9 @@ export default {
         },
         ignoreDesktopWarning() {
             this.userIsOnDesktop = false;
+        },
+        backToHome() {
+            window.location.href = '/';
         }
     },
     mounted() {
@@ -143,7 +156,9 @@ header {
         padding: 16px;
         border-bottom: 1px solid $color-wit;
 
-        .branding {}
+        .branding {
+            cursor: pointer;
+        }
 
         .icon {
             height: 39px;
@@ -178,11 +193,12 @@ header {
                 position: fixed;
                 width: 60%;
                 height: 100vh;
-                background: linear-gradient(to right,
-                        $illustrations-medium-green 125px,
-                        $illustrations-dark-green 125px) repeat-x;
+                // background: linear-gradient(to right,
+                //         $illustrations-medium-green 50%,
+                //         $illustrations-dark-green 50%) repeat-x;
                 margin: 0;
-                background-size: 250px 100%;
+                // background-size: 125px 100%;
+                background-color: $illustrations-dark-green;
                 padding: 0;
                 top: 0;
                 right: 0;
@@ -191,20 +207,25 @@ header {
 
 
                 .underline {
-                    display: flex;
-                    flex-direction: row;
-                    gap: 16px;
-                    align-items: center;
-                    justify-content: start;
                     width: 90%;
                     padding: 16px 0px 16px 8px;
                     border-bottom: 2px solid $color-wit;
                     margin-bottom: 8px;
 
-                    img {}
+                    .link {
+                        display: flex;
+                        align-items: center;
+                        gap: 10px;
+                        text-decoration: none;
+                        color: inherit;
 
-                    a {
-                        font-size: 16px
+                        span {
+                            font-family: $braah-font;
+                            font-size: 16px;
+                            line-height: 24px;
+                            color: $color-wit;
+                            text-decoration: none;
+                        }
                     }
 
                     &:last-child {

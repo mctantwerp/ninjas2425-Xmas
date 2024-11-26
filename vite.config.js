@@ -4,8 +4,8 @@ import laravel from 'laravel-vite-plugin'; // Check if using default export work
 
 export default defineConfig({
     plugins: [
-        laravel.default({ // Use default if laravel is a CommonJS module
-            input: ['resources/sass/app.scss', 'resources/js/app.js', 'resources/sass/welcomePage.scss'],
+        laravel({
+            input: ['resources/sass/app.scss', 'resources/js/app.js', 'resources/sass/welcomePage.scss', 'resources/js/shakeDecoration.js'],
             refresh: true,
         }),
         vue(),

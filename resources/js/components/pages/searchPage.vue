@@ -1,20 +1,21 @@
 <template>
     <div class="game-container">
         <transition name="fade-with-slide" mode="out-in">
-            <first-popup v-if="!gameStarted" @game-start="startGame" :game="'rebus'">
+            <first-popup v-if="!gameStarted" @game-start="startGame" :game="'search'">
                 <template v-slot:content>
-                    <h2>Rebus 🧩</h2>
-                    <p>Can you figure out what message is encoded in these images? Find the secret two words! B5TKC</p>
+                    <h2>Christmas search 🕵️</h2>
+                    <p>Find Santa's frozen present and reveal one of the words for the Christmas Challenge. BTF41</p>
                 </template>
                 <template v-slot:action>Continue</template>
             </first-popup>
 
-            <search-rebus v-else-if="gameStarted && !correctAnswer"></search-rebus>
+            <search-game v-else-if="gameStarted && !correctAnswer"></search-game>
 
             <final-popup v-else>
                 <template v-slot:content>
                     <h2>Congrats!</h2>
-                    <p>The word in this game is "Happy". Good luck with the rest of the games!</p>
+                    <p>The word in this game is 'MCT'. Complete the other challenges to reveal the entire sentence. Good
+                        luck!</p>
                 </template>
                 <template v-slot:action><button @click="redirectSubmitPage">Submit sentence</button></template>
             </final-popup>
@@ -31,13 +32,14 @@ export default {
             gameStarted: false,
             isDesktop: window.innerWidth > 1024,
             correctAnswer: false,
-            codeCorrect:false,
         }
     },
     computed: {
         viewportWidth() {
             return window.innerWidth;
         }
+    },
+    watch: {
     },
     mounted() {
         window.addEventListener('resize', this.checkViewport);
@@ -62,19 +64,15 @@ export default {
             document.getElementsByClassName('candy')[0].style.display = "none";
             document.getElementsByClassName('footer')[0].style.display = "none";
         },
-        checkCode(){
-            this.codeCorrect = true;
-        },
         checkViewport() {
             this.isLargeViewport = window.innerWidth > 1024;
             console.log(this.isLargeViewport);
         },
         redirectSubmitPage() {
             window.location.href = '/submit';
-        }
+        },
     },
     beforeUnmount() {
-        //remove event listener when the component is destroyed
         window.removeEventListener('resize', this.checkViewport);
         this.$bus.off('correct');
     },
@@ -86,7 +84,7 @@ export default {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: start;
     overflow: hidden;
     width: 100%;
 }

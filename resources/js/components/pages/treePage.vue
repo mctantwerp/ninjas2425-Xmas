@@ -1,20 +1,22 @@
 <template>
     <div class="game-container">
         <transition name="fade-with-slide" mode="out-in">
-            <first-popup v-if="!gameStarted" @game-start="startGame" :game="'rebus'">
+            <first-popup v-if="!gameStarted" @game-start="startGame" :game="'tree'">
                 <template v-slot:content>
-                    <h2>Rebus 🧩</h2>
-                    <p>Can you figure out what message is encoded in these images? Find the secret two words! B5TKC</p>
+                    <h2>What is Karel's favourite color? 🎨</h2>
+                    <p>Press the christmas ornament matching with that color and reveal the letters to assemble a word.
+                        WOZG3
+                    </p>
                 </template>
                 <template v-slot:action>Continue</template>
             </first-popup>
 
-            <search-rebus v-else-if="gameStarted && !correctAnswer"></search-rebus>
+            <tree-game v-else-if="gameStarted && !correctAnswer"></tree-game>
 
             <final-popup v-else>
                 <template v-slot:content>
                     <h2>Congrats!</h2>
-                    <p>The word in this game is "Happy". Good luck with the rest of the games!</p>
+                    <p>The word in this game is 'FROM'. Good luck with the rest of the challenges!</p>
                 </template>
                 <template v-slot:action><button @click="redirectSubmitPage">Submit sentence</button></template>
             </final-popup>
@@ -31,7 +33,6 @@ export default {
             gameStarted: false,
             isDesktop: window.innerWidth > 1024,
             correctAnswer: false,
-            codeCorrect:false,
         }
     },
     computed: {
@@ -61,9 +62,6 @@ export default {
             document.getElementsByClassName('gingerman')[0].style.display = "none";
             document.getElementsByClassName('candy')[0].style.display = "none";
             document.getElementsByClassName('footer')[0].style.display = "none";
-        },
-        checkCode(){
-            this.codeCorrect = true;
         },
         checkViewport() {
             this.isLargeViewport = window.innerWidth > 1024;
