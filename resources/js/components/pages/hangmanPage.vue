@@ -21,8 +21,18 @@
         </transition>
 
         <transition name="fade">
-            <search-hangman v-if="gameStarted && !correctAnswer">
+            <search-hangman v-if="gameStarted && !hangmanSolved">
             </search-hangman>
+        </transition>
+
+        <transition name="fade">
+            <final-popup v-if="hangmanSolved" class="absolute-center">
+                <template v-slot:content>
+                    <h2>Congrats!</h2>
+                    <p>The word from this game is "CHRISTMAS". How does it fit in the sentence with the other words of your quest. <br><br><strong>Good luck!</strong></p>
+                </template>
+                <template v-slot:action>Submit sentence</template>
+            </final-popup>
         </transition>
     </div>
 </template>
@@ -34,8 +44,8 @@ export default {
         return {
             gameStarted: false,
             isDesktop: window.innerWidth > 1024,
-            correctAnswer: false,
-            codeCorrect: false
+            hangmanSolved: false,
+            codeCorrect: false,
         }
     },
     computed: {
@@ -47,7 +57,7 @@ export default {
         window.addEventListener('resize', this.checkViewport);
         this.$bus.on('correct', () => {
             console.log('Correct word! Event listener works!');
-            this.correctAnswer = true;
+            this.hangmanSolved = true;
             this.triggerConfetti();
         });
     },
