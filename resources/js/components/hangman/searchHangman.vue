@@ -15,13 +15,22 @@
                     {{ correctLetters[i] }}
                 </span>
             </div>
+        </div>
+        <input 
+            v-if="!gameOver" 
+            type="text" 
+            class="keyboard-input" 
+            @input="handleKeyboardInput" 
+            ref="keyboardInput" 
+            style="position: absolute; top: -9999px; left: -9999px;">
+            
         <div v-if="gameOver" class="popup-overlay">
             <div class="popup">
                 <h2>Game Over</h2>
                 <p>Would you like to try again?</p>
                 <button @click="resetGame">Restart</button>
             </div>
-        </div>
+        
         </div>
     </div>
 </template>
@@ -63,6 +72,15 @@ export default {
                 this.responseMessage = 'Error submitting the word.';
             }
         },
+
+        handleKeyboardInput(event) {
+            const letter = event.target.value.toLowerCase();
+            if (letter && this.letters.includes(letter)) {
+                this.checkLetter(letter);
+            }
+            this.$refs.keyboardInput.value = '';
+        },
+
 
         addLetterToArray(inputletter, response){
             if(response.length > 0 && this.amountOfWrongTries < 10){
@@ -179,5 +197,16 @@ export default {
             margin-bottom: 10px;
         }
     }
+}
+
+.keyboard-input {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+    opacity: 0;
+    width: 1px;
+    height: 1px;
+    background: transparent;
+    border: none;
 }
 </style>
