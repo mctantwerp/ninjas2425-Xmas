@@ -11,6 +11,13 @@
 
             <hangman-game v-else-if="gameStarted && !hangmanSolved"></hangman-game>
             
+            <final-popup v-else>
+                <template v-slot:content>
+                    <h2>Congrats!</h2>
+                    <p>The word in this game is "CHRISTMAS". Good luck with the rest of the games!</p>
+                </template>
+                <template v-slot:action><button>Submit sentence</button></template>
+            </final-popup>
         </transition>
     </div>
 
@@ -50,9 +57,20 @@ export default {
             document.getElementsByClassName('candy')[0].style.display = "none";
             document.getElementsByClassName('footer')[0].style.display = "none";
         },
+        redirectSubmitPage() {
+            window.location.href = '/submit';
+        },
     }
 }
 </script>
 
 <style scoped>
+.game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    width: 100%;
+}
 </style>

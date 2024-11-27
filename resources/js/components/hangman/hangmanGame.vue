@@ -20,7 +20,7 @@
         </button>
     </div>
     <div v-if="gameOver" class="popup-overlay">
-            <negative-window-popup @submitRetryReset="resetGame">
+            <negative-window-popup @click="resetGame">
                 <template v-slot:content>
                     <h2 class="error-text">Uh oh!</h2>
                     <p>You failed the challenge. No worries though, you can retry as many times as you want!</p>
@@ -55,14 +55,12 @@ export default {
     methods: {
         async checkLetter(event){
             console.log(this.userInput);
-            //console.log(letter);
             try {
                 const response = await axios.post('/api/checkHangmanLetter', {
                     letter: this.userInput,
                 });
 
                 const { result } = response.data;
-                //console.log(result)
                 this.addLetterToArray(this.userInput, result);
             } catch (error) {
                 console.error('Error sending data:', error);
