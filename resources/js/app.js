@@ -28,6 +28,7 @@ import Navbar from './components/Navbar.vue';
 import rebusPage from './components/pages/rebusPage.vue';
 import searchPage from './components/pages/searchPage.vue';
 import treePage from './components/pages/treePage.vue';
+import hangmanPage from './components/pages/hangmanPage.vue';
 
 app.component('search-rebus', searchRebus);
 app.component('final-popup', finalPopup);
@@ -44,6 +45,7 @@ app.component('search-game', searchGame);
 app.component('tree-game', treeGame);
 app.component('tree-page', treePage);
 app.component('hint-popup', hintPopup);
+app.component('hangman-page', hangmanPage);
 
 
 app.mount('#app');
