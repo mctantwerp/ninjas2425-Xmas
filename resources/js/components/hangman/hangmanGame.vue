@@ -16,7 +16,7 @@
                 <input type="text" placeholder="Enter a letter" v-model="userInput" maxlength="1">
                 <i class="fa-regular fa-trash-can" @click="clearInput"></i>
             </div>
-            <button @click="checkLetter">
+            <button @mousedown.prevent="checkLetter" @touchdown.prevent="checkLetter">
                 <i class="fa-solid fa-arrow-right"></i>
             </button>
         </div>
