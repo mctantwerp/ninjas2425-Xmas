@@ -1,5 +1,5 @@
 <template>
-    <transition name="fade-high-index" mode="out-in">
+    <transition name="fade-high-index">
         <div v-if="hintVisible" class="hint-container">
             <div class="hint-wrapper">
                 <i class="fa-solid fa-x" @click="toggleHint"></i>
@@ -122,7 +122,7 @@ export default {
 
 }
 
-.background-image-hint {
+.hint-container {
     position: fixed;
     top: 0;
     left: 0;
