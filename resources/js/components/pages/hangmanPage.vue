@@ -8,6 +8,8 @@
                 </template>
                 <template v-slot:action>Continue</template>
             </first-popup>
+
+            <hangman-game v-else-if="gameStarted && !correctAnswer"></hangman-game>
         </transition>
     </div>
 
