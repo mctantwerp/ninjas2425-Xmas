@@ -16,12 +16,10 @@
                     <h2>Congrats!</h2>
                     <p>The word in this game is "CHRISTMAS". Good luck with the rest of the games!</p>
                 </template>
-                <template v-slot:action><button>Submit sentence</button></template>
+                <template v-slot:action><button @click="redirectSubmitPage">Submit sentence</button></template>
             </final-popup>
         </transition>
     </div>
-
-
 </template>
 
 <script>
@@ -34,11 +32,19 @@ export default {
             hangmanSolved: false,
         }
     },
+    computed: {
+        viewportWidth() {
+            return window.innerWidth;
+        }
+    },
     mounted() {
         window.addEventListener('resize', this.checkViewport);
         this.$bus.on('correct', () => {
             console.log('Correct word! Event listener works!');
             this.hangmanSolved = true;
+
+            console.log(this.hangmanSolved);
+            console.log(this.gameStarted);
             this.triggerConfetti();
         });
     },
@@ -52,6 +58,7 @@ export default {
         },
         startGame() {
             this.gameStarted = true;
+            this.hangmanSolved = false;
             document.getElementsByClassName('snow')[0].style.display = "none";
             document.getElementsByClassName('gingerman')[0].style.display = "none";
             document.getElementsByClassName('candy')[0].style.display = "none";
