@@ -9,7 +9,8 @@
                 <template v-slot:action>Continue</template>
             </first-popup>
 
-            <hangman-game v-else-if="gameStarted && !correctAnswer"></hangman-game>
+            <hangman-game v-else-if="gameStarted && !hangmanSolved"></hangman-game>
+            
         </transition>
     </div>
 
@@ -23,8 +24,16 @@ export default {
         return {
             gameStarted: false,
             isDesktop: window.innerWidth > 1024,
-            correctAnswer: false,
+            hangmanSolved: false,
         }
+    },
+    mounted() {
+        window.addEventListener('resize', this.checkViewport);
+        this.$bus.on('correct', () => {
+            console.log('Correct word! Event listener works!');
+            this.hangmanSolved = true;
+            this.triggerConfetti();
+        });
     },
     methods: {
         triggerConfetti() {
