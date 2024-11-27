@@ -58,6 +58,9 @@ export default {
             });
         },
         startGame() {
+            //reset height to start
+            window.scrollTo(0, 0);
+            //
             this.gameStarted = true;
             document.getElementsByClassName('snow')[0].style.display = "none";
             document.getElementsByClassName('gingerman')[0].style.display = "none";
