@@ -205,6 +205,7 @@ header {
                 transition: 0.5s ease all;
                 overflow-y: auto;
                 max-width: 250px;
+                box-shadow: -1px 2px 10px rgb(0, 0, 0, 0.5);
 
 
                 .underline {
