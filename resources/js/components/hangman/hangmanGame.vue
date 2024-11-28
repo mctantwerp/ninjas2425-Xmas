@@ -59,16 +59,27 @@ export default {
     methods: {
         async checkLetter(event) {
             console.log(this.userInput);
-            try {
-                const response = await axios.post('/api/checkHangmanLetter', {
-                    letter: this.userInput.toUpperCase(),
-                });
+            if(this.userInput.length > 1){
+                console.log('Please enter 1 letter');
+                return;
+            }
 
-                const { result } = response.data;
-                this.addLetterToArray(this.userInput.toUpperCase(), result);
-            } catch (error) {
-                console.error('Error sending data:', error);
-                this.responseMessage = 'Error submitting the word.';
+            if(this.userInput.length == 0){
+                console.log('Please enter a letter');
+                return;
+            }
+            if(this.userInput.length == 1){
+                try {
+                    const response = await axios.post('/api/checkHangmanLetter', {
+                        letter: this.userInput.toUpperCase(),
+                    });
+
+                    const { result } = response.data;
+                    this.addLetterToArray(this.userInput.toUpperCase(), result);
+                } catch (error) {
+                    console.error('Error sending data:', error);
+                    this.responseMessage = 'Error submitting the word.';
+                }
             }
         },
 
