@@ -102,7 +102,7 @@ export default {
 .rebus-wrapper {
     display: flex;
     flex-direction: column;
-    gap: 32px;
+    gap: 8px;
     width: 100%;
     text-align: center;
 
@@ -112,6 +112,7 @@ export default {
         gap: 32px;
         justify-content: center;
         align-items: center;
+        margin-bottom: 32px;
 
         img {
             width: 100%;

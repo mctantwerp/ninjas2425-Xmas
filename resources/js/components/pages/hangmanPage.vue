@@ -1,6 +1,6 @@
 <template>
     <div class="game-container">
-        <transition name="fade-with-slide" mode="out-in">
+        <transition name="fade-with-slide" mode="out-in" @before-enter="resetScrollPosition">
             <first-popup v-if="!gameStarted" @game-start="startGame" :game="'hangman'">
                 <template v-slot:content>
                     <h2>Hangman 🧍</h2>
@@ -65,6 +65,9 @@ export default {
         },
         redirectSubmitPage() {
             window.location.href = '/submit';
+        },
+        resetScrollPosition() {
+            window.scrollTo(0, 0, 'smooth');
         }
     }
 }

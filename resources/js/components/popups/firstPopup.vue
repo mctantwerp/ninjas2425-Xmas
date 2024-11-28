@@ -7,7 +7,7 @@
         </div>
         <div class="container-input">
             <div class="input" ref="shakeElement">
-                <label for="inputCode" class="sr-only">Enter code from poster</label>
+                <label for="inputCode" class="sr-only" hidden>Enter code from poster</label>
                 <input type="text" id="inputCode" placeholder="Enter code from poster" v-model="userInput"
                     aria-label="Enter code from poster" aria-describedby="error-message" />
                 <i class="fa-regular fa-trash-can" @click="clearInput" @keydown.enter.prevent="clearInput"
@@ -111,7 +111,7 @@ export default {
 .wrapper {
     display: flex;
     flex-direction: column;
-    gap: 32px;
+    gap: 8px;
     width: 100%;
 
     .container-input {
@@ -143,6 +143,7 @@ export default {
         border-radius: 20px;
         text-align: center;
         box-shadow: 2px -4px 4px #00000042;
+        margin-bottom: 24px;
 
 
         .box {

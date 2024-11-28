@@ -187,7 +187,6 @@ export default {
         flex-direction: row;
         gap: 16px;
         margin-top: 16px;
-        height: 60px;
 
         .input {
             position: relative;
@@ -200,7 +199,8 @@ export default {
             input {
                 margin: 0px;
                 width: 100%;
-                height: 36px;
+                height: 60px;
+                padding: 4px 16px 4px 16px;
             }
 
             i {
@@ -214,7 +214,7 @@ export default {
         button {
             width: 40%;
             max-width: 150px;
-            height: 60px;
+            height: 72px;
         }
     }
 }
