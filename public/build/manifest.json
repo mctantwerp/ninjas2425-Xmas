@@ -1,0 +1,110 @@
+{
+  "_index-DjKJqAo0.js": {
+    "file": "assets/index-DjKJqAo0.js",
+    "name": "index"
+  },
+  "public/images/candy-cane.png": {
+    "file": "assets/candy-cane-1bmmlmK-.png",
+    "src": "public/images/candy-cane.png"
+  },
+  "public/images/footer.png": {
+    "file": "assets/footer-Bgq00xfC.png",
+    "src": "public/images/footer.png"
+  },
+  "public/images/gingerbread.png": {
+    "file": "assets/gingerbread-D0PDCpda.png",
+    "src": "public/images/gingerbread.png"
+  },
+  "public/images/snow-globe.png": {
+    "file": "assets/snow-globe-CGxgHjd6.png",
+    "src": "public/images/snow-globe.png"
+  },
+  "public/logo-xmas.png": {
+    "file": "assets/logo-xmas-DkkHkaiD.png",
+    "src": "public/logo-xmas.png"
+  },
+  "resources/js/app.js": {
+    "file": "assets/app-BYtMyK2x.js",
+    "name": "app",
+    "src": "resources/js/app.js",
+    "isEntry": true,
+    "imports": [
+      "_index-DjKJqAo0.js"
+    ],
+    "css": [
+      "assets/app-CooB509c.css"
+    ],
+    "assets": [
+      "assets/rebus-problem-BNheyx5Z.png",
+      "assets/tree-clear-DyBlmEGA.png",
+      "assets/tree-filled-BO2t_0Hf.png",
+      "assets/logo-xmas-DkkHkaiD.png",
+      "assets/nav-tree-DrAXJkuB.png",
+      "assets/nav-present-CXCA8k3F.png",
+      "assets/nav-cup-S43X9knO.png",
+      "assets/nav-ginger-B8zj8DZv.png",
+      "assets/nav-bell-DVjfOD_n.png",
+      "assets/nav-santa-CCj0Q4aY.png",
+      "assets/search-background-K0Aj_Yxy.png"
+    ]
+  },
+  "resources/js/components/assets/nav-bell.png": {
+    "file": "assets/nav-bell-DVjfOD_n.png",
+    "src": "resources/js/components/assets/nav-bell.png"
+  },
+  "resources/js/components/assets/nav-cup.png": {
+    "file": "assets/nav-cup-S43X9knO.png",
+    "src": "resources/js/components/assets/nav-cup.png"
+  },
+  "resources/js/components/assets/nav-ginger.png": {
+    "file": "assets/nav-ginger-B8zj8DZv.png",
+    "src": "resources/js/components/assets/nav-ginger.png"
+  },
+  "resources/js/components/assets/nav-present.png": {
+    "file": "assets/nav-present-CXCA8k3F.png",
+    "src": "resources/js/components/assets/nav-present.png"
+  },
+  "resources/js/components/assets/nav-santa.png": {
+    "file": "assets/nav-santa-CCj0Q4aY.png",
+    "src": "resources/js/components/assets/nav-santa.png"
+  },
+  "resources/js/components/assets/nav-tree.png": {
+    "file": "assets/nav-tree-DrAXJkuB.png",
+    "src": "resources/js/components/assets/nav-tree.png"
+  },
+  "resources/js/components/assets/rebus-problem.png": {
+    "file": "assets/rebus-problem-BNheyx5Z.png",
+    "src": "resources/js/components/assets/rebus-problem.png"
+  },
+  "resources/js/components/assets/search-background.png": {
+    "file": "assets/search-background-K0Aj_Yxy.png",
+    "src": "resources/js/components/assets/search-background.png"
+  },
+  "resources/js/components/assets/tree-clear.png": {
+    "file": "assets/tree-clear-DyBlmEGA.png",
+    "src": "resources/js/components/assets/tree-clear.png"
+  },
+  "resources/js/components/assets/tree-filled.png": {
+    "file": "assets/tree-filled-BO2t_0Hf.png",
+    "src": "resources/js/components/assets/tree-filled.png"
+  },
+  "resources/js/shakeDecoration.js": {
+    "file": "assets/shakeDecoration-vFQIPo7r.js",
+    "name": "shakeDecoration",
+    "src": "resources/js/shakeDecoration.js",
+    "isEntry": true,
+    "imports": [
+      "_index-DjKJqAo0.js"
+    ]
+  },
+  "resources/sass/app.scss": {
+    "file": "assets/app-DU0Mp3xh.css",
+    "src": "resources/sass/app.scss",
+    "isEntry": true
+  },
+  "resources/sass/welcomePage.scss": {
+    "file": "assets/welcomePage-vUs4KHdP.css",
+    "src": "resources/sass/welcomePage.scss",
+    "isEntry": true
+  }
+}
