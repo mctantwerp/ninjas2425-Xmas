@@ -6,7 +6,7 @@
             </div>
         </div>
         <div class="action">
-            <button @click="submitRetry">
+            <button ref="retryButton" @click="submitRetry" aria-label="Retry the game" tabindex="0">
                 <slot name="action"></slot>
                 <i class="fa-solid fa-arrow-right"></i>
             </button>
@@ -19,8 +19,8 @@ export default {
     methods: {
         submitRetry() {
             this.$bus.emit('submitRetryReset');
-        }
-    }
+        },
+    },
 }
 </script>
 

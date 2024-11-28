@@ -1,21 +1,22 @@
 <template>
     <transition name="fade-high-index">
-        <div v-if="hintVisible" class="hint-container">
+        <div v-if="hintVisible" class="hint-container" role="dialog" aria-labelledby="hint-title"
+            aria-describedby="hint-description" tabindex="0">
             <div class="hint-wrapper">
-                <i class="fa-solid fa-x" @click="toggleHint"></i>
+                <i class="fa-solid fa-x" @click="toggleHint" aria-label="Close hint"></i>
                 <div class="top">
-                    <h1>Hint!</h1>
+                    <h1 id="hint-title">Hint!</h1>
                 </div>
                 <div class="bottom">
-                    <p>
+                    <p id="hint-description">
                         <slot name="bottom-text"></slot>
                     </p>
-                    <button @click="toggleHint">Got it!</button>
+                    <button @click="toggleHint" aria-label="Got it!">Got it!</button>
                 </div>
             </div>
-            <div class="background-image-hint"></div>
         </div>
-        <div v-else-if="showHintIcon" class="hint-icon" @click="toggleHint">
+        <div v-else-if="showHintIcon" class="hint-icon" @click="toggleHint" aria-label="Show hint" role="button"
+            tabindex="0" @keydown.enter.prevent="toggleHint">
             <i class="fa-solid fa-question"></i>
         </div>
     </transition>
@@ -34,10 +35,22 @@ export default {
         setTimeout(() => {
             this.showHintIcon = true;
         }, 500);
+        window.addEventListener('keydown', this.handleEscapeKey);
     },
     methods: {
         toggleHint() {
             this.hintVisible = !this.hintVisible;
+            if (this.hintVisible) {
+                //focus the got it button when the hint is visible
+                this.$nextTick(() => {
+                    this.$el.querySelector('button').focus();
+                });
+            }
+        },
+        handleEscapeKey(event) {
+            if (event.key === 'Escape' && this.hintVisible) {
+                this.toggleHint();
+            }
         },
     },
 };

@@ -1,7 +1,8 @@
 <template>
-    <div class="wrapper">
+    <div class="wrapper" role="dialog" aria-labelledby="popup-title" aria-hidden="true">
         <div class="box-wrapper">
-            <div class="box">
+            <div class="box" role="document">
+                <h2 id="popup-title">Congratulations!</h2>
                 <slot name="content"></slot>
             </div>
         </div>
@@ -13,11 +14,6 @@
 
 <script>
 export default {
-    methods: {
-        emitGameStart() {
-            this.$emit('game-start');
-        }
-    }
 }
 </script>
 

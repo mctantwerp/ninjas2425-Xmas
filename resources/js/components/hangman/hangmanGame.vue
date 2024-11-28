@@ -2,10 +2,11 @@
     <div class="hangman-wrapper">
         <div class="box-wrapper">
             <div class="box">
-                <img :src="`./images/hangman/hangman-${amountOfWrongTries + 1}.png`" alt="Hangman">
+                <img :src="`./images/hangman/hangman-${amountOfWrongTries + 1}.png`"
+                    :alt="`Hangman image showing the current state of the game with ${amountOfWrongTries + 1} wrong attempts`">
             </div>
         </div>
-        <div class="word">
+        <div class="word" aria-live="assertive" role="status">
             <span class="letter" :class="{ 'correct': correctLetters[i] && correctLetters[i] !== ' ' }"
                 v-for="(letter, i) in letters" :key="i">
                 {{ correctLetters[i] }}
@@ -13,19 +14,23 @@
         </div>
         <div class="user-input-container">
             <div class="input" ref="shakeElement">
-                <input type="text" placeholder="Enter a letter" v-model="userInput" maxlength="1" ref="inputLetter">
-                <i class="fa-regular fa-trash-can" @click="clearInput"></i>
+                <label for="inputLetter" class="sr-only">Enter a letter</label>
+                <input type="text" id="inputLetter" placeholder="Enter a letter" v-model="userInput" maxlength="1"
+                    aria-required="true" @keydown.enter="checkLetter">
             </div>
-            <button @mousedown.prevent="checkLetter" @touchdown.prevent="checkLetter">
+            <button @mousedown.prevent="checkLetter" @touchdown.prevent="checkLetter" @keydown.enter="checkLetter"
+                aria-label="Submit letter to guess the word" aria-keyshortcuts="Enter">
                 <i class="fa-solid fa-arrow-right"></i>
             </button>
         </div>
         <transition name="fade-with-slide" mode="out-in">
-            <div v-if="gameOver" class="popup-overlay">
+            <div v-if="gameOver" class="popup-overlay" role="alertdialog" aria-labelledby="game-over-title"
+                aria-describedby="game-over-description" aria-live="assertive">
                 <negative-window-popup @click="resetGame">
                     <template v-slot:content>
-                        <h2 class="error-text">Uh oh!</h2>
-                        <p>You failed the challenge. No worries though, you can retry as many times as you want!</p>
+                        <h2 id="game-over-title" class="error-text">Uh oh!</h2>
+                        <p id="game-over-description">You failed the challenge. No worries though, you can retry as many
+                            times as you want!</p>
                     </template>
                     <template v-slot:action>
                         Retry
@@ -41,7 +46,6 @@ import axios from 'axios';
 
 export default {
     props: {
-
         letters: {
             type: Array,
             default: () => ['C', 'H', 'R', 'I', 'S', 'T', 'M', 'A', 'S']
@@ -59,16 +63,16 @@ export default {
     methods: {
         async checkLetter(event) {
             console.log(this.userInput);
-            if(this.userInput.length > 1){
+            if (this.userInput.length > 1) {
                 console.log('Please enter 1 letter');
                 return;
             }
 
-            if(this.userInput.length == 0){
+            if (this.userInput.length == 0) {
                 console.log('Please enter a letter');
                 return;
             }
-            if(this.userInput.length == 1){
+            if (this.userInput.length == 1) {
                 try {
                     const response = await axios.post('/api/checkHangmanLetter', {
                         letter: this.userInput.toUpperCase(),
@@ -107,6 +111,7 @@ export default {
             this.amountOfWrongTries = 0;
             this.correctLetters = [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '];
             this.gameOver = false;
+            this.userInput = "";
         },
 
         checkIfGameIsFinished() {
@@ -117,12 +122,14 @@ export default {
         },
         clearInput() {
             this.userInput = "";
-        },
-        checkIfGameIsFinished() {
-            if (this.correctLetters.join('') === this.letters.join('')) {
-                console.log('You have guessed the word!');
-                this.$bus.emit('correct');
-            }
+        }
+    },
+    mounted() {
+        if (this.gameOver) {
+            this.$nextTick(() => {
+                const retryButton = document.querySelector('.action');
+                retryButton.focus();
+            });
         }
     }
 }
@@ -180,6 +187,7 @@ export default {
         flex-direction: row;
         gap: 16px;
         margin-top: 16px;
+        height: 60px;
 
         .input {
             position: relative;
@@ -191,8 +199,8 @@ export default {
 
             input {
                 margin: 0px;
-                height: 60px;
                 width: 100%;
+                height: 36px;
             }
 
             i {
@@ -206,6 +214,7 @@ export default {
         button {
             width: 40%;
             max-width: 150px;
+            height: 60px;
         }
     }
 }
