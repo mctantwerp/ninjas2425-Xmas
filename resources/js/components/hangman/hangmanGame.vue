@@ -13,7 +13,7 @@
         </div>
         <div class="user-input-container">
             <div class="input" ref="shakeElement">
-                <input type="text" placeholder="Enter a letter" v-model="userInput" maxlength="1">
+                <input type="text" placeholder="Enter a letter" v-model="userInput" maxlength="1" ref="letterInput">
                 <i class="fa-regular fa-trash-can" @click="clearInput"></i>
             </div>
             <button @mousedown.prevent="checkLetter" @touchdown.prevent="checkLetter">
@@ -87,6 +87,7 @@ export default {
             if (this.amountOfWrongTries >= 10) {
                 console.log('Game Over');
                 this.gameOver = true;
+                this.$refs.inputLetter.blur();
             }
             this.clearInput();
 
