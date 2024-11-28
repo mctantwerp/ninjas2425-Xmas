@@ -44,7 +44,7 @@ export default {
 
         letters: {
             type: Array,
-            default: () => ['c', 'h', 'r', 'i', 's', 't', 'm', 'a', 's']
+            default: () => ['C', 'H', 'R', 'I', 'S', 'T', 'M', 'A', 'S']
         }
 
     },
@@ -61,11 +61,11 @@ export default {
             console.log(this.userInput);
             try {
                 const response = await axios.post('/api/checkHangmanLetter', {
-                    letter: this.userInput,
+                    letter: this.userInput.toUpperCase(),
                 });
 
                 const { result } = response.data;
-                this.addLetterToArray(this.userInput, result);
+                this.addLetterToArray(this.userInput.toUpperCase(), result);
             } catch (error) {
                 console.error('Error sending data:', error);
                 this.responseMessage = 'Error submitting the word.';
