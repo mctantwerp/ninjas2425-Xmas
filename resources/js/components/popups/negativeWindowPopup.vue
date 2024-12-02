@@ -5,11 +5,19 @@
                 <slot name="content"></slot>
             </div>
         </div>
-        <div class="action">
-            <button ref="retryButton" @click="submitRetry" aria-label="Retry the game" tabindex="0">
-                <slot name="action"></slot>
-                <i class="fa-solid fa-arrow-right"></i>
-            </button>
+        <div class="buttons-wrapper">
+            <div class="action">
+                <button ref="retryButton" @click="submitRetry" aria-label="Retry the game" tabindex="0">
+                    <slot name="action"></slot>
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+            </div>
+            <div>
+                <button ref="retryButton" @click="goHome" aria-label="Retry the game" tabindex="0">
+                    <slot name="action-two"></slot>
+                    <i class="fa-regular fa-house-blank"></i>
+                </button>
+            </div>
         </div>
     </div>
 </template>
@@ -19,6 +27,9 @@ export default {
     methods: {
         submitRetry() {
             this.$bus.emit('submitRetryReset');
+        },
+        goHome() {
+            window.location.href = '/';
         },
     },
 }
@@ -33,6 +44,12 @@ export default {
     gap: 32px;
     width: 80vw;
     max-width: 600px;
+
+    .buttons-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
 
     .box-wrapper {
         display: flex;

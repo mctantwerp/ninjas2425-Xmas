@@ -30,6 +30,9 @@
                 <template v-slot:action>
                     Try again
                 </template>
+                <template v-slot:action-two>
+                    Go Home
+                </template>
             </negative-window-popup>
         </template>
     </transition>
