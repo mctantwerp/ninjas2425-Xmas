@@ -20,45 +20,48 @@
                 <div class="mobile-nav" @click.stop>
                     <transition name="mobile-nav">
                         <ul class="dropdown-nav" v-if="mobileNav" @click.stop>
-                            <h1>Christmas Hunt</h1>
+                            <h1 @click="goHome" @keydown.enter="goHome" tabindex="0" role="button"
+                                aria-label="Go to homepage">Christmas Hunt</h1>
+
                             <li class="underline">
                                 <a href="/tree" class="link" @click="navigateLink($event)"
-                                    @keydown.enter="navigateLink($event)">
-                                    <img src="./assets/nav-tree.png" alt="Christmas tree game icon.">
+                                    @keydown.enter="navigateLink($event)" aria-label="Navigate to Christmas Tree game">
+                                    <img src="./assets/nav-tree.png" alt="Christmas Tree Icon">
                                     <span>Christmas Tree</span>
                                 </a>
                             </li>
+
                             <li class="underline">
                                 <a href="/search" class="link" @click="navigateLink($event)"
-                                    @keydown.enter="navigateLink($event)">
+                                    @keydown.enter="navigateLink($event)" aria-label="Navigate to search game">
                                     <img src="./assets/nav-present.png" alt="Wrapped present icon.">
                                     <span>Search Game</span>
                                 </a>
                             </li>
                             <li class="underline">
                                 <a href="/rebus" class="link" @click="navigateLink($event)"
-                                    @keydown.enter="navigateLink($event)">
+                                    @keydown.enter="navigateLink($event)" aria-label="Navigate to rebus game">
                                     <img src="./assets/nav-cup.png" alt="Hot chocolate cup icon.">
                                     <span>Rebus</span>
                                 </a>
                             </li>
                             <li class="underline">
                                 <a href="/hangman" class="link" @click="navigateLink($event)"
-                                    @keydown.enter="navigateLink($event)">
+                                    @keydown.enter="navigateLink($event)" aria-label="Navigate to Hangman game">
                                     <img src="./assets/nav-ginger.png" alt="Gingerbread man icon.">
                                     <span>Hangman</span>
                                 </a>
                             </li>
                             <li class="underline">
                                 <a href="/howtoplay" class="link" @click="navigateLink($event)"
-                                    @keydown.enter="navigateLink($event)">
+                                    @keydown.enter="navigateLink($event)" aria-label="Navigate to how to play page">
                                     <img src="./assets/nav-bell.png" alt="Bell icon for how to play page.">
                                     <span>How to play</span>
                                 </a>
                             </li>
                             <li class="underline">
                                 <a href="/submit" class="link" @click="navigateLink($event)"
-                                    @keydown.enter="navigateLink($event)">
+                                    @keydown.enter="navigateLink($event)" aria-label="Navigate to submit sentence page">
                                     <img src="./assets/nav-santa.png" alt="Santa icon for submit page.">
                                     <span>Submit Sentence</span>
                                 </a>
@@ -113,6 +116,9 @@ export default {
             const link = event.target.closest('a');
             window.location.href = link.href;
             this.mobileNav = true;
+        },
+        goHome() {
+            window.location.href = '/';
         }
     },
     mounted() {
