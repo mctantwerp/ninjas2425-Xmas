@@ -25,6 +25,8 @@
 <script>
 import axios from 'axios';
 import gsap from 'gsap';
+import Cookies from 'js-cookie';
+
 export default {
     props: {
         game: {
@@ -53,6 +55,7 @@ export default {
                 const result = response.data.result;
                 console.log(result);
                 if (result) {
+                    Cookies.set('finalSentence', 'found', { expires: 14 });
                     this.$bus.emit('submitSentence');
                 }
                 else {
