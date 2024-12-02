@@ -39,6 +39,7 @@
 
 <script>
 import confetti from "canvas-confetti";
+import Cookies from 'js-cookie';
 export default {
     data() {
         return {
@@ -60,6 +61,13 @@ export default {
             this.hasSubmitted = false;
             this.submittedSentenceCorrect = false;
         });
+        //check if hangman has already been completed
+        const cookieValue = Cookies.get('finalSentence');
+        console.log(cookieValue);
+        if (cookieValue === "found") {
+            this.submittedSentenceCorrect = true;
+            this.hasSubmitted = true;
+        }
     },
     beforeUnmount() {
         this.$bus.off('submitSentence', this.handleSubmitSentence);

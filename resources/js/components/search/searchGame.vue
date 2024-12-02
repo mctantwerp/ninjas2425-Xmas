@@ -19,7 +19,7 @@ import Cookies from 'js-cookie';
 export default {
     methods: {
         correct() {
-            Cookies.set('search', 1, { expires: 14 });
+            Cookies.set('searchSolved', 1, { expires: 14 });
             this.$bus.emit('correct');
         },
         handleClick() {

@@ -17,7 +17,7 @@
                     <p>The word in this game is 'MCT'. Complete the other challenges to reveal the entire sentence. Good
                         luck!</p>
                 </template>
-                <template v-slot:action><button @click="redirectSubmitPage">Submit sentence</button></template>
+                <template v-slot:action><button @click="redirectHomePage">Go Home</button></template>
             </final-popup>
         </transition>
     </div>
@@ -54,7 +54,7 @@ export default {
 
 
         //check if search game has already been completed
-        const cookieValue = Cookies.get('search');
+        const cookieValue = Cookies.get('searchSolved');
         if (cookieValue === "1") {
             this.gameStarted = true;
             this.correctAnswer = true;
@@ -82,8 +82,8 @@ export default {
             this.isLargeViewport = window.innerWidth > 1024;
             console.log(this.isLargeViewport);
         },
-        redirectSubmitPage() {
-            window.location.href = '/submit';
+        redirectHomePage() {
+            window.location.href = '/';
         },
     },
     beforeUnmount() {

@@ -17,7 +17,7 @@
                     <h2>Congrats!</h2>
                     <p>The word in this game is "CHRISTMAS". Good luck with the rest of the games!</p>
                 </template>
-                <template v-slot:action><button @click="redirectSubmitPage">Submit sentence</button></template>
+                <template v-slot:action><button @click="redirectHomePage">Go Home</button></template>
             </final-popup>
         </transition>
     </div>
@@ -53,7 +53,7 @@ export default {
         });
 
         //check if hangman has already been completed
-        const cookieValue = Cookies.get('hangman');
+        const cookieValue = Cookies.get('hangmanSolved');
         if (cookieValue === "1") {
             this.hangmanSolved = true;
             this.gameStarted = true;
@@ -82,8 +82,8 @@ export default {
             this.isLargeViewport = window.innerWidth > 1024;
             console.log(this.isLargeViewport);
         },
-        redirectSubmitPage() {
-            window.location.href = '/submit';
+        redirectHomePage() {
+            window.location.href = '/';
         },
         resetScrollPosition() {
             window.scrollTo(0, 0, 'smooth');

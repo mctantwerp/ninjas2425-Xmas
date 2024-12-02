@@ -71,7 +71,7 @@ export default {
 
                 if (result) {
                     console.log('Word is correct!');
-                    Cookies.set('rebus', 1, { expires: 14 });
+                    Cookies.set('rebusSolved', 1, { expires: 14 });
                     this.$bus.emit('correct');
                 } else {
                     this.triggerShake();

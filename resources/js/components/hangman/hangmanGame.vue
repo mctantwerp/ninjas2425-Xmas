@@ -118,7 +118,7 @@ export default {
         checkIfGameIsFinished() {
             if (this.correctLetters.join('') === this.letters.join('')) {
                 console.log('You have guessed the word!');
-                Cookies.set('hangman', 1, { expires: 14 })
+                Cookies.set('hangmanSolved', 1, { expires: 14 })
                 this.$bus.emit('correct');
             }
         },

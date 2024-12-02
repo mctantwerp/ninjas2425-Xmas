@@ -18,7 +18,7 @@
                     <h2>Congrats!</h2>
                     <p>The word in this game is 'FROM'. Good luck with the rest of the challenges!</p>
                 </template>
-                <template v-slot:action><button @click="redirectSubmitPage">Submit sentence</button></template>
+                <template v-slot:action><button @click="redirectHomePage">Go Home</button></template>
             </final-popup>
         </transition>
     </div>
@@ -51,9 +51,9 @@ export default {
             this.triggerConfetti();
         });
 
+
         //check if tree game has already been completed
-        const cookieValue = Cookies.get('tree');
-        console.log(cookieValue);
+        const cookieValue = Cookies.get('treeSolved');
         if (cookieValue === "1") {
             this.gameStarted = true;
             this.correctAnswer = true;
@@ -78,9 +78,9 @@ export default {
             this.isLargeViewport = window.innerWidth > 1024;
             console.log(this.isLargeViewport);
         },
-        redirectSubmitPage() {
-            window.location.href = '/submit';
-        }
+        redirectHomePage() {
+            window.location.href = '/';
+        },
     },
     beforeUnmount() {
         //remove event listener when the component is destroyed

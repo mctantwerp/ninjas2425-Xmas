@@ -55,7 +55,7 @@ export default {
     },
     methods: {
         correct() {
-            Cookies.set('tree', 1, { expires: 14 });
+            Cookies.set('treeSolved', 1, { expires: 14 });
             this.$bus.emit('correct');
         },
         revealLetters() {
