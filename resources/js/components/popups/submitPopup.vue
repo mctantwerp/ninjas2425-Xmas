@@ -92,7 +92,7 @@ export default {
 .wrapper {
     display: flex;
     flex-direction: column;
-    gap: 32px;
+    gap: 8px;
     width: 100%;
 
     .container-input {
@@ -124,6 +124,7 @@ export default {
         border-radius: 20px;
         text-align: center;
         box-shadow: 2px -4px 4px #00000042;
+        margin-bottom: 24px;
 
 
         .box {

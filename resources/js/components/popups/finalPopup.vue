@@ -1,7 +1,7 @@
 <template>
-    <div class="wrapper">
+    <div class="wrapper" role="dialog" aria-labelledby="popup-title" aria-hidden="true">
         <div class="box-wrapper">
-            <div class="box">
+            <div class="box" role="document">
                 <slot name="content"></slot>
             </div>
         </div>
@@ -13,11 +13,6 @@
 
 <script>
 export default {
-    methods: {
-        emitGameStart() {
-            this.$emit('game-start');
-        }
-    }
 }
 </script>
 
@@ -27,7 +22,7 @@ export default {
 .wrapper {
     display: flex;
     flex-direction: column;
-    gap: 32px;
+    gap: 16px;
     width: 100%;
 
     @media (min-width: 768px) {

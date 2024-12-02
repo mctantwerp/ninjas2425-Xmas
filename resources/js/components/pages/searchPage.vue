@@ -13,7 +13,7 @@
 
             <final-popup v-else>
                 <template v-slot:content>
-                    <h2>Congrats!</h2>
+                    <h2 id="popup-title">Congrats!</h2>
                     <p>The word in this game is 'MCT'. Complete the other challenges to reveal the entire sentence. Good
                         luck!</p>
                 </template>

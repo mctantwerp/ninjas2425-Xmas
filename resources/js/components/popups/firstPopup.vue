@@ -7,20 +7,28 @@
         </div>
         <div class="container-input">
             <div class="input" ref="shakeElement">
-                <input type="text" placeholder="Enter code from poster" v-model="userInput">
-                <i class="fa-regular fa-trash-can" @click="clearInput"></i>
+                <label for="inputCode" class="sr-only" hidden>Enter code from poster</label>
+                <input type="text" id="inputCode" placeholder="Enter code from poster" v-model="userInput"
+                    aria-label="Enter code from poster" aria-describedby="error-message" />
+                <i class="fa-regular fa-trash-can" @click="clearInput" @keydown.enter.prevent="clearInput"
+                    @touchstart.prevent="clearInput" aria-label="Clear input" role="button" tabindex="0">
+                </i>
             </div>
             <transition name="fade">
-                <span class="error" v-if="responseMessage !== null">{{ responseMessage }}</span>
+                <span v-if="responseMessage !== null" class="error" id="error-message" role="alert"
+                    aria-live="assertive">
+                    {{ responseMessage }}
+                </span>
             </transition>
         </div>
         <div class="action">
-            <button @click="emitGameStart">
+            <button @click="emitGameStart" aria-label="Start game" type="button">
                 <slot name="action"></slot><i class="fa-solid fa-arrow-right"></i>
             </button>
         </div>
     </div>
 </template>
+
 
 <script>
 import axios from 'axios';
@@ -103,7 +111,7 @@ export default {
 .wrapper {
     display: flex;
     flex-direction: column;
-    gap: 32px;
+    gap: 8px;
     width: 100%;
 
     .container-input {
@@ -135,6 +143,7 @@ export default {
         border-radius: 20px;
         text-align: center;
         box-shadow: 2px -4px 4px #00000042;
+        margin-bottom: 24px;
 
 
         .box {

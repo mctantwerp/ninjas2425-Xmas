@@ -1,25 +1,16 @@
 <template>
     <div class="rebus-wrapper">
         <div class="images-rebus">
-            <!-- <div class="top-row">
-                <img src="../assets/rebus-first.png" alt="">
-                <i class="fa-light fa-plus"></i>
-                <img src="../assets/rebus-second.png" alt="">
-                <i class="fa-light fa-plus"></i>
-                <img src="../assets/rebus-third.png" alt="">
-            </div>
-            <div class="bottom-row">
-                <i class="fa-light fa-plus"></i>
-                <img src="../assets/rebus-fourth.png" alt="">
-            </div> -->
-            <img src="../assets/rebus-problem.png" alt="rebus game">
+            <img src="../assets/rebus-problem.png"
+                alt="Rebus puzzle showing a hat with 'T' removed, an upward arrow with 'U' removed, a pi symbol with 'I' removed, and the letter 'Y' added">
         </div>
         <div class="input" ref="shakeElement">
+            <label for="user-input" class="sr-only">Your Answer</label>
             <input type="text" :placeholder="inputPlaceholder" v-model="userInput">
-            <i class="fa-regular fa-trash-can" @click="clearInput"></i>
+            <i class="fa-regular fa-trash-can" @click="clearInput" aria-label="Clear input"></i>
         </div>
         <div class="action">
-            <button @click="checkWord">Submit
+            <button @click="checkWord" aria-label="Submit answer">Submit
                 <i class="fa-regular fa-gift"></i>
             </button>
         </div>
@@ -111,7 +102,7 @@ export default {
 .rebus-wrapper {
     display: flex;
     flex-direction: column;
-    gap: 32px;
+    gap: 8px;
     width: 100%;
     text-align: center;
 
@@ -121,6 +112,7 @@ export default {
         gap: 32px;
         justify-content: center;
         align-items: center;
+        margin-bottom: 32px;
 
         img {
             width: 100%;

@@ -1,8 +1,11 @@
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="XMAS 2024 is a project created by the last year MCT students of KdG. Complete the four games and win nice prizes!">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>@yield('title', 'Default Title')</title>
     @vite('resources/sass/app.scss')

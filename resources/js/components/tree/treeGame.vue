@@ -2,7 +2,7 @@
     <transition name="fade-with-slide" mode="out-in">
         <div class="image-container" ref="tree" v-if="!lettersVisible" @click="handleFalseClick">
             <img src="../assets/tree-clear.png"
-                alt="search game background image with many icons like presents and others" class="image" />
+                alt="image of a christmas tree with many ornaments in two different colors." class="image" />
             <div class="overlay-box first" @click="revealLetters">
                 <span class="tree-game-letter"></span>
             </div>
@@ -25,7 +25,8 @@
         </div>
         <div class="image-container" ref="shakeElement" v-else>
             <img src="../assets/tree-filled.png"
-                alt="search game background image with many icons like presents and others" class="image" />
+                alt="image of a christmas tree with the ornaments content revealing 4 letters: F, O, R, M"
+                class="image" />
             <div class="input" ref="inputField">
                 <input type="text" :placeholder="inputPlaceholder" v-model="userInput">
                 <i class="fa-regular fa-trash-can" @click="clearInput"></i>

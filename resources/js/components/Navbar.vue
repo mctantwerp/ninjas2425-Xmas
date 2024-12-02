@@ -1,6 +1,6 @@
 <template>
     <transition name="fade">
-        <div class="screen-popup" v-show="userIsOnDesktop">
+        <div class="screen-popup" v-show="userIsOnDesktop" tabindex="-1" ref="desktopPopup">
             <div class="box">
                 <h1>Hold! 🎄</h1>
                 <p class="larger-paragraph">This website is optimized for mobile devices. For the best experience,
@@ -11,55 +11,63 @@
     </transition>
     <header>
         <nav>
-            <div class="branding" @click="backToHome">
-                <img src="../../../public/logo-xmas.png" alt="">
+            <div class="branding" @click="backToHome" aria-label="Go to homepage">
+                <img src="../../../public/logo-xmas.png" alt="Christmas Hunt Logo">
             </div>
-            <div class="icon" @click="toggleMobileNav">
+            <div class="icon" @click="toggleMobileNav" @keydown.enter="toggleMobileNav"
+                aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-nav" tabindex="0">
                 <i class="fa-solid fa-bars" :class="{ 'icon-active': iconActive }"></i>
                 <div class="mobile-nav" @click.stop>
                     <transition name="mobile-nav">
                         <ul class="dropdown-nav" v-if="mobileNav" @click.stop>
                             <h1>Christmas Hunt</h1>
                             <li class="underline">
-                                <a href="/tree" class="link">
-                                    <img src="./assets/nav-tree.png">
+                                <a href="/tree" class="link" @click="navigateLink($event)"
+                                    @keydown.enter="navigateLink($event)">
+                                    <img src="./assets/nav-tree.png" alt="Christmas tree game icon.">
                                     <span>Christmas Tree</span>
                                 </a>
                             </li>
                             <li class="underline">
-                                <a href="/search" class="link">
-                                    <img src="./assets/nav-present.png">
+                                <a href="/search" class="link" @click="navigateLink($event)"
+                                    @keydown.enter="navigateLink($event)">
+                                    <img src="./assets/nav-present.png" alt="Wrapped present icon.">
                                     <span>Search Game</span>
                                 </a>
                             </li>
                             <li class="underline">
-                                <a href="/rebus" class="link">
-                                    <img src="./assets/nav-cup.png">
+                                <a href="/rebus" class="link" @click="navigateLink($event)"
+                                    @keydown.enter="navigateLink($event)">
+                                    <img src="./assets/nav-cup.png" alt="Hot chocolate cup icon.">
                                     <span>Rebus</span>
                                 </a>
                             </li>
                             <li class="underline">
-                                <a href="/hangman" class="link">
-                                    <img src="./assets/nav-ginger.png">
+                                <a href="/hangman" class="link" @click="navigateLink($event)"
+                                    @keydown.enter="navigateLink($event)">
+                                    <img src="./assets/nav-ginger.png" alt="Gingerbread man icon.">
                                     <span>Hangman</span>
                                 </a>
                             </li>
                             <li class="underline">
-                                <a href="/howtoplay" class="link">
-                                    <img src="./assets/nav-bell.png">
+                                <a href="/howtoplay" class="link" @click="navigateLink($event)"
+                                    @keydown.enter="navigateLink($event)">
+                                    <img src="./assets/nav-bell.png" alt="Bell icon for how to play page.">
                                     <span>How to play</span>
                                 </a>
                             </li>
                             <li class="underline">
-                                <a href="/submit" class="link">
-                                    <img src="./assets/nav-santa.png">
+                                <a href="/submit" class="link" @click="navigateLink($event)"
+                                    @keydown.enter="navigateLink($event)">
+                                    <img src="./assets/nav-santa.png" alt="Santa icon for submit page.">
                                     <span>Submit Sentence</span>
                                 </a>
                             </li>
                         </ul>
                     </transition>
                     <transition name="fade">
-                        <div class="dropdown-nav-background" v-if="mobileNav" @click="toggleMobileNav"></div>
+                        <div class="dropdown-nav-background" v-if="mobileNav" @click="toggleMobileNav"
+                            aria-label="Close navigation menu" aria-expanded="true" aria-controls="mobile-nav"></div>
                     </transition>
                 </div>
             </div>
@@ -80,18 +88,47 @@ export default {
         toggleMobileNav() {
             this.mobileNav = !this.mobileNav;
             this.iconActive = !this.iconActive;
+            this.$nextTick(() => {
+                if (this.mobileNav) {
+                    const firstLink = document.querySelector('.dropdown-nav a');
+                    firstLink.focus();
+                } else {
+                    document.querySelector('.icon').focus();
+                }
+            });
         },
         ignoreDesktopWarning() {
             this.userIsOnDesktop = false;
         },
         backToHome() {
             window.location.href = '/';
+        },
+        handleEscKey(event) {
+            if (event.key === 'Escape') {
+                this.toggleMobileNav();
+            }
+        },
+        navigateLink(event) {
+            event.preventDefault();
+            const link = event.target.closest('a');
+            window.location.href = link.href;
+            this.mobileNav = true;
         }
     },
     mounted() {
         if (window.innerWidth > 1024) {
             this.userIsOnDesktop = true;
         }
+        if (this.userIsOnDesktop) {
+            this.$nextTick(() => {
+                this.$refs.desktopPopup.focus();
+            });
+        }
+        window.addEventListener('keydown', this.handleEscKey);
+
+    },
+    beforeDestroy() {
+        window.removeEventListener('keydown', this.handleEscKey);
     },
 }
 </script>
@@ -205,6 +242,7 @@ header {
                 transition: 0.5s ease all;
                 overflow-y: auto;
                 max-width: 250px;
+                box-shadow: -1px 2px 10px rgb(0, 0, 0, 0.5);
 
 
                 .underline {
