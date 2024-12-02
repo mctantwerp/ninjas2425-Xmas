@@ -50,14 +50,6 @@ export default {
             this.correctAnswer = true;
             this.triggerConfetti();
         });
-
-
-        //check if tree game has already been completed
-        const cookieValue = Cookies.get('treeSolved');
-        if (cookieValue === "1") {
-            this.gameStarted = true;
-            this.correctAnswer = true;
-        }
     },
     methods: {
         triggerConfetti() {
@@ -86,6 +78,14 @@ export default {
         //remove event listener when the component is destroyed
         window.removeEventListener('resize', this.checkViewport);
         this.$bus.off('correct');
+    },
+    beforeMount() {
+        //check if tree game has already been completed
+        const cookieValue = Cookies.get('treeSolved');
+        if (cookieValue === "1") {
+            this.gameStarted = true;
+            this.correctAnswer = true;
+        }
     },
 }
 </script>

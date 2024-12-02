@@ -61,18 +61,20 @@ export default {
             this.hasSubmitted = false;
             this.submittedSentenceCorrect = false;
         });
-        //check if hangman has already been completed
+    },
+    beforeUnmount() {
+        this.$bus.off('submitSentence', this.handleSubmitSentence);
+        this.$bus.off('submitRetry', this.handleSubmitRetry);
+        this.$bus.off('submitRetryReset', this.handleSubmitRetryReset);
+    },
+    beforeMount() {
+        //check if sentence has already been solved
         const cookieValue = Cookies.get('finalSentence');
         console.log(cookieValue);
         if (cookieValue === "found") {
             this.submittedSentenceCorrect = true;
             this.hasSubmitted = true;
         }
-    },
-    beforeUnmount() {
-        this.$bus.off('submitSentence', this.handleSubmitSentence);
-        this.$bus.off('submitRetry', this.handleSubmitRetry);
-        this.$bus.off('submitRetryReset', this.handleSubmitRetryReset);
     },
     methods: {
         triggerConfetti() {

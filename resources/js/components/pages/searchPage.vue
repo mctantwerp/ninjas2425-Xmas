@@ -51,14 +51,6 @@ export default {
             this.correctAnswer = true;
             this.triggerConfetti();
         });
-
-
-        //check if search game has already been completed
-        const cookieValue = Cookies.get('searchSolved');
-        if (cookieValue === "1") {
-            this.gameStarted = true;
-            this.correctAnswer = true;
-        }
     },
     methods: {
         triggerConfetti() {
@@ -90,6 +82,14 @@ export default {
         window.removeEventListener('resize', this.checkViewport);
         this.$bus.off('correct');
     },
+    beforeMount() {
+        //check if search game has already been completed
+        const cookieValue = Cookies.get('searchSolved');
+        if (cookieValue === "1") {
+            this.gameStarted = true;
+            this.correctAnswer = true;
+        }
+    }
 }
 </script>
 

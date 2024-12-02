@@ -48,13 +48,6 @@ export default {
             this.correctAnswer = true;
             this.triggerConfetti();
         });
-
-        //check if rebus has already been completed
-        const cookieValue = Cookies.get('rebusSolved');
-        if (cookieValue === "1") {
-            this.gameStarted = true;
-            this.correctAnswer = true;
-        }
     },
     methods: {
         triggerConfetti() {
@@ -86,6 +79,14 @@ export default {
         //remove event listener when the component is destroyed
         window.removeEventListener('resize', this.checkViewport);
         this.$bus.off('correct');
+    },
+    beforeMount() {
+        //check if rebus has already been completed
+        const cookieValue = Cookies.get('rebusSolved');
+        if (cookieValue === "1") {
+            this.gameStarted = true;
+            this.correctAnswer = true;
+        }
     },
 }
 </script>

@@ -51,13 +51,6 @@ export default {
             console.log(this.gameStarted);
             this.triggerConfetti();
         });
-
-        //check if hangman has already been completed
-        const cookieValue = Cookies.get('hangmanSolved');
-        if (cookieValue === "1") {
-            this.hangmanSolved = true;
-            this.gameStarted = true;
-        }
     },
     methods: {
         triggerConfetti() {
@@ -88,7 +81,15 @@ export default {
         resetScrollPosition() {
             window.scrollTo(0, 0, 'smooth');
         }
-    }
+    },
+    beforeMount() {
+        //check if hangman has already been completed
+        const cookieValue = Cookies.get('hangmanSolved');
+        if (cookieValue === "1") {
+            this.hangmanSolved = true;
+            this.gameStarted = true;
+        }
+    },
 }
 </script>
 
