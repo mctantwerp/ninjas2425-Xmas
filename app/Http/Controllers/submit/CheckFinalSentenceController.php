@@ -23,8 +23,10 @@ class CheckFinalSentenceController extends Controller
             sentence: $request->input('finalSentence'),
         );
 
+        $sentenceIsCorrect = $this->checkFinalSentenceAction->execute($finalSentenceDto);
+
         return response()->json([
-            'result' => $this->checkFinalSentenceAction->execute($finalSentenceDto)
+            'result' => $sentenceIsCorrect
         ]);
 
     }

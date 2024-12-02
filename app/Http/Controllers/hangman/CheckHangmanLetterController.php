@@ -24,10 +24,10 @@ class CheckHangmanLetterController extends Controller
             letter: $request->input('letter')
         );
         //dd($hangmanLetterDto);
-        $data = $this->checkhangmanletteraction->execute($hangmanLetterDto);
+        $hangmanLetterIsCorrect = $this->checkhangmanletteraction->execute($hangmanLetterDto);
 
         return response()->json([
-            'result' => $data
+            'result' => $hangmanLetterIsCorrect
         ]);
     }
 }

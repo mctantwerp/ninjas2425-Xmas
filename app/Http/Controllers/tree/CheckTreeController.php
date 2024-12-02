@@ -25,10 +25,11 @@ class CheckTreeController extends Controller
             word: $request->input('word'),
         );
 
-        $data = $this->checktreeaction->execute($inputWordDto);
+        $treeIsCorrect = $this->checktreeaction->execute($inputWordDto);
+        $cookie = cookie('tree', $treeIsCorrect, 20160);
 
         return response()->json([
-            'result' => $data
-        ]);
+            'result' => $treeIsCorrect
+        ])->withCookie($cookie);
     }
 }
