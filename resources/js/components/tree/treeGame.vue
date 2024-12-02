@@ -43,6 +43,8 @@
 <script>
 import { gsap } from "gsap";
 import axios from "axios";
+import Cookies from 'js-cookie';
+
 export default {
     data() {
         return {
@@ -53,6 +55,7 @@ export default {
     },
     methods: {
         correct() {
+            Cookies.set('tree', 1, { expires: 14 });
             this.$bus.emit('correct');
         },
         revealLetters() {

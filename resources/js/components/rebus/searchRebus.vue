@@ -27,6 +27,7 @@
 <script>
 import axios from 'axios';
 import { gsap } from "gsap";
+import Cookies from 'js-cookie';
 
 export default {
     data() {
@@ -70,6 +71,7 @@ export default {
 
                 if (result) {
                     console.log('Word is correct!');
+                    Cookies.set('rebus', 1, { expires: 14 });
                     this.$bus.emit('correct');
                 } else {
                     this.triggerShake();

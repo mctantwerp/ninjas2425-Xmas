@@ -26,11 +26,10 @@ class CheckRebusController extends Controller
         );
 
         $rebusIsCorrect = $this->checkrebusaction->execute($inputWordDto);
-        $cookie = cookie('rebus', $rebusIsCorrect, 20160);
 
         return response()->json([
             'result' => $rebusIsCorrect
-        ])->withCookie($cookie);
+        ]);
 
     }
 }
