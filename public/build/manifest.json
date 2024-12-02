@@ -24,7 +24,7 @@
     "src": "public/logo-xmas.png"
   },
   "resources/js/app.js": {
-    "file": "assets/app-BYtMyK2x.js",
+    "file": "assets/app-yRyPXosv.js",
     "name": "app",
     "src": "resources/js/app.js",
     "isEntry": true,
@@ -32,7 +32,7 @@
       "_index-DjKJqAo0.js"
     ],
     "css": [
-      "assets/app-CooB509c.css"
+      "assets/app-DBCGGiw2.css"
     ],
     "assets": [
       "assets/rebus-problem-BNheyx5Z.png",
@@ -98,7 +98,7 @@
     ]
   },
   "resources/sass/app.scss": {
-    "file": "assets/app-DU0Mp3xh.css",
+    "file": "assets/app-Bh83qKU3.css",
     "src": "resources/sass/app.scss",
     "isEntry": true
   },

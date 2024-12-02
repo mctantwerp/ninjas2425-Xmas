@@ -14,9 +14,12 @@
 
 <script>
 import { gsap } from "gsap";
+import Cookies from 'js-cookie';
+
 export default {
     methods: {
         correct() {
+            Cookies.set('search', 1, { expires: 14 });
             this.$bus.emit('correct');
         },
         handleClick() {
