@@ -17,4 +17,5 @@
         <p>Got them all? Submit your answers for a chance to win
             amazing prizes! Good luck and have fun with the challenge! 🎅✨</p>
     </div>
+    <square-game-overview></square-game-overview>
 @endsection
