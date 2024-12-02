@@ -1,6 +1,6 @@
 <template>
     <div class="game-container">
-        <transition name="fade-with-slide" mode="out-in">
+        <transition name="fade-with-slide" mode="out-in" @before-enter="resetScrollPosition">
             <first-popup v-if="!gameStarted" @game-start="startGame" :game="'search'">
                 <template v-slot:content>
                     <h2>Christmas search 🕵️</h2>
@@ -77,6 +77,9 @@ export default {
         redirectHomePage() {
             window.location.href = '/';
         },
+        resetScrollPosition() {
+            window.scrollTo(0, 0);
+        }
     },
     beforeUnmount() {
         window.removeEventListener('resize', this.checkViewport);
