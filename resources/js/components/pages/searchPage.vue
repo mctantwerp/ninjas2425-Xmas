@@ -26,6 +26,7 @@
 
 <script>
 import confetti from "canvas-confetti";
+import Cookies from 'js-cookie';
 export default {
     data() {
         return {
@@ -42,12 +43,22 @@ export default {
     watch: {
     },
     mounted() {
+        //event listener for window resize
         window.addEventListener('resize', this.checkViewport);
+        //game correct event listener
         this.$bus.on('correct', () => {
             console.log('Correct word! Event listener works!');
             this.correctAnswer = true;
             this.triggerConfetti();
         });
+
+
+        //check if search game has already been completed
+        const cookieValue = Cookies.get('search');
+        if (cookieValue === "1") {
+            this.gameStarted = true;
+            this.correctAnswer = true;
+        }
     },
     methods: {
         triggerConfetti() {

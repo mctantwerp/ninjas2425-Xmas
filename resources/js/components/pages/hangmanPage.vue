@@ -24,6 +24,7 @@
 </template>
 
 <script>
+import Cookies from 'js-cookie';
 import confetti from "canvas-confetti";
 export default {
     data() {
@@ -39,7 +40,9 @@ export default {
         }
     },
     mounted() {
+        //event listener for window resize
         window.addEventListener('resize', this.checkViewport);
+        //game correct event listener
         this.$bus.on('correct', () => {
             console.log('Correct word! Event listener works!');
             this.hangmanSolved = true;
@@ -48,6 +51,13 @@ export default {
             console.log(this.gameStarted);
             this.triggerConfetti();
         });
+
+        //check if hangman has already been completed
+        const cookieValue = Cookies.get('hangman');
+        if (cookieValue === "1") {
+            this.hangmanSolved = true;
+            this.gameStarted = true;
+        }
     },
     methods: {
         triggerConfetti() {
