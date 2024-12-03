@@ -1,34 +1,60 @@
 <template>
     <div class="game-container">
         <a href="/rebus" class="box">
-            <div class="top-left">
+            <div class="top-left" :class="{ 'solved': rebusSolved }">
                 <img src="./assets/nav-cup.png" alt="christmas coffee cup">
                 <h2>Rebus</h2>
+                <span>Happy</span>
+                <span class="status-box solved" v-if="rebusSolved">Solved</span>
             </div>
         </a>
         <a href="/tree" class="box">
-            <div class="top-right">
+            <div class="top-right" :class="{ 'solved': treeSolved }">
                 <img src="./assets/nav-tree.png" alt="christmas tree">
                 <h2>Tree</h2>
+                <span>From</span>
+                <span class="status-box solved" v-if="treeSolved">Solved</span>
             </div>
         </a>
         <a href="/hangman" class="box">
-            <div class="bottom-left">
+            <div class="bottom-left" :class="{ 'solved': hangmanSolved }">
                 <img src="./assets/nav-ginger.png" alt="christmas gingerman">
                 <h2>Hangman</h2>
+                <span>Christmas</span>
+                <span class="status-box solved" v-if="hangmanSolved">Solved</span>
             </div>
         </a>
         <a href="/search" class="box">
-            <div class="bottom-right">
+            <div class="bottom-right" :class="{ 'solved': searchSolved }">
                 <img src="./assets/nav-present.png" alt="christmas present">
                 <h2>Search</h2>
+                <span>MCT</span>
+                <span class="status-box solved" v-if="searchSolved">Solved</span>
             </div>
         </a>
     </div>
 </template>
 
 <script>
-
+import Cookies from 'js-cookie';
+export default {
+    data() {
+        return {
+            rebusSolved: false,
+            treeSolved: false,
+            hangmanSolved: false,
+            searchSolved: true
+        }
+    },
+    methods: {
+    },
+    beforeMount() {
+        this.rebusSolved = Cookies.get('rebusSolved');
+        this.treeSolved = Cookies.get('treeSolved');
+        this.hangmanSolved = Cookies.get('hangmanSolved');
+        this.searchSolved = Cookies.get('searchSolved');
+    }
+}
 </script>
 
 <style lang="scss" scoped>
@@ -43,9 +69,9 @@
     width: 100%;
 
     .box {
+        position: relative;
         padding: 20px;
         text-align: center;
-        font-size: 1.2rem;
         font-weight: bold;
         border-radius: 8px;
         height: 130px;
@@ -61,6 +87,21 @@
             width: 35px;
             height: 35px;
         }
+
+        .status-box {
+            border: 2.5px solid $illustrations-green;
+            padding: 4px 8px;
+            border-radius: 8px;
+            border-bottom-right-radius: 0px;
+            border-top-left-radius: 0px;
+            position: absolute;
+            top: 0px;
+            right: 0px;
+        }
+    }
+
+    .solved {
+        opacity: 0.75;
     }
 }
 
