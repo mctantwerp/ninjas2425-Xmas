@@ -7,15 +7,13 @@
         </div>
         <div class="container-input">
             <div class="input" ref="shakeElement">
-                <input type="text" placeholder="Type sentence here" v-model="userInput">
-                <i class="fa-regular fa-trash-can" @click="clearInput"></i>
+                <input type="text" placeholder="Type sentence here" v-model="userInput" aria-label="Type your sentence">
+                <i class="fa-regular fa-trash-can" @click="clearInput" @keydown.enter="clearInput" tabindex="0"
+                    aria-label="Clear input"></i>
             </div>
-            <transition name="fade">
-                <span class="error" v-if="responseMessage !== null">{{ responseMessage }}</span>
-            </transition>
         </div>
         <div class="action">
-            <button @click="submitSentence">
+            <button @click="submitSentence" @keydown.enter="submitSentence" aria-label="Submit your sentence">
                 <slot name="action"></slot><i class="fa-solid fa-arrow-right"></i>
             </button>
         </div>
