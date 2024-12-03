@@ -1,6 +1,7 @@
 <template>
     <transition name="fade">
-        <div class="screen-popup" v-show="userIsOnDesktop" tabindex="-1" ref="desktopPopup">
+        <div class="screen-popup" v-show="userIsOnDesktop && !userIgnoredDesktopWarning" tabindex="-1"
+            ref="desktopPopup">
             <div class="box">
                 <h1>Hold! 🎄</h1>
                 <p class="larger-paragraph">This website is optimized for mobile devices. For the best experience,
@@ -79,12 +80,14 @@
 </template>
 
 <script>
+import Cookies from 'js-cookie';
 export default {
     data() {
         return {
             mobileNav: false,
             iconActive: false,
-            userIsOnDesktop: false
+            userIsOnDesktop: false,
+            userIgnoredDesktopWarning: Cookies.get('acceptedDesktopWarning')
         }
     },
     methods: {
@@ -102,6 +105,7 @@ export default {
         },
         ignoreDesktopWarning() {
             this.userIsOnDesktop = false;
+            Cookies.set('acceptedDesktopWarning', 1, { expires: 14 });
         },
         backToHome() {
             window.location.href = '/';
