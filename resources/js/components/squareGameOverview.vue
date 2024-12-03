@@ -43,7 +43,7 @@ export default {
             rebusSolved: false,
             treeSolved: false,
             hangmanSolved: false,
-            searchSolved: true
+            searchSolved: false,
         }
     },
     methods: {

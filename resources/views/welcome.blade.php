@@ -14,7 +14,7 @@
         <p>Find posters with QR codes and secret
             numbers, solve the challenges, and collect the words.</p>
         </br>
-        <p>Got them all? Submit your answers for a chance to win
+        <p>Got them all? <a href="/submit" class="clear-link">Submit</a> your answers for a chance to win
             amazing prizes! Good luck and have fun with the challenge! 🎅✨</p>
     </div>
     <square-game-overview></square-game-overview>
