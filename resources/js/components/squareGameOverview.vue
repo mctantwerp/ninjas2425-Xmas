@@ -89,7 +89,8 @@ export default {
         }
 
         .status-box {
-            border: 2.5px solid $illustrations-green;
+            border: 2.5px solid $illustrations-dark-green;
+            background-color: $illustrations-green;
             padding: 4px 8px;
             border-radius: 8px;
             border-bottom-right-radius: 0px;
@@ -101,7 +102,8 @@ export default {
     }
 
     .solved {
-        opacity: 0.75;
+        color: $color-wit;
+        //opacity: 0.6;
     }
 }
 
