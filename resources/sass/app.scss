@@ -37,6 +37,15 @@ a {
     color: $color-wit;
     text-decoration: none;
 }
+.clear-link {
+    font-family: $red-hat-font;
+    font-size: 16px;
+    line-height: 24px;
+    color: $color-turquoise-60;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    color: $color-turquoise-60;
+}
 button {
     background-color: $color-turquoise-10;
     color: $color-turquoise-90;

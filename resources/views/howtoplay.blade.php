@@ -9,7 +9,7 @@
             <p>1. Find all 4 posters on campus.</p>
             <p>2. Scan the QR code and type in the unique code. Each game has a unique code.</p>
             <p>3. Play the minigames to reveal all 4 words.</p>
-            <p>4. Make the secret sentence and submit in the end.</p>
+            <p>4. Make the secret sentence and <a href="/submit" class="clear-link">submit</a> in the end.</p>
             <p>5. You will have the chance to win a price!</p>
             <p>Are you stuck in a game? Press the “?” on the top right of the screen for a hint. Good luck!</p>
         </template>
