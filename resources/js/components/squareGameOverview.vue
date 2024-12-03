@@ -103,6 +103,7 @@ export default {
 
     .solved {
         color: $color-wit;
+        font-size: 14px;
         //opacity: 0.6;
     }
 }
