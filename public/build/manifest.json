@@ -24,7 +24,7 @@
     "src": "public/logo-xmas.png"
   },
   "resources/js/app.js": {
-    "file": "assets/app-DPny4rYn.js",
+    "file": "assets/app-B4zebhtx.js",
     "name": "app",
     "src": "resources/js/app.js",
     "isEntry": true,
@@ -32,17 +32,17 @@
       "_index-DjKJqAo0.js"
     ],
     "css": [
-      "assets/app-BZ7SO7OT.css"
+      "assets/app-CyhBL9zu.css"
     ],
     "assets": [
       "assets/rebus-problem-BNheyx5Z.png",
       "assets/tree-clear-DyBlmEGA.png",
       "assets/tree-filled-BO2t_0Hf.png",
-      "assets/logo-xmas-DkkHkaiD.png",
-      "assets/nav-tree-DrAXJkuB.png",
-      "assets/nav-present-CXCA8k3F.png",
       "assets/nav-cup-S43X9knO.png",
+      "assets/nav-tree-DrAXJkuB.png",
       "assets/nav-ginger-B8zj8DZv.png",
+      "assets/nav-present-CXCA8k3F.png",
+      "assets/logo-xmas-DkkHkaiD.png",
       "assets/nav-bell-DVjfOD_n.png",
       "assets/nav-santa-CCj0Q4aY.png",
       "assets/search-background-K0Aj_Yxy.png"
@@ -98,12 +98,12 @@
     ]
   },
   "resources/sass/app.scss": {
-    "file": "assets/app-Bh83qKU3.css",
+    "file": "assets/app-Iobv3g9E.css",
     "src": "resources/sass/app.scss",
     "isEntry": true
   },
   "resources/sass/welcomePage.scss": {
-    "file": "assets/welcomePage-vUs4KHdP.css",
+    "file": "assets/welcomePage-DeOPRhte.css",
     "src": "resources/sass/welcomePage.scss",
     "isEntry": true
   }
