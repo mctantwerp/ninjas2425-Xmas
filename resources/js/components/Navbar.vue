@@ -204,7 +204,14 @@ header {
         border-bottom: 1px solid $color-wit;
 
         .branding {
+            width: 216px;
+            height: 27.4px;
             cursor: pointer;
+
+            img {
+                width: 100%;
+                height: fit-content;
+            }
         }
 
         .icon {
