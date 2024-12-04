@@ -171,6 +171,10 @@ body {
     z-index: 10;
     max-width: 780px;
     margin: 0 auto;
+    pointer-events: none;
+}
+.content * {
+    pointer-events: auto;
 }
 .error {
     background-color: $color-input-error-background;
@@ -217,7 +221,6 @@ body {
         color: $color-black;
     }
 }
-
 .fade-with-slide-enter-active,
 .fade-with-slide-leave-active {
     transition: opacity 0.5s ease, transform 0.5s ease;
