@@ -12,6 +12,10 @@
     </transition>
     <header>
         <nav>
+            <div class="icon" @click="goHome" @keydown.enter="goHome" aria-label="Open navigation menu"
+                aria-expanded="false" aria-controls="mobile-nav" tabindex="0" v-if="!userIsOnHome">
+                <i class="fa-regular fa-angle-left"></i>
+            </div>
             <div class="branding" @click="backToHome" aria-label="Go to homepage">
                 <img src="../../../public/logo-xmas.png" alt="Christmas Hunt Logo">
             </div>
@@ -87,7 +91,8 @@ export default {
             mobileNav: false,
             iconActive: false,
             userIsOnDesktop: false,
-            userIgnoredDesktopWarning: Cookies.get('acceptedDesktopWarning')
+            userIgnoredDesktopWarning: Cookies.get('acceptedDesktopWarning'),
+            userIsOnHome: false
         }
     },
     methods: {
@@ -136,6 +141,11 @@ export default {
         }
         window.addEventListener('keydown', this.handleEscKey);
 
+    },
+    beforeMount() {
+        if (window.location.pathname === '/') {
+            this.userIsOnHome = true;
+        }
     },
     beforeDestroy() {
         window.removeEventListener('keydown', this.handleEscKey);
