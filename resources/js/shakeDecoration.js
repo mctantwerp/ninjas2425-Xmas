@@ -5,10 +5,31 @@ document.addEventListener("DOMContentLoaded", () => {
     const snow = document.querySelector(".snow");
     const gingerman = document.querySelector(".gingerman");
     const candy = document.querySelector(".candy");
+    // Create a new Audio object
+    const ornaments = new Audio('/sfx/ornaments.wav');
+    const tinkling = new Audio('/sfx/tinkling.wav');
+    const crunch = new Audio('/sfx/crunch.wav');
 
     elements.forEach(element => {
         element.addEventListener("click", async () => {
-            await triggerShake(element);
+            if (element.className === "snow") {
+                ornaments.pause();
+                ornaments.currentTime = 0;
+                ornaments.play();
+                await triggerShake(element);
+            }
+            else if (element.className === "gingerman") {
+                crunch.pause();
+                crunch.currentTime = 0;
+                crunch.play();
+                await triggerShake(element);
+            }
+            else if (element.className === "candy") {
+                tinkling.pause();
+                tinkling.currentTime = 0;
+                tinkling.play();
+                await triggerShake(element);
+            }
         });
     });
 
