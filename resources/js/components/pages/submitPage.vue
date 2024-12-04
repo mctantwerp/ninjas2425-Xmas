@@ -17,6 +17,9 @@
                             href="mailto:britt.breugelmans@student.kdg.be">britt.breugelmans@student.kdg.be</a></p>
                     <p>Keep an eye on your inbox! Maybe you’ll be the lucky winner of a special prize 😉.</p>
                 </template>
+                <template v-slot:audio>
+                    <audio-player></audio-player>
+                </template>
             </window-popup>
         </template>
         <template v-else>

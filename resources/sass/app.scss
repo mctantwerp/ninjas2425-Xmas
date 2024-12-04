@@ -46,7 +46,7 @@ a {
     text-underline-offset: 4px;
     color: $color-turquoise-60;
 }
-button {
+button:not(.audio-wrapper button) {
     background-color: $color-turquoise-10;
     color: $color-turquoise-90;
     font-family: $braah-font;

@@ -5,11 +5,13 @@
                 <slot name="content"></slot>
             </div>
         </div>
+        <slot name="audio"></slot>
     </div>
 </template>
 
 <script>
-
+export default {
+}
 </script>
 
 <style lang="scss" scoped>

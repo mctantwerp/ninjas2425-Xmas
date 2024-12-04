@@ -23,6 +23,7 @@ import treeGame from './components/tree/treeGame.vue';
 import hintPopup from './components/popups/hintPopup.vue';
 import hangmanGame from './components/hangman/hangmanGame.vue';
 import squareGameOverview from './components/squareGameOverview.vue';
+import audioPlayer from './components/audioPlayer.vue';
 
 
 import Navbar from './components/Navbar.vue';
@@ -50,6 +51,7 @@ app.component('hint-popup', hintPopup);
 app.component('hangman-page', hangmanPage);
 app.component('hangman-game', hangmanGame);
 app.component('square-game-overview', squareGameOverview);
+app.component('audio-player', audioPlayer);
 
 
 app.mount('#app');
