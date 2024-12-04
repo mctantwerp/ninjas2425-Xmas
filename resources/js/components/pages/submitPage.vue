@@ -134,22 +134,29 @@ export default {
                 this.triggerShake();
                 return;
             }
-
-            try{
+            try {
                 const response = await axios.post('/api/save-email', {
                     email: this.userEmail,
                 });
-                console.log(response.data.message);
-                Cookies.set('finalSentence', "found");
-                Cookies.set('emailSubmitted', "true");
-                this.submittedSentenceCorrect = true;
-                this.hasSubmitted = true;
-                this.userInputtedEmail = true;
+
+                if (response.status === 200) {
+                    console.log("Email saved successfully:", response.data.message);
+                    this.userInputtedEmail = true;
+                    Cookies.set('emailSubmitted', true);
+                }
+            } catch (error) {
+                if (error.response) {
+                    console.error("Error saving email:", error.response.data.message);
+
+                    if (error.response.status === 400) {
+                        console.error("Invalid request. Please check the input.");
+                    } else if (error.response.status === 500) {
+                        console.error("A server error occurred. Please try again later.");
+                    }
+                } else {
+                    console.error("Unexpected error:", error.message);
+                }
             }
-            catch (error) {
-                console.error('Error sending data:', error);
-            }
-            
         },
         async triggerShake() {
             //animation
