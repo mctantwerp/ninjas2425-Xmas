@@ -139,7 +139,7 @@ export default {
                 const response = await axios.post('/api/save-email', {
                     email: this.userEmail,
                 });
-                console.log("test");
+                console.log(response.data.message);
                 Cookies.set('finalSentence', "found");
                 Cookies.set('emailSubmitted', "true");
                 this.submittedSentenceCorrect = true;
