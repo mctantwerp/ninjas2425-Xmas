@@ -123,8 +123,7 @@ export default {
                 origin: { y: 0.6 },
             });
         },
-        handleSubmitEmail() {
-
+        async handleSubmitEmail() {
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
             if (this.userEmail === null || this.userEmail === "") {
@@ -135,8 +134,22 @@ export default {
                 this.triggerShake();
                 return;
             }
-            this.userInputtedEmail = true;
 
+            try{
+                const response = await axios.post('/api/save-email', {
+                    email: this.userEmail,
+                });
+                console.log("test");
+                Cookies.set('finalSentence', "found");
+                Cookies.set('emailSubmitted', "true");
+                this.submittedSentenceCorrect = true;
+                this.hasSubmitted = true;
+                this.userInputtedEmail = true;
+            }
+            catch (error) {
+                console.error('Error sending data:', error);
+            }
+            
         },
         async triggerShake() {
             //animation
