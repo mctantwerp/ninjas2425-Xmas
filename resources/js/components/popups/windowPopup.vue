@@ -5,6 +5,9 @@
                 <slot name="content"></slot>
             </div>
         </div>
+        <div class="input">
+            <slot name="input"></slot>
+        </div>
         <slot name="audio"></slot>
     </div>
 </template>
@@ -22,6 +25,12 @@ export default {
     flex-direction: column;
     gap: 32px;
     width: 100%;
+
+    .input {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
 
     .box-wrapper {
         display: flex;
