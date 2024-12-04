@@ -8,6 +8,7 @@ use App\Http\Controllers\search\ShowSearchController;
 use App\Http\Controllers\hangman\ShowHangmanController;
 use App\Http\Controllers\ShowHowToPlayController;
 use App\Http\Controllers\submit\ShowSubmitController;
+use App\Http\Controllers\ShowAdminLoginController;
 
 
 
@@ -18,3 +19,4 @@ Route::get('/search', ShowSearchController::class)->name('search');
 Route::get('/hangman', ShowHangmanController::class)->name('hangman');
 Route::get('/howtoplay', ShowHowToPlayController::class)->name('howtoplay');
 Route::get('/submit', ShowSubmitController::class)->name('submit');
+Route::get('/admin', ShowAdminLoginController::class)->name('admin');

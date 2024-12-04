@@ -20,11 +20,15 @@
     "src": "public/images/snow-globe.png"
   },
   "public/logo-xmas.png": {
-    "file": "assets/logo-xmas-DkkHkaiD.png",
+    "file": "assets/logo-xmas-4mmFX3Xx.png",
     "src": "public/logo-xmas.png"
   },
+  "public/sfx/mct-christmas-song.mp3": {
+    "file": "assets/mct-christmas-song-COcB7UZY.mp3",
+    "src": "public/sfx/mct-christmas-song.mp3"
+  },
   "resources/js/app.js": {
-    "file": "assets/app-B4zebhtx.js",
+    "file": "assets/app-DvuqzH0_.js",
     "name": "app",
     "src": "resources/js/app.js",
     "isEntry": true,
@@ -32,21 +36,32 @@
       "_index-DjKJqAo0.js"
     ],
     "css": [
-      "assets/app-CyhBL9zu.css"
+      "assets/app-CP7ZZubi.css"
     ],
     "assets": [
       "assets/rebus-problem-BNheyx5Z.png",
+      "assets/dancing-man2-scaled-BIAjjC_C.gif",
+      "assets/dancing-man-scaled-DZkwoCSU.gif",
       "assets/tree-clear-DyBlmEGA.png",
       "assets/tree-filled-BO2t_0Hf.png",
       "assets/nav-cup-S43X9knO.png",
       "assets/nav-tree-DrAXJkuB.png",
       "assets/nav-ginger-B8zj8DZv.png",
       "assets/nav-present-CXCA8k3F.png",
-      "assets/logo-xmas-DkkHkaiD.png",
+      "assets/mct-christmas-song-COcB7UZY.mp3",
+      "assets/logo-xmas-4mmFX3Xx.png",
       "assets/nav-bell-DVjfOD_n.png",
       "assets/nav-santa-CCj0Q4aY.png",
       "assets/search-background-K0Aj_Yxy.png"
     ]
+  },
+  "resources/js/components/assets/dancing-man-scaled.gif": {
+    "file": "assets/dancing-man-scaled-DZkwoCSU.gif",
+    "src": "resources/js/components/assets/dancing-man-scaled.gif"
+  },
+  "resources/js/components/assets/dancing-man2-scaled.gif": {
+    "file": "assets/dancing-man2-scaled-BIAjjC_C.gif",
+    "src": "resources/js/components/assets/dancing-man2-scaled.gif"
   },
   "resources/js/components/assets/nav-bell.png": {
     "file": "assets/nav-bell-DVjfOD_n.png",
@@ -89,7 +104,7 @@
     "src": "resources/js/components/assets/tree-filled.png"
   },
   "resources/js/shakeDecoration.js": {
-    "file": "assets/shakeDecoration-vFQIPo7r.js",
+    "file": "assets/shakeDecoration-ECRqmU21.js",
     "name": "shakeDecoration",
     "src": "resources/js/shakeDecoration.js",
     "isEntry": true,
@@ -98,7 +113,7 @@
     ]
   },
   "resources/sass/app.scss": {
-    "file": "assets/app-Iobv3g9E.css",
+    "file": "assets/app-DQGSDm7H.css",
     "src": "resources/sass/app.scss",
     "isEntry": true
   },
