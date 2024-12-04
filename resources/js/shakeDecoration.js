@@ -94,7 +94,6 @@ function delay(ms) {
 async function fadeAudio(audio) {
     for (let index = 100; index >= 0; index--) {
         audio.volume = index / 100;
-        console.log(audio.volume);
         await delay(10);
     }
 }
