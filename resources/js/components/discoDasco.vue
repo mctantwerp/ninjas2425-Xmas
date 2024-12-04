@@ -7,6 +7,17 @@
 
 <script>
 export default {
+    mounted() {
+        // Add disco lights to the body
+        this.$bus.on('disableDiscoFX', () => {
+            console.log('Disabling disco lights');
+            document.querySelector('.disco-container').style.display = 'none';
+        });
+        this.$bus.on('enableDiscoFX', () => {
+            console.log('Enabling disco lights');
+            document.querySelector('.disco-container').style.display = 'flex';
+        });
+    }
 };
 </script>
 

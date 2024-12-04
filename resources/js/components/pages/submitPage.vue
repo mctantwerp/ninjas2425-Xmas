@@ -21,6 +21,14 @@
                     <input type="text" placeholder="Enter your e-mail" aria-label="E-mail" ref="shakeElement"
                         v-model="userEmail">
                 </template>
+                <template v-slot:error>
+                    <transition name="fade">
+                        <span v-if="responseMessage !== null" class="error" id="error-message" role="alert"
+                            aria-live="assertive">
+                            {{ responseMessage }}
+                        </span>
+                    </transition>
+                </template>
                 <template v-slot:action>
                     <button @click="handleSubmitEmail">Submit</button>
                 </template>
@@ -40,7 +48,9 @@
                     <p>And most importantly, turn up your volume for some special MCT celebration music!</p>
                 </template>
                 <template v-slot:action>
-                    <a href="/"><button class="button-spacing">Go Home</button></a>
+                    <a href="/"><button>Go Home<i class="fa-regular fa-house-blank"></i></button></a>
+                    <button class="button-spacing" @click="disableDiscoFX">{{ buttonText }}<i
+                            class="fa-regular fa-party-horn"></i></button>
                 </template>
             </window-popup>
         </template>
@@ -84,6 +94,8 @@ export default {
             submittedSentenceCorrect: null,
             userInputtedEmail: false,
             userEmail: "",
+            responseMessage: null,
+            showDisco: true,
         }
     },
     mounted() {
@@ -127,11 +139,19 @@ export default {
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
             if (this.userEmail === null || this.userEmail === "") {
+                this.responseMessage = 'E-mail cannot be empty.';
                 this.triggerShake();
+                setTimeout(() => {
+                    this.responseMessage = null;
+                }, 2250);
                 return;
             }
             if (!emailRegex.test(this.userEmail)) {
+                this.responseMessage = 'Invalid e-mail format.';
                 this.triggerShake();
+                setTimeout(() => {
+                    this.responseMessage = null;
+                }, 2250);
                 return;
             }
             try {
@@ -143,15 +163,27 @@ export default {
                     console.log("Email saved successfully:", response.data.message);
                     this.userInputtedEmail = true;
                     Cookies.set('emailSubmitted', true);
+
                 }
             } catch (error) {
                 if (error.response) {
                     console.error("Error saving email:", error.response.data.message);
-
+                    this.responseMessage = 'Error saving email. Please try again.';
+                    setTimeout(() => {
+                        this.responseMessage = null;
+                    }, 2250);
                     if (error.response.status === 400) {
                         console.error("Invalid request. Please check the input.");
+                        this.responseMessage = 'Invalid request. Please check the input.';
+                        setTimeout(() => {
+                            this.responseMessage = null;
+                        }, 2250);
                     } else if (error.response.status === 500) {
                         console.error("A server error occurred. Please try again later.");
+                        this.responseMessage = 'A server error occurred. Please try again later.';
+                        setTimeout(() => {
+                            this.responseMessage = null;
+                        }, 2250);
                     }
                 } else {
                     console.error("Unexpected error:", error.message);
@@ -173,7 +205,21 @@ export default {
                 ease: "power2.inOut",
             });
         },
-    }
+        disableDiscoFX() {
+            this.showDisco = !this.showDisco;
+            if (this.showDisco) {
+                this.$bus.emit('enableDiscoFX');
+            }
+            else {
+                this.$bus.emit('disableDiscoFX');
+            }
+        },
+    },
+    computed: {
+        buttonText() {
+            return this.showDisco ? "Disable Disco" : "Enable Disco";
+        }
+    },
 }
 </script>
 
@@ -188,11 +234,15 @@ a {
     text-decoration: underline;
 }
 
-::v-deep .dancing-gif {
+:deep(.dancing-gif) {
     height: 150px;
     width: 25%;
     object-fit: contain;
     margin: 0 auto;
+}
+
+:deep(.action) i {
+    margin-left: 16px;
 }
 
 .button-spacing {

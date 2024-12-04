@@ -11,6 +11,7 @@
         <div class="input">
             <slot name="input"></slot>
         </div>
+        <slot name="error"></slot>
         <div class="action">
             <slot name="action"></slot>
         </div>
@@ -51,6 +52,12 @@ export default {
             right: 24px;
             padding: 8px;
         }
+    }
+
+    .action {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
     }
 
     .box-wrapper {
