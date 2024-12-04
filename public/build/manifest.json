@@ -28,7 +28,7 @@
     "src": "public/sfx/mct-christmas-song.mp3"
   },
   "resources/js/app.js": {
-    "file": "assets/app-GUJm_v9i.js",
+    "file": "assets/app-sJO_OKyd.js",
     "name": "app",
     "src": "resources/js/app.js",
     "isEntry": true,
@@ -36,7 +36,7 @@
       "_index-DjKJqAo0.js"
     ],
     "css": [
-      "assets/app-BRn2Oz9N.css"
+      "assets/app-CIxnEG3-.css"
     ],
     "assets": [
       "assets/rebus-problem-BNheyx5Z.png",
@@ -113,7 +113,7 @@
     ]
   },
   "resources/sass/app.scss": {
-    "file": "assets/app-DQGSDm7H.css",
+    "file": "assets/app-OCAb-mU2.css",
     "src": "resources/sass/app.scss",
     "isEntry": true
   },
