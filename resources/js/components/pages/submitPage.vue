@@ -241,10 +241,6 @@ a {
     margin: 0 auto;
 }
 
-:deep(.action) i {
-    margin-left: 16px;
-}
-
 .button-spacing {
     margin-bottom: 100px;
 }

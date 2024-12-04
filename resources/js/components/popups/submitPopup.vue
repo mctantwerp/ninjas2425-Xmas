@@ -144,10 +144,6 @@ export default {
         button {
             width: 100%;
         }
-
-        i {
-            margin-left: 16px;
-        }
     }
 }
 </style>
