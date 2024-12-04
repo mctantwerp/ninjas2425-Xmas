@@ -9,27 +9,40 @@ document.addEventListener("DOMContentLoaded", () => {
     const ornaments = new Audio('/sfx/ornaments.wav');
     const tinkling = new Audio('/sfx/tinkling.wav');
     const crunch = new Audio('/sfx/crunch.wav');
+    var clicked = false;
 
     elements.forEach(element => {
         element.addEventListener("click", async () => {
+            if (clicked) {
+                return
+            }
+            clicked = true;
             if (element.className === "snow") {
-                ornaments.pause();
+                //init
+                ornaments.volume = 1;
                 ornaments.currentTime = 0;
+                //play
                 ornaments.play();
+                //shake
                 await triggerShake(element);
+                fadeAudio(ornaments);
             }
             else if (element.className === "gingerman") {
-                crunch.pause();
+                crunch.volume = 1;
                 crunch.currentTime = 0;
                 crunch.play();
                 await triggerShake(element);
+                fadeAudio(crunch);
             }
             else if (element.className === "candy") {
-                tinkling.pause();
+                tinkling.volume = 1;
                 tinkling.currentTime = 0;
                 tinkling.play();
                 await triggerShake(element);
+                fadeAudio(tinkling);
             }
+            delay(250);
+            clicked = false;
         });
     });
 
@@ -61,14 +74,15 @@ document.addEventListener("DOMContentLoaded", () => {
 async function triggerShake(element) {
     await gsap.to(element, {
         duration: 0.15,
-        x: 3,
-        repeat: 4,
+        x: 2,
+        repeat: 15,
         yoyo: true,
         ease: "bounce.inOut",
     });
-    await gsap.to(element, {
+    gsap.to(element, {
         duration: 0.15,
         x: 0,
+        repeat: 6,
         ease: "bounce.inOut",
     });
 }
@@ -77,4 +91,10 @@ function delay(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-
+async function fadeAudio(audio) {
+    for (let index = 100; index >= 0; index--) {
+        audio.volume = index / 100;
+        console.log(audio.volume);
+        await delay(10);
+    }
+}
