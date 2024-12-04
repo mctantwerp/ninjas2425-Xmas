@@ -90,6 +90,8 @@ export default {
 
         .status-box {
             border: 2.5px solid $illustrations-dark-green;
+            border-top: none;
+            border-right: none;
             background-color: $illustrations-green;
             padding: 4px 8px;
             border-radius: 8px;
