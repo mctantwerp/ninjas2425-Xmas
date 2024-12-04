@@ -13,7 +13,7 @@ import 'plyr/dist/plyr.css';
 export default {
     mounted() {
         const player = new Plyr('#custom-audio-player');
-        //player.play();
+        player.play();
     }
 }
 </script>
@@ -23,14 +23,19 @@ export default {
 
 .audio-wrapper {
     position: fixed;
-    bottom: 0px;
+    bottom: 16px;
     left: 50%;
     transform: translateX(-50%);
     min-width: 320px;
     width: 80%;
+    box-shadow: 4px 4px 16px rgba(0, 0, 0, 0.589);
 }
 
 :root {
     --plyr-color-main: #{$illustrations-green};
+}
+
+.footer {
+    display: none;
 }
 </style>

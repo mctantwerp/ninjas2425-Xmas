@@ -32,6 +32,7 @@ import rebusPage from './components/pages/rebusPage.vue';
 import searchPage from './components/pages/searchPage.vue';
 import treePage from './components/pages/treePage.vue';
 import hangmanPage from './components/pages/hangmanPage.vue';
+import discoDasco from './components/discoDasco.vue';
 
 app.component('search-rebus', searchRebus);
 app.component('final-popup', finalPopup);
@@ -52,6 +53,7 @@ app.component('hangman-page', hangmanPage);
 app.component('hangman-game', hangmanGame);
 app.component('square-game-overview', squareGameOverview);
 app.component('audio-player', audioPlayer);
+app.component('disco-dasco', discoDasco);
 
 
 app.mount('#app');

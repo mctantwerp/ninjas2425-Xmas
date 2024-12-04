@@ -1,6 +1,6 @@
 <template>
     <transition name="fade-with-slide" mode="out-in">
-        <template v-if="!hasSubmitted">
+        <template v-if="!hasSubmitted" key="submit">
             <submit-popup>
                 <template v-slot:content>
                     <h2>Submit sentence 🚀</h2>
@@ -9,7 +9,7 @@
                 <template v-slot:action>Submit</template>
             </submit-popup>
         </template>
-        <template v-else-if="submittedSentenceCorrect && !userInputtedEmail">
+        <template v-else-if="submittedSentenceCorrect && !userInputtedEmail" key="email">
             <window-popup>
                 <template v-slot:content>
                     <h2>Good Job!</h2>
@@ -20,19 +20,27 @@
                 <template v-slot:input>
                     <input type="text" placeholder="Enter your e-mail" aria-label="E-mail" ref="shakeElement"
                         v-model="userEmail">
-                    <button @click="handleEmailSubmit">Submit</button>
                 </template>
-                <template v-slot:audio>
-                    <audio-player></audio-player>
+                <template v-slot:action>
+                    <button @click="handleSubmitEmail">Submit</button>
                 </template>
             </window-popup>
         </template>
-        <template v-else-if="submittedSentenceCorrect && userInputtedEmail">
+        <template v-else-if="submittedSentenceCorrect && userInputtedEmail" key="audio">
             <window-popup>
+                <template v-slot:gifs>
+                    <img class="dancing-gif" src="../assets/dancing-man2-scaled.gif">
+                    <img class="dancing-gif" src="../assets/dancing-man-scaled.gif">
+                </template>
                 <template v-slot:content>
                     <h2>Woop Woop</h2>
                     <p>You have correctly guessed the sentence.</p>
-                    <p>We’ve got your email, so stay tuned for your prize 😉.</p>
+                    <p>We will draw random winners soon and contact them by e-mail, so be sure to keep a watch on your
+                        inbox 😉.</p>
+                    <p>And most importantly, turn up your volume for some special MCT celebration music!</p>
+                </template>
+                <template v-slot:action>
+                    <a href="/"><button class="button-spacing">Go Home</button></a>
                 </template>
             </window-popup>
         </template>
@@ -52,10 +60,17 @@
             </negative-window-popup>
         </template>
     </transition>
+    <transition name="fade">
+        <template v-if="submittedSentenceCorrect && userInputtedEmail">
+            <audio-player></audio-player>
+        </template>
+    </transition>
+    <transition name="fade">
+        <template v-if="submittedSentenceCorrect && userInputtedEmail">
+            <disco-dasco></disco-dasco>
+        </template>
+    </transition>
 </template>
-
-
-
 
 <script>
 import confetti from "canvas-confetti";
@@ -108,9 +123,15 @@ export default {
                 origin: { y: 0.6 },
             });
         },
-        handleEmailSubmit() {
-            //send email
-            if (this.userInputtedEmail === null || this.userInputtedEmail === "") {
+        handleSubmitEmail() {
+
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            if (this.userEmail === null || this.userEmail === "") {
+                this.triggerShake();
+                return;
+            }
+            if (!emailRegex.test(this.userEmail)) {
                 this.triggerShake();
                 return;
             }
@@ -145,5 +166,16 @@ a {
     font-size: 16px;
     line-height: 24px;
     text-decoration: underline;
+}
+
+::v-deep .dancing-gif {
+    height: 150px;
+    width: 25%;
+    object-fit: contain;
+    margin: 0 auto;
+}
+
+.button-spacing {
+    margin-bottom: 100px;
 }
 </style>
