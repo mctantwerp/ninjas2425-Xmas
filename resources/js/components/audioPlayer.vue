@@ -29,10 +29,7 @@ export default {
     min-width: 320px;
     width: 80%;
     box-shadow: 4px 4px 16px rgba(0, 0, 0, 0.589);
-}
-
-:root {
-    --plyr-color-main: #{$illustrations-green};
+    border-radius: 6px;
 }
 
 .footer {

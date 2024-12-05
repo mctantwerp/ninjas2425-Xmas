@@ -1,0 +1,9 @@
+@import "_variables";
+
+.plyr {
+    border-radius: 6px;
+    overflow: hidden;
+}
+:root {
+    --plyr-color-main: #{$illustrations-green};
+}
