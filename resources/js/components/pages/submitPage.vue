@@ -41,16 +41,17 @@
                     <img class="dancing-gif" src="../assets/dancing-man-scaled.gif">
                 </template>
                 <template v-slot:content>
-                    <h2>Woop Woop</h2>
-                    <p>You have correctly guessed the sentence.</p>
-                    <p>We will draw random winners soon and contact them by e-mail, so be sure to keep a watch on your
-                        inbox 😉.</p>
-                    <p>And most importantly, turn up your volume for some special MCT celebration music!</p>
+                    <h2>Woop Woop! 🎉</h2>
+                    <p>Thank you for submitting your email!</p>
+                    <p>We'll be selecting random winners soon and reaching out to them via email, so keep an eye on your
+                        inbox! 😉</p>
+                    <p>In the meantime, crank up the volume and enjoy some special MCT celebration music! 🎶</p>
+
                 </template>
                 <template v-slot:action>
-                    <a href="/"><button>Go Home<i class="fa-regular fa-house-blank"></i></button></a>
-                    <button class="button-spacing" @click="disableDiscoFX">{{ buttonText }}<i
-                            class="fa-regular fa-party-horn"></i></button>
+                    <button @click="disableDiscoFX">{{ buttonText }}<i class="fa-regular fa-party-horn"></i></button>
+                    <a href="/" class="button-spacing"><button>Go Home<i
+                                class="fa-regular fa-house-blank"></i></button></a>
                 </template>
             </window-popup>
         </template>

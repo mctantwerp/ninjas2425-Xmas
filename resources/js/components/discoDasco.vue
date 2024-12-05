@@ -38,6 +38,8 @@ export default {
     z-index: 99999999;
     pointer-events: none;
     overflow: hidden;
+    top: 0;
+    left: 0;
 }
 
 /* Disco light animation */
