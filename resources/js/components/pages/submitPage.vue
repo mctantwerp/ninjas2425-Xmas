@@ -125,10 +125,13 @@ export default {
     beforeMount() {
         //check if sentence has already been solved
         const cookieValue = Cookies.get('finalSentence');
-        console.log(cookieValue);
+        const cookieValue2 = Cookies.get('emailSubmitted');
         if (cookieValue === "found") {
             this.submittedSentenceCorrect = true;
             this.hasSubmitted = true;
+        }
+        if (cookieValue2) {
+            this.userInputtedEmail = true;
         }
     },
     methods: {
