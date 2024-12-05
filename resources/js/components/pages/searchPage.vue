@@ -17,7 +17,8 @@
                     <p>The word in this game is 'MCT'. Complete the other challenges to reveal the entire sentence. Good
                         luck!</p>
                 </template>
-                <template v-slot:action><button @click="redirectHomePage">Go Home</button></template>
+                <template v-slot:action><button @click="redirectHomePage">Go Home<i
+                            class="fa-regular fa-house-blank"></i></button></template>
             </final-popup>
         </transition>
     </div>

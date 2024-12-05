@@ -18,7 +18,8 @@
                     <h2>Congrats!</h2>
                     <p>The word in this game is 'FROM'. Good luck with the rest of the challenges!</p>
                 </template>
-                <template v-slot:action><button @click="redirectHomePage">Go Home</button></template>
+                <template v-slot:action><button @click="redirectHomePage">Go Home<i
+                            class="fa-regular fa-house-blank"></i></button></template>
             </final-popup>
         </transition>
     </div>
