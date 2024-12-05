@@ -17,7 +17,7 @@
         <teleport to=".game-container">
             <hint-popup>
                 <template v-slot:bottom-text>
-                    Don't overthink it!
+                    Solve the rebus & don't overthink it!
                 </template>
             </hint-popup>
         </teleport>
