@@ -20,6 +20,9 @@
                 <template v-slot:input>
                     <input type="text" placeholder="Enter your e-mail" aria-label="E-mail" ref="shakeElement"
                         v-model="userEmail">
+                    <i class="fa-regular fa-trash-can" @click="clearInput" @keydown.enter.prevent="clearInput"
+                        @touchstart.prevent="clearInput" aria-label="Clear input" role="button" tabindex="0">
+                    </i>
                 </template>
                 <template v-slot:error>
                     <transition name="fade">
@@ -215,6 +218,9 @@ export default {
                 this.$bus.emit('disableDiscoFX');
             }
         },
+        clearInput() {
+            this.userEmail = "";
+        },
     },
     computed: {
         buttonText() {
@@ -240,6 +246,21 @@ a {
     width: 25%;
     object-fit: contain;
     margin: 0 auto;
+}
+
+:deep(.input) {
+
+    input {
+        position: relative;
+    }
+
+    i {
+        position: absolute;
+        right: 24px;
+        color: $color-rood-40;
+        font-size: 16px;
+        padding: 8px;
+    }
 }
 
 .button-spacing {
