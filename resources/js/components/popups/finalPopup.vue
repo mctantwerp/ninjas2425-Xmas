@@ -25,14 +25,6 @@ export default {
     gap: 16px;
     width: 100%;
 
-    @media (min-width: 768px) {
-        width: 75%;
-    }
-
-    @media (min-width: 1024px) {
-        width: 40%;
-    }
-
 
     .box-wrapper {
         display: flex;
