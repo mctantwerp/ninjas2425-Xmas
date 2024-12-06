@@ -20,5 +20,3 @@ Route::get('/search', ShowSearchController::class)->name('search');
 Route::get('/hangman', ShowHangmanController::class)->name('hangman');
 Route::get('/howtoplay', ShowHowToPlayController::class)->name('howtoplay');
 Route::get('/submit', ShowSubmitController::class)->name('submit');
-Route::get('/admin', ShowAdminLoginController::class)->name('admin');
-Route::get('/admin/create', ShowAdminCreateController::class)->name('adminCreate');
