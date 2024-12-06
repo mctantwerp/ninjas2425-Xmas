@@ -29,7 +29,7 @@
     <meta property="og:title" content="XMAS 2024 | KdG">
     <meta property="og:description"
         content="Find the posters, complete the challenges and win fun prizes! Made by the MCT students of KdG for the holidays.">
-    <meta property="og:image" content="https://i.imgur.com/yD0hMm4.png">
+    <meta property="og:image" content="{{ asset('og-image.png') }}">
     <meta property="og:image:alt" content="Christmas wallpaper with pattern related to christmas">
 </head>
 
