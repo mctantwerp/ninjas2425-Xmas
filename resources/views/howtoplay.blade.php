@@ -2,6 +2,10 @@
 
 @section('title', 'XMAS | How to Play')
 
+@section('navbar')
+    <navbar navbar-title='How To Play'></navbar>
+@endsection
+
 @section('content')
     <window-popup>
         <template v-slot:content>

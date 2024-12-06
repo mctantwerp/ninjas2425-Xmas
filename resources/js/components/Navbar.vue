@@ -17,7 +17,7 @@
                 <i class="fa-regular fa-angle-left"></i>
             </div>
             <div class="branding" @click="backToHome" aria-label="Go to homepage">
-                <img src="../../../public/logo-xmas.png" alt="Christmas Hunt Logo">
+                <h1>{{ navbarTitle }}</h1>
             </div>
             <div class="icon" @click="toggleMobileNav" @keydown.enter="toggleMobileNav"
                 aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-nav" tabindex="0">
@@ -93,6 +93,12 @@ export default {
             userIsOnDesktop: false,
             userIgnoredDesktopWarning: Cookies.get('acceptedDesktopWarning'),
             userIsOnHome: false
+        }
+    },
+    props: {
+        navbarTitle: {
+            type: String,
+            default: 'Christmas Hunt'
         }
     },
     methods: {
@@ -214,13 +220,18 @@ header {
         border-bottom: 1px solid $color-wit;
 
         .branding {
-            width: 216px;
             height: 27.4px;
             cursor: pointer;
 
             img {
                 width: 100%;
                 height: fit-content;
+            }
+
+            h1 {
+                display: inline-block;
+                vertical-align: middle;
+                transform: translateY(18%);
             }
         }
 

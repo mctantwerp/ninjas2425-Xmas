@@ -39,7 +39,7 @@
     </app-container> --}}
     <div id="app">
         <snow-flakes></snow-flakes>
-        <navbar></navbar>
+        @yield('navbar')
         <div class="snow"></div>
         <div class="gingerman">
         </div>

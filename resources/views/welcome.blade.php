@@ -6,6 +6,10 @@
 
 @section('title', 'XMAS')
 
+@section('navbar')
+    <navbar></navbar>
+@endsection
+
 @section('content')
     <div class="window-intro">
         <h1>Welcome to the 2024 KDG Christmas Challenge! 🎄</h1>
