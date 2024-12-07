@@ -53,6 +53,7 @@
     </div>
     @vite('resources/js/app.js')
     @vite('resources/js/shakeDecoration.js')
+    @vite('resources/js/gsap.js')
 </body>
 
 </html>
