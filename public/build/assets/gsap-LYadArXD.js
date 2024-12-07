@@ -1,0 +1,1 @@
+import{g as t}from"./index-DjKJqAo0.js";document.addEventListener("DOMContentLoaded",()=>{t.from(".content",{opacity:0,y:50,duration:1.5,ease:"power3.out",onComplete:()=>{t.set(".content",{clearProps:"all"})}})});

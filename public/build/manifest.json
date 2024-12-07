@@ -3,6 +3,17 @@
     "file": "assets/index-DjKJqAo0.js",
     "name": "index"
   },
+  "_snowFlakes-!~{009}~.js": {
+    "file": "assets/snowFlakes-DKboD5yG.css",
+    "src": "_snowFlakes-!~{009}~.js"
+  },
+  "_snowFlakes-BKuBNaSV.js": {
+    "file": "assets/snowFlakes-BKuBNaSV.js",
+    "name": "snowFlakes",
+    "css": [
+      "assets/snowFlakes-DKboD5yG.css"
+    ]
+  },
   "public/images/candy-cane.png": {
     "file": "assets/candy-cane-1bmmlmK-.png",
     "src": "public/images/candy-cane.png"
@@ -19,24 +30,30 @@
     "file": "assets/snow-globe-CGxgHjd6.png",
     "src": "public/images/snow-globe.png"
   },
-  "public/logo-xmas.png": {
-    "file": "assets/logo-xmas-4mmFX3Xx.png",
-    "src": "public/logo-xmas.png"
-  },
   "public/sfx/mct-christmas-song.mp3": {
     "file": "assets/mct-christmas-song-COcB7UZY.mp3",
     "src": "public/sfx/mct-christmas-song.mp3"
   },
+  "resources/js/404.js": {
+    "file": "assets/404-BmkEQoIw.js",
+    "name": "404",
+    "src": "resources/js/404.js",
+    "isEntry": true,
+    "imports": [
+      "_snowFlakes-BKuBNaSV.js"
+    ]
+  },
   "resources/js/app.js": {
-    "file": "assets/app-sJO_OKyd.js",
+    "file": "assets/app-BuMTSyFV.js",
     "name": "app",
     "src": "resources/js/app.js",
     "isEntry": true,
     "imports": [
+      "_snowFlakes-BKuBNaSV.js",
       "_index-DjKJqAo0.js"
     ],
     "css": [
-      "assets/app-CIxnEG3-.css"
+      "assets/app-DKjjsB2p.css"
     ],
     "assets": [
       "assets/rebus-problem-BNheyx5Z.png",
@@ -49,7 +66,6 @@
       "assets/nav-ginger-B8zj8DZv.png",
       "assets/nav-present-CXCA8k3F.png",
       "assets/mct-christmas-song-COcB7UZY.mp3",
-      "assets/logo-xmas-4mmFX3Xx.png",
       "assets/nav-bell-DVjfOD_n.png",
       "assets/nav-santa-CCj0Q4aY.png",
       "assets/search-background-K0Aj_Yxy.png"
@@ -103,6 +119,15 @@
     "file": "assets/tree-filled-BO2t_0Hf.png",
     "src": "resources/js/components/assets/tree-filled.png"
   },
+  "resources/js/gsap.js": {
+    "file": "assets/gsap-LYadArXD.js",
+    "name": "gsap",
+    "src": "resources/js/gsap.js",
+    "isEntry": true,
+    "imports": [
+      "_index-DjKJqAo0.js"
+    ]
+  },
   "resources/js/shakeDecoration.js": {
     "file": "assets/shakeDecoration-ECRqmU21.js",
     "name": "shakeDecoration",
@@ -112,9 +137,19 @@
       "_index-DjKJqAo0.js"
     ]
   },
+  "resources/sass/404.scss": {
+    "file": "assets/404-EnIGy32S.css",
+    "src": "resources/sass/404.scss",
+    "isEntry": true
+  },
   "resources/sass/app.scss": {
-    "file": "assets/app-OCAb-mU2.css",
+    "file": "assets/app-BCx_qQCk.css",
     "src": "resources/sass/app.scss",
+    "isEntry": true
+  },
+  "resources/sass/plyrCustom.scss": {
+    "file": "assets/plyrCustom-wNy9J1SS.css",
+    "src": "resources/sass/plyrCustom.scss",
     "isEntry": true
   },
   "resources/sass/welcomePage.scss": {
