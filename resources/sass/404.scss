@@ -25,24 +25,33 @@ body {
     margin: 0 auto;
     h1 {
         font-size: 32px;
+        color: $color-black;
     }
-
-    .text-and-action {
-        display: flex;
-        flex-direction: column;
-        gap: 16px;
+    .error-page-box {
+        padding: 32px 16px 32px 16px;
+        background-color: $color-wit;
+        opacity: 0.75;
         margin: 16px;
-        p {
-            color: $color-wit;
-            font-size: 16px;
-        }
-        button {
-            width: 95%;
-        }
+        border-radius: 12px;
+        box-shadow: 2px 2px 8px $color-black-semi-transparent;
 
-        // .cta-error {
-        //     font-style: italic;
-        //     font-size: 16px;
-        // }
+        .text-and-action {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            margin: 16px;
+            p {
+                color: $color-black;
+                font-size: 16px;
+            }
+            button {
+                width: 95%;
+            }
+
+            // .cta-error {
+            //     font-style: italic;
+            //     font-size: 16px;
+            // }
+        }
     }
 }
