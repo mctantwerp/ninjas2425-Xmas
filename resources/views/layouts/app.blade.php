@@ -11,7 +11,8 @@
     @vite('resources/sass/app.scss')
     @yield('scss')
     <script src="https://kit.fontawesome.com/26d2910850.js" crossorigin="anonymous" defer></script>
-
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
     <!-- Standard Favicon -->
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
