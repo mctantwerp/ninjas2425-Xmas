@@ -10,7 +10,7 @@
     <title>@yield('title', 'Default Title')</title>
     @vite('resources/sass/app.scss')
     @yield('scss')
-    <script src="https://kit.fontawesome.com/26d2910850.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/26d2910850.js" crossorigin="anonymous" defer></script>
 
     <!-- Standard Favicon -->
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
