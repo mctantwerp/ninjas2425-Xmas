@@ -31,7 +31,7 @@
     "src": "public/images/snow-globe.png"
   },
   "public/sfx/mct-christmas-song.mp3": {
-    "file": "assets/mct-christmas-song-COcB7UZY.mp3",
+    "file": "assets/mct-christmas-song-0S9KlV0p.mp3",
     "src": "public/sfx/mct-christmas-song.mp3"
   },
   "resources/js/404.js": {
@@ -44,7 +44,7 @@
     ]
   },
   "resources/js/app.js": {
-    "file": "assets/app-BuMTSyFV.js",
+    "file": "assets/app-Dy8qNfvY.js",
     "name": "app",
     "src": "resources/js/app.js",
     "isEntry": true,
@@ -53,7 +53,7 @@
       "_index-DjKJqAo0.js"
     ],
     "css": [
-      "assets/app-DKjjsB2p.css"
+      "assets/app-BzjwxxN-.css"
     ],
     "assets": [
       "assets/rebus-problem-BNheyx5Z.png",
@@ -65,7 +65,7 @@
       "assets/nav-tree-DrAXJkuB.png",
       "assets/nav-ginger-B8zj8DZv.png",
       "assets/nav-present-CXCA8k3F.png",
-      "assets/mct-christmas-song-COcB7UZY.mp3",
+      "assets/mct-christmas-song-0S9KlV0p.mp3",
       "assets/nav-bell-DVjfOD_n.png",
       "assets/nav-santa-CCj0Q4aY.png",
       "assets/search-background-K0Aj_Yxy.png"
@@ -138,22 +138,22 @@
     ]
   },
   "resources/sass/404.scss": {
-    "file": "assets/404-EnIGy32S.css",
+    "file": "assets/404-Cc5spmFR.css",
     "src": "resources/sass/404.scss",
     "isEntry": true
   },
   "resources/sass/app.scss": {
-    "file": "assets/app-BCx_qQCk.css",
+    "file": "assets/app-DXeO_GSn.css",
     "src": "resources/sass/app.scss",
     "isEntry": true
   },
   "resources/sass/plyrCustom.scss": {
-    "file": "assets/plyrCustom-wNy9J1SS.css",
+    "file": "assets/plyrCustom-COMhYzK9.css",
     "src": "resources/sass/plyrCustom.scss",
     "isEntry": true
   },
   "resources/sass/welcomePage.scss": {
-    "file": "assets/welcomePage-DeOPRhte.css",
+    "file": "assets/welcomePage-Bv0xChF9.css",
     "src": "resources/sass/welcomePage.scss",
     "isEntry": true
   }
