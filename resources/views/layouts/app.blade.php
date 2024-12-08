@@ -32,6 +32,16 @@
         content="Find the posters, complete the challenges and win fun prizes! Made by the MCT students of KdG for the holidays.">
     <meta property="og:image" content="{{ asset('og-image.png') }}">
     <meta property="og:image:alt" content="Christmas wallpaper with pattern related to christmas">
+
+    <!-- Fonts -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Borel&display=swap" as="style"
+        onload="this.rel='stylesheet'">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Braah+One&display=swap" as="style"
+        onload="this.rel='stylesheet'">
+    <link rel="preload"
+        href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap"
+        as="style" onload="this.rel='stylesheet'">
+
 </head>
 
 <body>

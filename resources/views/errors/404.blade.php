@@ -7,6 +7,14 @@
     <title>XMAS | 404</title>
     @vite('resources/sass/404.scss')
     <script src="https://kit.fontawesome.com/26d2910850.js" crossorigin="anonymous"></script>
+    <!-- Fonts -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Borel&display=swap" as="style"
+        onload="this.rel='stylesheet'">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Braah+One&display=swap" as="style"
+        onload="this.rel='stylesheet'">
+    <link rel="preload"
+        href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap"
+        as="style" onload="this.rel='stylesheet'">
 </head>
 
 <body>
