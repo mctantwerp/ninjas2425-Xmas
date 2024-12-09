@@ -7,7 +7,8 @@
         <div class="input" ref="shakeElement">
             <label for="user-input" class="sr-only">Your Answer</label>
             <input type="text" :placeholder="inputPlaceholder" v-model="userInput">
-            <i class="fa-regular fa-trash-can" @click="clearInput" aria-label="Clear input"></i>
+            <i class="fa-regular fa-trash-can" @click="clearInput" @keydown.enter.prevent="clearInput"
+                @touchstart.prevent="clearInput" aria-label="Clear input" role="button" tabindex="0"></i>
         </div>
         <div class="action">
             <button @click="checkWord" aria-label="Submit answer">Submit
