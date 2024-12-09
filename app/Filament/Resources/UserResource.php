@@ -21,6 +21,7 @@ class UserResource extends Resource
 {
     protected static ?string $model = User::class;
 
+
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
     public static function form(Form $form): Form
@@ -41,15 +42,14 @@ class UserResource extends Resource
                     ->searchable(),
             ])
             ->filters([
-                Tables\Filters\Filter::make('Exclude Admins')
-                    ->query(fn (Builder $query) => $query->where('is_admin', false))
-                    ->label('Exclude Admins'),
+                Tables\Filters\Filter::make('Admins')
+                    ->query(fn (Builder $query) => $query->where('is_admin', true))
+                    ->label('Admins'),
                 Tables\Filters\Filter::make('Winners')
                     ->query(fn (Builder $query) => $query->where('has_won', true))
                     ->label('Winners'),
             ])
             ->actions([
-                Tables\Actions\EditAction::make(),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
@@ -58,32 +58,38 @@ class UserResource extends Resource
             ])
             ->headerActions([
                 Tables\Actions\Action::make('Pick Winners')
+                    ->icon('heroicon-o-trophy')
                     ->action(function () {
-                        // Use a database transaction to ensure data integrity
                         DB::transaction(function () {
-                            // Select 4 random users who haven't won yet
-                            $usersToUpdate = User::where('has_won', 0)
-                                ->where('is_admin', false)
-                                ->inRandomOrder() // Randomize the selection
-                                ->limit(3)
-                                ->get();
-
-                            // Update their 'has_won' status
-                            foreach ($usersToUpdate as $user) {
-                                $user->update(['has_won' => 1]);
+                            if(count(User::where('has_won', 1)->get()) > 0){
+                                Notification::make()
+                                    ->title('Winners already selected')
+                                    ->body('There were already winners selected.')
+                                    ->danger()
+                                    ->send();
                             }
+                            else {
+                                $usersToUpdate = User::where('has_won', 0)
+                                    ->where('is_admin', false)
+                                    ->inRandomOrder()
+                                    ->limit(3)
+                                    ->get();
 
-                            // Provide feedback to the user via notification
-                            Notification::make()
-                                ->title('Winners Picked')
-                                ->body(count($usersToUpdate) . ' users have been randomly selected as winners.')
-                                ->success()
-                                ->send();
+                                foreach ($usersToUpdate as $user) {
+                                    $user->update(['has_won' => 1]);
+                                }
+
+                                Notification::make()
+                                    ->title('Winners Picked')
+                                    ->body(count($usersToUpdate) . ' users have been randomly selected as winners.')
+                                    ->success()
+                                    ->send();
+                            }
                         });
                     })
-                    ->requiresConfirmation() // Optional: Asks for confirmation before running
+                    ->requiresConfirmation()
                     ->label('Pick Winners')
-                    ->color('primary'), // Optional: Styling for the action button
+                    ->color('primary'),
             ]);
     }
 

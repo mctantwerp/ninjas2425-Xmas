@@ -21,6 +21,9 @@ class PutEmailInDatabaseController extends Controller
         ]);
 
         $email = $validated['email'];
+//        return response()->json([
+//            'message' => $email
+//        ]);
 
         try{
             $user = new User();
