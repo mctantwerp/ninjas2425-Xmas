@@ -13,7 +13,8 @@
 @section('content')
     <div class="window-intro">
         <h1>Welcome to the 2024 KDG Christmas Challenge! 🎄</h1>
-        <p>This holiday season, embark on a scavenger hunt across the KDG campuses!</p>
+        <p>This holiday season, embark on a scavenger hunt across the KDG campuses! Made possible by the last year students
+            of MCT.</p>
         </br>
         <p>Find posters with QR codes and secret
             numbers, solve the challenges, and collect the words.</p>
