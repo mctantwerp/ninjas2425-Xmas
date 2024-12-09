@@ -11,7 +11,8 @@
     @vite('resources/sass/app.scss')
     @yield('scss')
     <script src="https://kit.fontawesome.com/26d2910850.js" crossorigin="anonymous" defer></script>
-
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
     <!-- Standard Favicon -->
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -31,6 +32,16 @@
         content="Find the posters, complete the challenges and win fun prizes! Made by the MCT students of KdG for the holidays.">
     <meta property="og:image" content="{{ asset('og-image.png') }}">
     <meta property="og:image:alt" content="Christmas wallpaper with pattern related to christmas">
+
+    <!-- Fonts -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Borel&display=swap" as="style"
+        onload="this.rel='stylesheet'">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Braah+One&display=swap" as="style"
+        onload="this.rel='stylesheet'">
+    <link rel="preload"
+        href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap"
+        as="style" onload="this.rel='stylesheet'">
+
 </head>
 
 <body>
