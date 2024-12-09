@@ -51,11 +51,6 @@ class UserResource extends Resource
             ])
             ->actions([
             ])
-            ->bulkActions([
-                Tables\Actions\BulkActionGroup::make([
-                    Tables\Actions\DeleteBulkAction::make(),
-                ])
-            ])
             ->headerActions([
                 Tables\Actions\Action::make('Pick Winners')
                     ->icon('heroicon-o-trophy')

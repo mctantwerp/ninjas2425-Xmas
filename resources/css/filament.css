@@ -107,6 +107,16 @@ form button .fi-icon-btn-icon{
     fill: gray;
 }
 
+.fi-sidebar-nav{
+    background: repeating-linear-gradient(
+        to right,
+        #00997c , /* Replace $illustrations-medium-green with the actual color value */
+        #00997c  100px,
+        #0d8770  100px, /* Replace $illustrations-dark-green with the actual color value */
+        #0d8770  200px
+    );
+}
+
 .fi-sidebar-item-icon {
     height: 1.5rem; /* h-6 */
     width: 1.5rem;  /* w-6 */
@@ -192,12 +202,103 @@ form button .fi-icon-btn-icon{
 }
 
 .fi-btn-label{
-    color: #0d8770;
+    color: #5C5D68FF;
 }
 
 .fi-btn svg{
-    color: #0d8770;
+    color: #5C5D68FF;
 }
+
+.ring-1{
+    --tw-ring-shadow: none;
+}
+.fi-badge{
+    color: #fff;
+}
+
+.fi-dropdown-panel {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    background-color: #00997c;
+}
+
+.fi-ta{
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4); /* Subtle shadow all around */
+    border-radius: 18px;
+
+}
+
+.fi-ta-filters .flex{
+    border-bottom: 1px solid #fff;
+
+}
+
+.fi-select-input{
+    background-image: none;
+    color: #fff;
+    justify-content: center;
+}
+
+.fi-select-input option{
+    background-color: #00997c;
+}
+
+select:not(.choice){
+    background-image: none;
+}
+
+.fi-dropdown-header{
+    background-color: #00997c;
+}
+
+.fi-dropdown-header-icon{
+    fill: #fff;
+}
+
+fi-dropdown-list-item-icon{
+    fill: #fff;
+}
+
+.fi-dropdown-list-item-icon {
+    height: 1.25rem; /* h-5 (5 * 0.25rem) */
+    width: 1.25rem; /* w-5 (5 * 0.25rem) */
+    color: #fff; /* text-gray-400 */
+}
+
+@media (prefers-color-scheme: dark) {
+    .fi-dropdown-list-item-icon {
+        color: #fff; /* dark:text-gray-500 */
+    }
+}
+
+.text-center h2{
+    color: #fff;
+}
+
+.text-center p{
+    color: #fff;
+}
+
+form button .fi-icon-btn-icon{
+    color: #fff;
+}
+
+.fi-breadcrumbs-item-label {
+    color: #fff; /* Default text color equivalent to Tailwind text-gray-500 */
+}
+
+@media (prefers-color-scheme: dark) {
+    .fi-breadcrumbs-item-label {
+        color: #fff; /* Equivalent to dark:text-gray-400 */
+    }
+}
+
+
+
+
+
+
+
+
 
 
 
