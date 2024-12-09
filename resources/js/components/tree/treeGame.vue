@@ -29,7 +29,8 @@
                 class="image" />
             <div class="input" ref="inputField">
                 <input type="text" :placeholder="inputPlaceholder" v-model="userInput">
-                <i class="fa-regular fa-trash-can" @click="clearInput"></i>
+                <i class="fa-regular fa-trash-can" @click="clearInput" @keydown.enter.prevent="clearInput"
+                    @touchstart.prevent="clearInput" aria-label="Clear input" role="button" tabindex="0"></i>
             </div>
             <div class="action">
                 <button @click="checkWord">Submit
