@@ -3,9 +3,9 @@
     "file": "assets/index-DjKJqAo0.js",
     "name": "index"
   },
-  "_snowFlakes-!~{009}~.js": {
+  "_snowFlakes-!~{008}~.js": {
     "file": "assets/snowFlakes-DKboD5yG.css",
-    "src": "_snowFlakes-!~{009}~.js"
+    "src": "_snowFlakes-!~{008}~.js"
   },
   "_snowFlakes-BKuBNaSV.js": {
     "file": "assets/snowFlakes-BKuBNaSV.js",
@@ -31,7 +31,7 @@
     "src": "public/images/snow-globe.png"
   },
   "public/sfx/mct-christmas-song.mp3": {
-    "file": "assets/mct-christmas-song-0S9KlV0p.mp3",
+    "file": "assets/mct-christmas-song-COcB7UZY.mp3",
     "src": "public/sfx/mct-christmas-song.mp3"
   },
   "resources/js/404.js": {
@@ -44,7 +44,7 @@
     ]
   },
   "resources/js/app.js": {
-    "file": "assets/app-Dy8qNfvY.js",
+    "file": "assets/app-DWz2jtlm.js",
     "name": "app",
     "src": "resources/js/app.js",
     "isEntry": true,
@@ -53,7 +53,7 @@
       "_index-DjKJqAo0.js"
     ],
     "css": [
-      "assets/app-BzjwxxN-.css"
+      "assets/app-YSrP30DO.css"
     ],
     "assets": [
       "assets/rebus-problem-BNheyx5Z.png",
@@ -65,7 +65,7 @@
       "assets/nav-tree-DrAXJkuB.png",
       "assets/nav-ginger-B8zj8DZv.png",
       "assets/nav-present-CXCA8k3F.png",
-      "assets/mct-christmas-song-0S9KlV0p.mp3",
+      "assets/mct-christmas-song-COcB7UZY.mp3",
       "assets/nav-bell-DVjfOD_n.png",
       "assets/nav-santa-CCj0Q4aY.png",
       "assets/search-background-K0Aj_Yxy.png"
@@ -138,22 +138,17 @@
     ]
   },
   "resources/sass/404.scss": {
-    "file": "assets/404-Cc5spmFR.css",
+    "file": "assets/404-EnIGy32S.css",
     "src": "resources/sass/404.scss",
     "isEntry": true
   },
   "resources/sass/app.scss": {
-    "file": "assets/app-DXeO_GSn.css",
+    "file": "assets/app-BCx_qQCk.css",
     "src": "resources/sass/app.scss",
     "isEntry": true
   },
-  "resources/sass/plyrCustom.scss": {
-    "file": "assets/plyrCustom-COMhYzK9.css",
-    "src": "resources/sass/plyrCustom.scss",
-    "isEntry": true
-  },
   "resources/sass/welcomePage.scss": {
-    "file": "assets/welcomePage-Bv0xChF9.css",
+    "file": "assets/welcomePage-DeOPRhte.css",
     "src": "resources/sass/welcomePage.scss",
     "isEntry": true
   }
