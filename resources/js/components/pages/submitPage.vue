@@ -91,6 +91,7 @@ import confetti from "canvas-confetti";
 import Cookies from 'js-cookie';
 import axios from 'axios';
 import gsap from 'gsap';
+import DOMPurify from 'dompurify';
 export default {
     data() {
         return {
@@ -143,8 +144,13 @@ export default {
             });
         },
         async handleSubmitEmail() {
+            //regex to check if input is email
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
+            //using DOMpurify to sanitize input
+            this.userEmail = DOMPurify.sanitize(this.userEmail);
+
+            //email checks --> if empty then ...
             if (this.userEmail === null || this.userEmail === "") {
                 this.responseMessage = 'E-mail cannot be empty.';
                 this.triggerShake();
@@ -153,6 +159,7 @@ export default {
                 }, 2250);
                 return;
             }
+            //check email format
             if (!emailRegex.test(this.userEmail)) {
                 this.responseMessage = 'Invalid e-mail format.';
                 this.triggerShake();
@@ -162,17 +169,21 @@ export default {
                 return;
             }
             try {
+                //try post
                 const response = await axios.post('/api/save-email', {
                     email: this.userEmail,
                 });
 
+                //is ok and saved? then proceed to next page
                 if (response.status === 200) {
                     console.log("Email saved successfully:", response.data.message);
                     this.userInputtedEmail = true;
                     Cookies.set('emailSubmitted', true);
 
                 }
-            } catch (error) {
+            }
+            //catch errors 
+            catch (error) {
                 if (error.response) {
                     console.error("Error saving email:", error.response.data.message);
                     this.responseMessage = 'Error saving email. Please try again.';
