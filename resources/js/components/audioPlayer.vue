@@ -1,9 +1,11 @@
 <template>
-    <div class="audio-wrapper">
-        <audio id="custom-audio-player" controls>
-            <source src="/public/sfx/mct-christmas-song.mp3" type="audio/mp3" />
-        </audio>
-    </div>
+    <teleport to="body">
+        <div class="audio-wrapper">
+            <audio id="custom-audio-player" controls>
+                <source src="/public/sfx/mct-christmas-song.mp3" type="audio/mp3" />
+            </audio>
+        </div>
+    </teleport>
 </template>
 
 <script>
@@ -30,9 +32,6 @@ export default {
     width: 80%;
     box-shadow: 4px 4px 16px rgba(0, 0, 0, 0.589);
     border-radius: 6px;
-}
-
-.footer {
-    display: none;
+    z-index: 11;
 }
 </style>

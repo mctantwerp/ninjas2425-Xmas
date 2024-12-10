@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const candy = document.querySelector(".candy");
     // Create a new Audio object
     const ornaments = new Audio('/sfx/ornaments.mp3');
-    const tinkling = new Audio('/sfx/tinkling.wav');
+    const tinkling = new Audio('/sfx/tinkling.mp3');
     const crunch = new Audio('/sfx/crunch.wav');
     var clicked = false;
 
