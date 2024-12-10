@@ -35,7 +35,7 @@
     "src": "public/sfx/mct-christmas-song.mp3"
   },
   "resources/css/filament.css": {
-    "file": "assets/filament-DUnjMJn7.css",
+    "file": "assets/filament-v31WQRR3.css",
     "src": "resources/css/filament.css",
     "isEntry": true
   },
@@ -49,7 +49,7 @@
     ]
   },
   "resources/js/app.js": {
-    "file": "assets/app-Bz3hkQKg.js",
+    "file": "assets/app-DlIotWEB.js",
     "name": "app",
     "src": "resources/js/app.js",
     "isEntry": true,
@@ -58,7 +58,7 @@
       "_index-DjKJqAo0.js"
     ],
     "css": [
-      "assets/app-d9AeT1Nx.css"
+      "assets/app-C5evCvcB.css"
     ],
     "assets": [
       "assets/rebus-problem-BNheyx5Z.png",
@@ -143,12 +143,12 @@
     ]
   },
   "resources/sass/404.scss": {
-    "file": "assets/404-Cc5spmFR.css",
+    "file": "assets/404-Bq0-12ZG.css",
     "src": "resources/sass/404.scss",
     "isEntry": true
   },
   "resources/sass/app.scss": {
-    "file": "assets/app-DXeO_GSn.css",
+    "file": "assets/app-Dnf68vZn.css",
     "src": "resources/sass/app.scss",
     "isEntry": true
   },
@@ -158,7 +158,7 @@
     "isEntry": true
   },
   "resources/sass/welcomePage.scss": {
-    "file": "assets/welcomePage-Bv0xChF9.css",
+    "file": "assets/welcomePage-D4Mxw4nZ.css",
     "src": "resources/sass/welcomePage.scss",
     "isEntry": true
   }
