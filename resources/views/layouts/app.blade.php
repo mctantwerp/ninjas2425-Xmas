@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="XMAS 2024 is a project created by the last year MCT students of KdG. Complete the four games and win nice prizes!">
+        content="XMAS 2024 is a festive project crafted by the final-year MCT students of KdG. Challenge yourself with four exciting games, celebrate the holiday spirit, and win fantastic prizes!">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>@yield('title', 'Default Title')</title>
     @vite('resources/sass/app.scss')
@@ -27,11 +27,12 @@
     <!-- Open Graph Meta Tags -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://happyholidays.mctantwerp.be">
-    <meta property="og:title" content="XMAS 2024 | KdG">
+    <meta property="og:title" content="XMAS 2024 | MCT Antwerp">
     <meta property="og:description"
-        content="Find the posters, complete the challenges and win fun prizes! Made by the MCT students of KdG for the holidays.">
+        content="Discover the excitement of XMAS 2024! Find hidden posters, take on fun challenges, and win amazing prizes. Dive into a festive adventure brought to you by the last year innovative MCT students of KdG. Perfect for spreading holiday cheer and showcasing creativity during the most wonderful time of the year!">
     <meta property="og:image" content="{{ asset('og-image.png') }}">
-    <meta property="og:image:alt" content="Christmas wallpaper with pattern related to christmas">
+    <meta property="og:image:alt"
+        content="A picture of two hands with a phone showcasing the app. Along with regular branding.">
 
     <!-- Fonts -->
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Borel&display=swap" as="style"
