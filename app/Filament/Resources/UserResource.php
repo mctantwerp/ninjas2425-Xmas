@@ -4,6 +4,7 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\UserResource\Pages;
 use App\Filament\Resources\UserResource\RelationManagers;
+use App\Filament\Resources\UserResource\Widgets\Stats;
 use App\Models\User;
 use Filament\Forms;
 use Filament\Forms\Form;
@@ -92,6 +93,13 @@ class UserResource extends Resource
     {
         return [
             //
+        ];
+    }
+
+    public static function getWidgets(): array
+    {
+        return [
+            Stats::class,
         ];
     }
 

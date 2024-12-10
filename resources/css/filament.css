@@ -351,6 +351,13 @@ form button .fi-icon-btn-icon{
     fill: #4f4f4f;
 }
 
+.fi-wi-stats-overview-stat{
+    background-color: #fff;
+}
+.fi-wi-stats-overview-stat-value{
+    color: #0d8770;
+}
+
 
 
 
