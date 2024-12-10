@@ -4,10 +4,11 @@ declare(strict_types=1);
 
 namespace App\Http\Controllers;
 
+use App\Actions\CheckEntryKeyAction;
 use App\DataTransferObjects\EntryKeyDto;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
-use App\Actions\CheckEntryKeyAction;
+
 class CheckEntryKeyController extends Controller
 {
     private CheckEntryKeyAction $checkEntryKeyAction;
@@ -27,6 +28,6 @@ class CheckEntryKeyController extends Controller
         return response()->json([
             'passwordCorrect' => $response
         ]);
-        
+
     }
 }

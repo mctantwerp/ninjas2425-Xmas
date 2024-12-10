@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace App\Http\Controllers\submit;
 
-use Illuminate\Http\Request;
-use App\DataTransferObjects\FinalSentenceDto;
 use App\Actions\CheckFinalSentenceAction;
+use App\DataTransferObjects\FinalSentenceDto;
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 
 class CheckFinalSentenceController extends Controller
 {

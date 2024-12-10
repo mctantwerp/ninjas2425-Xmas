@@ -5,11 +5,11 @@ declare(strict_types=1);
 namespace App\Http\Controllers\tree;
 
 
-use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
-use App\DataTransferObjects\InputWordDto;
 use App\Actions\Tree\CheckTreeWordAction;
+use App\DataTransferObjects\InputWordDto;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\JsonResponse;
+use Illuminate\Http\Request;
 
 class CheckTreeController extends Controller
 {

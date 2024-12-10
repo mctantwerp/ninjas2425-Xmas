@@ -8,5 +8,5 @@ class EntryKeyDto
         public string $game,
         public string $key,
     ){
-    }   
+    }
 }

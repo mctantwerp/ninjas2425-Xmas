@@ -4,12 +4,11 @@ declare(strict_types=1);
 
 namespace App\Http\Controllers\rebus;
 
-use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
 use App\Actions\Rebus\CheckRebusWordAction;
 use App\DataTransferObjects\InputWordDto;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\JsonResponse;
-use Illuminate\Http\Response;
+use Illuminate\Http\Request;
 
 class CheckRebusController extends Controller
 {

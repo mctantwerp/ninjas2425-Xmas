@@ -202,7 +202,7 @@ form button .fi-icon-btn-icon{
 }
 
 .fi-input-wrp .fi-input-wrp-prefix{
-    
+
 }
 
 .fi-btn{
@@ -328,6 +328,31 @@ form button .fi-icon-btn-icon{
 .fi-input-wrp-icon{
     fill: #fff
 }
+
+.fi-simple-main{
+    background-color: rgba(255, 255, 255, 0.572);
+    color: #0d8770;
+}
+
+.fi-simple-main .fi-logo{
+    color: #0d8770;
+    fill: #0d8770;
+}
+
+.fi-simple-header-heading {
+    color: #0d8770;
+}
+
+.fi-fo-field-wrp .grid .flex .fi-fo-field-wrp-label .text-sm{
+    color: #0d8770;
+}
+
+.my-auto .fi-icon-btn .fi-icon-btn-icon{
+    fill: #4f4f4f;
+}
+
+
+
 
 
 

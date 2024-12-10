@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace App\Http\Controllers\hangman;
 
-use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
-use App\DataTransferObjects\HangmanLetterDto;
 use App\Actions\Hangman\CheckHangmanLetterAction;
+use App\DataTransferObjects\HangmanLetterDto;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\JsonResponse;
+use Illuminate\Http\Request;
 
 class CheckHangmanLetterController extends Controller
 {
