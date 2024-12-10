@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'XMAS | Submit')
+@section('title', 'XMAS | Submit Sentence')
 
 @section('scss')
     @vite('resources/sass/plyrCustom.scss')

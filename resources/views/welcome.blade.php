@@ -4,7 +4,7 @@
     @vite('resources/sass/welcomePage.scss')
 @endsection
 
-@section('title', 'XMAS')
+@section('title', 'XMAS | Home')
 
 @section('navbar')
     <navbar></navbar>

@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'XMAS | Tree')
+@section('title', 'XMAS | Tree Game')
 
 @section('navbar')
     <navbar navbar-title='Tree Game'></navbar>
