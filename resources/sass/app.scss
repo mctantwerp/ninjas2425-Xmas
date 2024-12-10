@@ -211,20 +211,6 @@ body {
         repeat-x;
     background-size: 200px 100%;
 }
-.window-intro {
-    padding: 32px;
-    background-color: $color-wit;
-    border-radius: 15px;
-    opacity: 0.75;
-    margin-bottom: 82px;
-    text-align: center;
-    h1 {
-        color: $color-black;
-    }
-    p {
-        color: $color-black;
-    }
-}
 .fade-with-slide-enter-active,
 .fade-with-slide-leave-active {
     transition: opacity 0.5s ease, transform 0.5s ease;
