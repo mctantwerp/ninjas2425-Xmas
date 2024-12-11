@@ -4,7 +4,7 @@
             <first-popup v-if="!gameStarted" @game-start="startGame" :game="'search'">
                 <template v-slot:content>
                     <h2>Christmas search 🕵️</h2>
-                    <p>Find Santa's frozen present and reveal one of the words for the Christmas Challenge. BTF41</p>
+                    <p>Find Santa's frozen present and reveal one of the words for the Christmas Challenge.</p>
                 </template>
                 <template v-slot:action>Continue</template>
             </first-popup>

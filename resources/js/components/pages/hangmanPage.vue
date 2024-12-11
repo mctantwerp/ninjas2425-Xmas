@@ -5,7 +5,7 @@
                 <template v-slot:content>
                     <h2>Hangman 🧍</h2>
                     <p>Type a letter and see if it occurs anywhere in the word. With this word you can continue your
-                        search! 18M12</p>
+                        search!</p>
                 </template>
                 <template v-slot:action>Continue</template>
             </first-popup>
