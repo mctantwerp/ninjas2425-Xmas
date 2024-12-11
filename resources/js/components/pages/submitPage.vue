@@ -176,13 +176,13 @@ export default {
 
                 //is ok and saved? then proceed to next page
                 if (response.status === 200) {
-                    console.log("Email saved successfully:", response.data.message);
+                    //console.log("Email saved successfully:", response.data.message);
                     this.userInputtedEmail = true;
                     Cookies.set('emailSubmitted', true);
 
                 }
             }
-            //catch errors 
+            //catch errors
             catch (error) {
                 if (error.response) {
                     console.error("Error saving email:", error.response.data.message);

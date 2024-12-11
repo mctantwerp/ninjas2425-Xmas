@@ -47,7 +47,7 @@ export default {
         window.addEventListener('resize', this.checkViewport);
         //game correct event listener
         this.$bus.on('correct', () => {
-            console.log('Correct word! Event listener works!');
+            //console.log('Correct word! Event listener works!');
             this.correctAnswer = true;
             this.triggerConfetti();
         });
@@ -72,7 +72,7 @@ export default {
         },
         checkViewport() {
             this.isLargeViewport = window.innerWidth > 1024;
-            console.log(this.isLargeViewport);
+            //console.log(this.isLargeViewport);
         },
         redirectHomePage() {
             window.location.href = '/';

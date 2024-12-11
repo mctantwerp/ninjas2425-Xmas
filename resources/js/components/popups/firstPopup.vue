@@ -76,7 +76,7 @@ export default {
                     this.triggerShake();
                 }
             } catch (error) {
-                console.error('Error sending data:', error);
+                //console.error('Error sending data:', error);
                 this.responseMessage = 'Error submitting the word.';
             }
         },
@@ -100,7 +100,7 @@ export default {
         },
     },
     mounted() {
-        console.log(this.game);
+        //console.log(this.game);
     }
 }
 </script>
