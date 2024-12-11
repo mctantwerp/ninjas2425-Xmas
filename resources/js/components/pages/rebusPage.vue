@@ -4,7 +4,7 @@
             <first-popup v-if="!gameStarted" @game-start="startGame" :game="'rebus'">
                 <template v-slot:content>
                     <h2>Rebus 🧩</h2>
-                    <p>Can you figure out what message is encoded in these images? Find the secret two words!</p>
+                    <p>Can you figure out what message is encoded in these images? Find the secret word!</p>
                 </template>
                 <template v-slot:action>Continue</template>
             </first-popup>
@@ -14,7 +14,7 @@
             <final-popup v-else>
                 <template v-slot:content>
                     <h2>Congrats!</h2>
-                    <p>The word in this game is "HAPPY". Good luck with the rest of the games!</p>
+                    <p>The word in this game is "Happy". Good luck with the rest of the games!</p>
                 </template>
                 <template v-slot:action><button @click="redirectHomePage">Go Home<i
                             class="fa-regular fa-house-blank"></i></button></template>
