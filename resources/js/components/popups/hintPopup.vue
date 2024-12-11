@@ -3,7 +3,7 @@
         <div v-if="hintVisible" class="hint-container" role="dialog" aria-labelledby="hint-title"
             aria-describedby="hint-description" tabindex="0">
             <div class="hint-wrapper">
-                <i class="fa-solid fa-x" @click="toggleHint" aria-label="Close hint"></i>
+                <i class="fa-solid fa-x close" @click="toggleHint" aria-label="Close hint"></i>
                 <div class="top">
                     <h1 id="hint-title">Hint!</h1>
                 </div>
@@ -88,6 +88,10 @@ export default {
     z-index: 1001;
     border-radius: 12px;
     min-width: 290px;
+
+    .close {
+        cursor: pointer;
+    }
 
     p,
     h1 {
