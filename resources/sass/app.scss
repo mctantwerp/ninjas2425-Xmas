@@ -109,7 +109,6 @@ body {
     .snow {
         display: none;
         outline: none;
-        -webkit-tap-highlight-color: transparent;
     }
     .footer {
         display: none;
@@ -168,6 +167,12 @@ body {
     background-position: center; /* Centers the background image */
     background-repeat: no-repeat; /* Prevents the image from repeating */
     z-index: 10;
+}
+.gingerman,
+.candy,
+.snow,
+.footer {
+    -webkit-tap-highlight-color: transparent;
 }
 .content {
     padding: 1.5rem;
