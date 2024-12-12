@@ -4,9 +4,7 @@
             <first-popup v-if="!gameStarted" @game-start="startGame" :game="'tree'">
                 <template v-slot:content>
                     <h2>What is Karel's favourite color? 🎨</h2>
-                    <p>Press the christmas ornament matching with that color and reveal the letters to assemble a word.
-                        WOZG3
-                    </p>
+                    <p>Press the christmas ornament matching with that color and reveal the letters to assemble a word.</p>
                 </template>
                 <template v-slot:action>Continue</template>
             </first-popup>
@@ -16,7 +14,7 @@
             <final-popup v-else>
                 <template v-slot:content>
                     <h2>Congrats!</h2>
-                    <p>The word in this game is 'FROM'. Good luck with the rest of the challenges!</p>
+                    <p>The word in this game is "from". Good luck with the rest of the games!</p>
                 </template>
                 <template v-slot:action><button @click="redirectHomePage">Go Home<i
                             class="fa-regular fa-house-blank"></i></button></template>
@@ -47,7 +45,7 @@ export default {
         window.addEventListener('resize', this.checkViewport);
         //game correct event listener
         this.$bus.on('correct', () => {
-            console.log('Correct word! Event listener works!');
+            //console.log('Correct word! Event listener works!');
             this.correctAnswer = true;
             this.triggerConfetti();
         });
@@ -69,7 +67,7 @@ export default {
         },
         checkViewport() {
             this.isLargeViewport = window.innerWidth > 1024;
-            console.log(this.isLargeViewport);
+            //console.log(this.isLargeViewport);
         },
         redirectHomePage() {
             window.location.href = '/';

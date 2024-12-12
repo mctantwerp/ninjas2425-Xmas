@@ -4,7 +4,7 @@
             <first-popup v-if="!gameStarted" @game-start="startGame" :game="'rebus'">
                 <template v-slot:content>
                     <h2>Rebus 🧩</h2>
-                    <p>Can you figure out what message is encoded in these images? Find the secret two words! B5TKC</p>
+                    <p>Can you figure out what message is encoded in these images? Find the secret word!</p>
                 </template>
                 <template v-slot:action>Continue</template>
             </first-popup>
@@ -45,7 +45,7 @@ export default {
         window.addEventListener('resize', this.checkViewport);
         //game correct event listener
         this.$bus.on('correct', () => {
-            console.log('Correct word! Event listener works!');
+            //console.log('Correct word! Event listener works!');
             this.correctAnswer = true;
             this.triggerConfetti();
         });
@@ -67,7 +67,7 @@ export default {
         },
         checkViewport() {
             this.isLargeViewport = window.innerWidth > 1024;
-            console.log(this.isLargeViewport);
+            //console.log(this.isLargeViewport);
         },
         redirectHomePage() {
             window.location.href = '/';

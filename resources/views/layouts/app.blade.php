@@ -33,6 +33,8 @@
     <meta property="og:image" content="{{ asset('og-image.png') }}">
     <meta property="og:image:alt"
         content="A picture of two hands with a phone showcasing the app. Along with regular branding.">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
 
     <!-- Fonts -->
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Borel&display=swap" as="style"
@@ -44,14 +46,20 @@
         as="style" onload="this.rel='stylesheet'">
     <!-- Hotjar Tracking Code for https://happyholidays.mctantwerp.be/ -->
     <script>
-        (function(h,o,t,j,a,r){
-            h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
-            h._hjSettings={hjid:5237356,hjsv:6};
-            a=o.getElementsByTagName('head')[0];
-            r=o.createElement('script');r.async=1;
-            r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        (function(h, o, t, j, a, r) {
+            h.hj = h.hj || function() {
+                (h.hj.q = h.hj.q || []).push(arguments)
+            };
+            h._hjSettings = {
+                hjid: 5237356,
+                hjsv: 6
+            };
+            a = o.getElementsByTagName('head')[0];
+            r = o.createElement('script');
+            r.async = 1;
+            r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
             a.appendChild(r);
-        })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+        })(window, document, 'https://static.hotjar.com/c/hotjar-', '.js?sv=');
     </script>
 
 </head>

@@ -111,6 +111,9 @@ body {
         outline: none;
         -webkit-tap-highlight-color: transparent;
     }
+    .footer {
+        display: none;
+    }
 }
 @media (max-height: 768px) {
     .footer {
@@ -126,6 +129,7 @@ body {
     background-image: url("../../public/images/footer.png");
     background-repeat: repeat;
     background-position: center;
+    background-size: contain;
     z-index: 10;
     pointer-events: none;
 }

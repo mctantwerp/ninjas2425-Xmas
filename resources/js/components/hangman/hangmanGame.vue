@@ -63,14 +63,14 @@ export default {
     },
     methods: {
         async checkLetter(event) {
-            console.log(this.userInput);
+            //console.log(this.userInput);
             if (this.userInput.length > 1) {
-                console.log('Please enter 1 letter');
+                //console.log('Please enter 1 letter');
                 return;
             }
 
             if (this.userInput.length == 0) {
-                console.log('Please enter a letter');
+                //console.log('Please enter a letter');
                 return;
             }
             if (this.userInput.length == 1) {
@@ -101,7 +101,7 @@ export default {
             }
 
             if (this.amountOfWrongTries >= 10) {
-                console.log('Game Over');
+                //console.log('Game Over');
                 this.gameOver = true;
                 this.$refs.inputLetter.blur();
             }
@@ -117,7 +117,7 @@ export default {
 
         checkIfGameIsFinished() {
             if (this.correctLetters.join('') === this.letters.join('')) {
-                console.log('You have guessed the word!');
+                //console.log('You have guessed the word!');
                 Cookies.set('hangmanSolved', 1, { expires: 14 })
                 this.$bus.emit('correct');
             }

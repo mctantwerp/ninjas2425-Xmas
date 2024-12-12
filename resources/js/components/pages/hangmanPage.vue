@@ -5,7 +5,7 @@
                 <template v-slot:content>
                     <h2>Hangman 🧍</h2>
                     <p>Type a letter and see if it occurs anywhere in the word. With this word you can continue your
-                        search! 18M12</p>
+                        search!</p>
                 </template>
                 <template v-slot:action>Continue</template>
             </first-popup>
@@ -15,7 +15,7 @@
             <final-popup v-else>
                 <template v-slot:content>
                     <h2>Congrats!</h2>
-                    <p>The word in this game is "CHRISTMAS". Good luck with the rest of the games!</p>
+                    <p>The word in this game is "christmas". Good luck with the rest of the games!</p>
                 </template>
                 <template v-slot:action><button @click="redirectHomePage">Go Home<i
                             class="fa-regular fa-house-blank"></i></button></template>
@@ -45,11 +45,11 @@ export default {
         window.addEventListener('resize', this.checkViewport);
         //game correct event listener
         this.$bus.on('correct', () => {
-            console.log('Correct word! Event listener works!');
+            //console.log('Correct word! Event listener works!');
             this.hangmanSolved = true;
 
-            console.log(this.hangmanSolved);
-            console.log(this.gameStarted);
+            // console.log(this.hangmanSolved);
+            // console.log(this.gameStarted);
             this.triggerConfetti();
         });
     },
@@ -74,7 +74,7 @@ export default {
         },
         checkViewport() {
             this.isLargeViewport = window.innerWidth > 1024;
-            console.log(this.isLargeViewport);
+            //console.log(this.isLargeViewport);
         },
         redirectHomePage() {
             window.location.href = '/';

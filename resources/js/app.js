@@ -32,13 +32,9 @@ import rebusPage from './components/pages/rebusPage.vue';
 import searchPage from './components/pages/searchPage.vue';
 import treePage from './components/pages/treePage.vue';
 import hangmanPage from './components/pages/hangmanPage.vue';
-import adminPage from './components/pages/adminPage.vue';
-import createAdminPage from './components/pages/createAdminPage.vue';
 import discoDasco from './components/discoDasco.vue';
 
 app.component('search-rebus', searchRebus);
-app.component('admin-page', adminPage);
-app.component('create-admin-page', createAdminPage);
 app.component('final-popup', finalPopup);
 app.component('first-popup', firstPopup);
 app.component('rebus-page', rebusPage);

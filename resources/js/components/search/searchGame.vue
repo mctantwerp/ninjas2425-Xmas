@@ -25,7 +25,7 @@ export default {
         handleClick() {
             //if target contains overlay-box class, emit event
             if (!event.target.classList.contains('overlay-box')) {
-                console.log('overlay-box clicked');
+                //console.log('overlay-box clicked');
                 this.triggerShake();
             }
             else {

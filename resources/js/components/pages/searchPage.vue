@@ -4,7 +4,7 @@
             <first-popup v-if="!gameStarted" @game-start="startGame" :game="'search'">
                 <template v-slot:content>
                     <h2>Christmas search 🕵️</h2>
-                    <p>Find Santa's frozen present and reveal one of the words for the Christmas Challenge. BTF41</p>
+                    <p>Find Santa's frozen present and reveal one of the words for the Christmas Challenge.</p>
                 </template>
                 <template v-slot:action>Continue</template>
             </first-popup>
@@ -14,8 +14,7 @@
             <final-popup v-else>
                 <template v-slot:content>
                     <h2 id="popup-title">Congrats!</h2>
-                    <p>The word in this game is 'MCT'. Complete the other challenges to reveal the entire sentence. Good
-                        luck!</p>
+                    <p>The word in this game is "MCT". Good luck with the rest of the games!</p>
                 </template>
                 <template v-slot:action><button @click="redirectHomePage">Go Home<i
                             class="fa-regular fa-house-blank"></i></button></template>
@@ -48,7 +47,7 @@ export default {
         window.addEventListener('resize', this.checkViewport);
         //game correct event listener
         this.$bus.on('correct', () => {
-            console.log('Correct word! Event listener works!');
+            //console.log('Correct word! Event listener works!');
             this.correctAnswer = true;
             this.triggerConfetti();
         });
@@ -73,7 +72,7 @@ export default {
         },
         checkViewport() {
             this.isLargeViewport = window.innerWidth > 1024;
-            console.log(this.isLargeViewport);
+            //console.log(this.isLargeViewport);
         },
         redirectHomePage() {
             window.location.href = '/';

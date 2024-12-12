@@ -51,7 +51,7 @@ export default {
                     finalSentence: this.userInput,
                 });
                 const result = response.data.result;
-                console.log(result);
+                //console.log(result);
                 if (result) {
                     Cookies.set('finalSentence', 'found', { expires: 14 });
                     this.$bus.emit('submitSentence');
@@ -80,7 +80,7 @@ export default {
             });
         },
         clearInput() {
-            console.log("clear input");
+            //console.log("clear input");
             this.userInput = "";
         },
     },

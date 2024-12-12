@@ -39,7 +39,7 @@ export default {
     },
     methods: {
         clearInput() {
-            console.log('clear input');
+            //console.log('clear input');
             this.userInput = '';
         },
         async triggerShake() {
@@ -71,12 +71,12 @@ export default {
                 const { result } = response.data;
 
                 if (result) {
-                    console.log('Word is correct!');
+                    //console.log('Word is correct!');
                     Cookies.set('rebusSolved', 1, { expires: 14 });
                     this.$bus.emit('correct');
                 } else {
                     this.triggerShake();
-                    console.log('Word is incorrect.');
+                    //console.log('Word is incorrect.');
                     this.generateRandomPlaceholder();
                 }
             } catch (error) {
