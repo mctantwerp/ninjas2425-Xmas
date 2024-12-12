@@ -35,7 +35,7 @@
     "src": "public/sfx/mct-christmas-song.mp3"
   },
   "resources/css/filament.css": {
-    "file": "assets/filament-DUnjMJn7.css",
+    "file": "assets/filament-v31WQRR3.css",
     "src": "resources/css/filament.css",
     "isEntry": true
   },
@@ -143,12 +143,12 @@
     ]
   },
   "resources/sass/404.scss": {
-    "file": "assets/404-CNBL19Es.css",
+    "file": "assets/404-DQYbdINH.css",
     "src": "resources/sass/404.scss",
     "isEntry": true
   },
   "resources/sass/app.scss": {
-    "file": "assets/app-BaDCnK5s.css",
+    "file": "assets/app-C7P5jrpk.css",
     "src": "resources/sass/app.scss",
     "isEntry": true
   },
