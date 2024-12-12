@@ -49,7 +49,7 @@
     ]
   },
   "resources/js/app.js": {
-    "file": "assets/app-Z5Wg22g9.js",
+    "file": "assets/app-D25MuqbI.js",
     "name": "app",
     "src": "resources/js/app.js",
     "isEntry": true,
@@ -58,7 +58,7 @@
       "_index-DjKJqAo0.js"
     ],
     "css": [
-      "assets/app-BJIFSWfW.css"
+      "assets/app-BdXm8IeW.css"
     ],
     "assets": [
       "assets/rebus-problem-BNheyx5Z.png",

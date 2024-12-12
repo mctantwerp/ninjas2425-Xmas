@@ -146,6 +146,7 @@ export default {
             });
         }
         window.addEventListener('keydown', this.handleEscKey);
+        console.log(window.innerHeight, screen.height);
 
     },
     beforeMount() {
