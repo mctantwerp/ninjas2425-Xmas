@@ -114,11 +114,6 @@ body {
         display: none;
     }
 }
-@media (max-height: 768px) {
-    .footer {
-        display: none;
-    }
-}
 .footer {
     position: fixed;
     bottom: -16px;
@@ -128,9 +123,13 @@ body {
     background-image: url("../../public/images/footer.png");
     background-repeat: repeat;
     background-position: center;
-    background-size: contain;
     z-index: 10;
     pointer-events: none;
+}
+@media (max-height: 768px) {
+    .footer {
+        display: none;
+    }
 }
 .gingerman {
     position: fixed;
@@ -170,8 +169,7 @@ body {
 }
 .gingerman,
 .candy,
-.snow,
-.footer {
+.snow {
     -webkit-tap-highlight-color: transparent;
 }
 .content {
