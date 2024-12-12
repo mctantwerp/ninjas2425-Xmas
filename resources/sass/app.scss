@@ -108,6 +108,8 @@ body {
     .candy,
     .snow {
         display: none;
+        outline: none;
+        -webkit-tap-highlight-color: transparent;
     }
 }
 @media (max-height: 768px) {
