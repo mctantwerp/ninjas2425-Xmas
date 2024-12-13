@@ -18,6 +18,13 @@ h2 {
     font-weight: 400;
     color: $color-turquoise-90;
 }
+h3 {
+    font-family: $braah-font;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    color: $color-turquoise-90;
+}
 p {
     font-family: $red-hat-font;
     font-size: 16px;
@@ -46,7 +53,11 @@ a {
     text-underline-offset: 4px;
     color: $color-turquoise-60;
 }
-button:not(.audio-wrapper button) {
+button:not(
+        .audio-wrapper button,
+        .cookie-comply button,
+        .cookie-comply__modal button
+    ) {
     background-color: $color-turquoise-10;
     color: $color-turquoise-90;
     font-family: $braah-font;
