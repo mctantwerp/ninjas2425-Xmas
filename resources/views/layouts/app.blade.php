@@ -61,6 +61,8 @@
             a.appendChild(r);
         })(window, document, 'https://static.hotjar.com/c/hotjar-', '.js?sv=');
     </script>
+    <!-- Cookie Free Analytics -->
+    <script defer src="https://cloud.umami.is/script.js" data-website-id="777bf68f-180f-42cc-8cae-15176bc505ee"></script>
 
 </head>
 
