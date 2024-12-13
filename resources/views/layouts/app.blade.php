@@ -55,13 +55,11 @@
         //
         //listen for all cookies event --> if received, enable hotjar and other necessarry cookies
         window.addEventListener('cookies-accepted', function() {
-            console.log('all cookies enabled from component, event works.');
             enableHotjar();
         });
 
         //listen for specific hotjar cookie consent --> if received, enable hotjar
         window.addEventListener('hotjar-accepted-true', function() {
-            console.log('Hotjar cookies enabled from component, event works.');
             enableHotjar();
         });
 
