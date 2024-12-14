@@ -97,10 +97,10 @@
             if (!document.querySelector('script[src^="https://static.hotjar.com/c/hotjar-"]')) {
                 (function(h, o, t, j, a, r) {
                     h.hj = h.hj || function() {
-                        (h.hj.q = h.hj.q || []).push(arguments);
+                        (h.hj.q = h.hj.q || []).push(arguments)
                     };
                     h._hjSettings = {
-                        hjid: 5237356,
+                        hjid: 5241639,
                         hjsv: 6
                     };
                     a = o.getElementsByTagName('head')[0];
