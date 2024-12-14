@@ -5,6 +5,14 @@
                 decline-button-text="Decline" background-color="#f5f5f5" text-color="#333" button-color="#007bff"
                 button-text-color="#fff" target="#app" :preferences="preferencesCookies"
                 @on-accept-all-cookies="onAccept" @on-save-cookie-preferences="onSavePreferences">
+                <template v-slot:header>
+                    <header>
+                        <h3 class="cookie-comply__header-title">🍪 Cookie Settings</h3>
+                        <p class="cookie-comply__header-description">We use cookies and similar technologies to help
+                            personalize content and offer a better
+                            experience. You can opt to customize them by clicking the preferences button.</p>
+                    </header>
+                </template>
             </vue-cookie-comply>
         </transition>
     </div>
@@ -16,7 +24,7 @@ export default {
         return {
             preferencesCookies: [
                 {
-                    title: 'Functional Cookies',
+                    title: '🍪 Functional Cookies',
                     description:
                         'Functional cookies are necessary for the website to function correctly.',
                     items: [{ label: 'Game Rememberer', value: 'Functional', isRequired: true }],
