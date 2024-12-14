@@ -46,6 +46,7 @@
         as="style" onload="this.rel='stylesheet'">
     <!-- Hotjar Tracking Code for https://happyholidays.mctantwerp.be/ -->
     <script>
+        enableHotjar();
         //NOTE: HOTJAR IS ADDED TO BOTTOM OF HEAD, USE CTRL + F TO FIND IT
         //
         //NOTE: HOTJAR IS ADDED TO BOTTOM OF HEAD, USE CTRL + F TO FIND IT
