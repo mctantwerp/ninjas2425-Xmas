@@ -2,9 +2,9 @@
 
 @section('title', 'XMAS | Submit Sentence')
 
-@section('scss')
+{{-- @section('scss')
     @vite('resources/sass/plyrCustom.scss')
-@endsection
+@endsection --}}
 
 @section('navbar')
     <navbar navbar-title='Submit'></navbar>

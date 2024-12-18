@@ -1,8 +1,5 @@
-//reset
-@import "../css/reset.css";
+@import "_variables.scss";
 
-//variables
-@import "_variables";
 h1 {
     font-family: $borel-font;
     font-size: 24px;

@@ -1,19 +1,4 @@
 {
-  "_index-DjKJqAo0.js": {
-    "file": "assets/index-DjKJqAo0.js",
-    "name": "index"
-  },
-  "_snowFlakes-!~{00a}~.js": {
-    "file": "assets/snowFlakes-DKboD5yG.css",
-    "src": "_snowFlakes-!~{00a}~.js"
-  },
-  "_snowFlakes-BUT6CAsU.js": {
-    "file": "assets/snowFlakes-BUT6CAsU.js",
-    "name": "snowFlakes",
-    "css": [
-      "assets/snowFlakes-DKboD5yG.css"
-    ]
-  },
   "public/images/candy-cane.png": {
     "file": "assets/candy-cane-1bmmlmK-.png",
     "src": "public/images/candy-cane.png"
@@ -34,31 +19,13 @@
     "file": "assets/mct-christmas-song-0S9KlV0p.mp3",
     "src": "public/sfx/mct-christmas-song.mp3"
   },
-  "resources/css/filament.css": {
-    "file": "assets/filament-v31WQRR3.css",
-    "src": "resources/css/filament.css",
-    "isEntry": true
-  },
-  "resources/js/404.js": {
-    "file": "assets/404-CwWAL_sn.js",
-    "name": "404",
-    "src": "resources/js/404.js",
-    "isEntry": true,
-    "imports": [
-      "_snowFlakes-BUT6CAsU.js"
-    ]
-  },
   "resources/js/app.js": {
-    "file": "assets/app-C90nUCPi.js",
+    "file": "assets/app-DLxzvETl.js",
     "name": "app",
     "src": "resources/js/app.js",
     "isEntry": true,
-    "imports": [
-      "_snowFlakes-BUT6CAsU.js",
-      "_index-DjKJqAo0.js"
-    ],
     "css": [
-      "assets/app-B2fLuXJ-.css"
+      "assets/app-CuZOludK.css"
     ],
     "assets": [
       "assets/rebus-problem-BNheyx5Z.png",
@@ -73,6 +40,10 @@
       "assets/mct-christmas-song-0S9KlV0p.mp3",
       "assets/nav-bell-DVjfOD_n.png",
       "assets/nav-santa-CCj0Q4aY.png",
+      "assets/footer-Bgq00xfC.png",
+      "assets/gingerbread-D0PDCpda.png",
+      "assets/candy-cane-1bmmlmK-.png",
+      "assets/snow-globe-CGxgHjd6.png",
       "assets/search-background-K0Aj_Yxy.png"
     ]
   },
@@ -123,43 +94,5 @@
   "resources/js/components/assets/tree-filled.png": {
     "file": "assets/tree-filled-BO2t_0Hf.png",
     "src": "resources/js/components/assets/tree-filled.png"
-  },
-  "resources/js/gsap.js": {
-    "file": "assets/gsap-2XO-WCo8.js",
-    "name": "gsap",
-    "src": "resources/js/gsap.js",
-    "isEntry": true,
-    "imports": [
-      "_index-DjKJqAo0.js"
-    ]
-  },
-  "resources/js/shakeDecoration.js": {
-    "file": "assets/shakeDecoration-BMMFWU2H.js",
-    "name": "shakeDecoration",
-    "src": "resources/js/shakeDecoration.js",
-    "isEntry": true,
-    "imports": [
-      "_index-DjKJqAo0.js"
-    ]
-  },
-  "resources/sass/404.scss": {
-    "file": "assets/404-Dq9kA8Tc.css",
-    "src": "resources/sass/404.scss",
-    "isEntry": true
-  },
-  "resources/sass/app.scss": {
-    "file": "assets/app-CnhnrB8P.css",
-    "src": "resources/sass/app.scss",
-    "isEntry": true
-  },
-  "resources/sass/plyrCustom.scss": {
-    "file": "assets/plyrCustom-COMhYzK9.css",
-    "src": "resources/sass/plyrCustom.scss",
-    "isEntry": true
-  },
-  "resources/sass/welcomePage.scss": {
-    "file": "assets/welcomePage-D4Mxw4nZ.css",
-    "src": "resources/sass/welcomePage.scss",
-    "isEntry": true
   }
 }

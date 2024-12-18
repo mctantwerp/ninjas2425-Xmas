@@ -1,9 +1,19 @@
+//other js files import
+import './gsap.js';
+import './shakeDecoration.js';
+import './404.js';
+
+//other styling files import
+import '../sass/404.scss';
+import '../sass/app.scss';
+import '../sass/plyrCustom.scss';
+import '../sass/welcomePage.scss';
+import '../css/reset.css';
+
+// Vue stuff
 import { createApp } from 'vue';
-
 const app = createApp({});
-
 import searchRebus from './components/rebus/searchRebus.vue';
-
 //event listener import
 import mitt from 'mitt';
 //create eventbus

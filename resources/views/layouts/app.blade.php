@@ -76,8 +76,8 @@
         content="XMAS 2024 is a festive project crafted by the final-year MCT students of KdG. Challenge yourself with four exciting games, celebrate the holiday spirit, and win fantastic prizes!">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>@yield('title', 'Default Title')</title>
-    @vite('resources/sass/app.scss')
-    @yield('scss')
+    {{-- @vite('resources/sass/app.scss')
+    @yield('scss') --}}
     <script src="https://kit.fontawesome.com/26d2910850.js" crossorigin="anonymous" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
@@ -137,8 +137,8 @@
         <cookie-popup></cookie-popup>
     </div>
     @vite('resources/js/app.js')
-    @vite('resources/js/shakeDecoration.js')
-    @vite('resources/js/gsap.js')
+    {{-- @vite('resources/js/shakeDecoration.js')
+    @vite('resources/js/gsap.js') --}}
 </body>
 
 </html>

@@ -1,8 +1,8 @@
 @extends('layouts.app')
 
-@section('scss')
+{{-- @section('scss')
     @vite('resources/sass/welcomePage.scss')
-@endsection
+@endsection --}}
 
 @section('title', 'XMAS | Home')
 
