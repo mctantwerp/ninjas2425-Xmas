@@ -12,19 +12,13 @@ use Illuminate\Http\Request;
 
 class CheckHangmanLetterController extends Controller
 {
-    private CheckHangmanLetterAction $checkhangmanletteraction;
-
-    public function __construct(CheckHangmanLetterAction $checkHangmanLetterAction)
-    {
-        $this->checkhangmanletteraction = $checkHangmanLetterAction;
-    }
-    public function __invoke(Request $request) : JsonResponse
+    public function __invoke(Request $request, CheckHangmanLetterAction $checkHangmanLetterAction) : JsonResponse
     {
         $hangmanLetterDto = new HangmanLetterDto(
             letter: $request->input('letter')
         );
         //dd($hangmanLetterDto);
-        $hangmanLetterIsCorrect = $this->checkhangmanletteraction->execute($hangmanLetterDto);
+        $hangmanLetterIsCorrect =$checkHangmanLetterAction->execute($hangmanLetterDto);
 
         return response()->json([
             'result' => $hangmanLetterIsCorrect

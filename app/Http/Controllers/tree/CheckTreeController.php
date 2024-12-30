@@ -13,19 +13,13 @@ use Illuminate\Http\Request;
 
 class CheckTreeController extends Controller
 {
-    private CheckTreeWordAction $checktreeaction;
-
-    public function __construct(CheckTreeWordAction $checktreeaction)
-    {
-        $this->checktreeaction = $checktreeaction;
-    }
-    public function __invoke(Request $request) : JsonResponse
+    public function __invoke(Request $request, CheckTreeWordAction $checkTreeAction) : JsonResponse
     {
         $inputWordDto = new InputWordDto(
             word: $request->input('word'),
         );
 
-        $treeIsCorrect = $this->checktreeaction->execute($inputWordDto);
+        $treeIsCorrect = $checkTreeAction->execute($inputWordDto);
         $cookie = cookie('tree', $treeIsCorrect, 20160);
 
         return response()->json([

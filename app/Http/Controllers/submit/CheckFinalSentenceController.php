@@ -11,19 +11,13 @@ use Illuminate\Http\Request;
 
 class CheckFinalSentenceController extends Controller
 {
-    private CheckFinalSentenceAction $checkFinalSentenceAction;
-
-    public function __construct(CheckFinalSentenceAction $checkFinalSentenceAction)
-    {
-        $this->checkFinalSentenceAction = $checkFinalSentenceAction;
-    }
-    public function __invoke(Request $request)
+    public function __invoke(Request $request, CheckFinalSentenceAction $checkFinalSentenceAction)
     {
         $finalSentenceDto = new FinalSentenceDto(
             sentence: $request->input('finalSentence'),
         );
 
-        $sentenceIsCorrect = $this->checkFinalSentenceAction->execute($finalSentenceDto);
+        $sentenceIsCorrect = $checkFinalSentenceAction->execute($finalSentenceDto);
 
         return response()->json([
             'result' => $sentenceIsCorrect

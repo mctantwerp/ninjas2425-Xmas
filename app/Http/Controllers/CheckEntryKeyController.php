@@ -11,20 +11,14 @@ use Illuminate\Http\Request;
 
 class CheckEntryKeyController extends Controller
 {
-    private CheckEntryKeyAction $checkEntryKeyAction;
-
-    public function __construct(CheckEntryKeyAction $checkentrykeyaction)
-    {
-        $this->checkEntryKeyAction = $checkentrykeyaction;
-    }
-    public function __invoke(Request $request) : JsonResponse
+    public function __invoke(Request $request, CheckEntryKeyAction $checkEntryKeyAction) : JsonResponse
     {
         $entrykeydto = new EntryKeyDto(
             game: $request->input('game'),
             key: $request->input('enterd_key'),
         );
 
-        $response = $this->checkEntryKeyAction->execute($entrykeydto);
+        $response = $checkEntryKeyAction->execute($entrykeydto);
         return response()->json([
             'passwordCorrect' => $response
         ]);
