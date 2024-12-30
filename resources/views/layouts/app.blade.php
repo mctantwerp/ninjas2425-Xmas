@@ -2,6 +2,74 @@
 <html lang="en">
 
 <head>
+    <!-- Hotjar Tracking Code for https://happyholidays.mctantwerp.be/ -->
+    <script>
+        //NOTE: HOTJAR IS ADDED TO BOTTOM OF HEAD, USE CTRL + F TO FIND IT
+        //
+        //NOTE: HOTJAR IS ADDED TO BOTTOM OF HEAD, USE CTRL + F TO FIND IT
+        //
+        //NOTE: HOTJAR IS ADDED TO BOTTOM OF HEAD, USE CTRL + F TO FIND IT
+        //
+        //
+        //listen for all cookies event --> if received, enable hotjar and other necessarry cookies
+        window.addEventListener('cookies-accepted', function() {
+            enableHotjar();
+        });
+
+        //listen for specific hotjar cookie consent --> if received, enable hotjar
+        window.addEventListener('hotjar-accepted-true', function() {
+            enableHotjar();
+        });
+
+        //check for hotjar consent on page load
+        checkHotjarConsent();
+
+
+        //function to check if consent was given or not
+        function checkHotjarConsent() {
+            //get the cookie comply from local storage
+            let rawCookieComply = localStorage.getItem('cookie-comply');
+
+            //cookie comply but parsed
+            let cookieComply;
+
+            try {
+                //parse the cookie comply into json format
+                cookieComply = JSON.parse(rawCookieComply);
+            } catch (error) {
+                //if not possible due to for example string being present, dont parse.
+                cookieComply = rawCookieComply;
+            }
+            if (Array.isArray(cookieComply)) {
+                //check if 'hotjar' is included in array
+                if (cookieComply.includes('hotjar')) {
+                    enableHotjar();
+                }
+            } else if (cookieComply === "all") {
+                enableHotjar();
+            }
+        }
+
+        //function to enable hotjar
+        function enableHotjar() {
+            if (!document.querySelector('script[src^="https://static.hotjar.com/c/hotjar-"]')) {
+                (function(h, o, t, j, a, r) {
+                    h.hj = h.hj || function() {
+                        (h.hj.q = h.hj.q || []).push(arguments)
+                    };
+                    h._hjSettings = {
+                        hjid: 5241639,
+                        hjsv: 6
+                    };
+                    a = o.getElementsByTagName('head')[0];
+                    r = o.createElement('script');
+                    r.async = 1;
+                    r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
+                    a.appendChild(r);
+                })(window, document, 'https://static.hotjar.com/c/hotjar-', '.js?sv=');
+            }
+        }
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
@@ -44,23 +112,8 @@
     <link rel="preload"
         href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap"
         as="style" onload="this.rel='stylesheet'">
-    <!-- Hotjar Tracking Code for https://happyholidays.mctantwerp.be/ -->
-    <script>
-        (function(h, o, t, j, a, r) {
-            h.hj = h.hj || function() {
-                (h.hj.q = h.hj.q || []).push(arguments)
-            };
-            h._hjSettings = {
-                hjid: 5237356,
-                hjsv: 6
-            };
-            a = o.getElementsByTagName('head')[0];
-            r = o.createElement('script');
-            r.async = 1;
-            r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
-            a.appendChild(r);
-        })(window, document, 'https://static.hotjar.com/c/hotjar-', '.js?sv=');
-    </script>
+    <!-- Cookie Free Analytics -->
+    <script defer src="https://cloud.umami.is/script.js" data-website-id="777bf68f-180f-42cc-8cae-15176bc505ee"></script>
 
 </head>
 
@@ -81,6 +134,7 @@
         </div>
         <div class="footer">
         </div>
+        <cookie-popup></cookie-popup>
     </div>
     @vite('resources/js/app.js')
     @vite('resources/js/shakeDecoration.js')

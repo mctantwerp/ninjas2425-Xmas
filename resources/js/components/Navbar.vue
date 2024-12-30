@@ -1,5 +1,5 @@
 <template>
-    <transition name="fade">
+    <!-- <transition name="fade">
         <div class="screen-popup" v-show="userIsOnDesktop && !userIgnoredDesktopWarning" tabindex="-1"
             ref="desktopPopup">
             <div class="box">
@@ -9,7 +9,7 @@
                 <button @click="ignoreDesktopWarning">Continue anyway</button>
             </div>
         </div>
-    </transition>
+    </transition> -->
     <header>
         <nav>
             <div class="icon" @click="goHome" @keydown.enter="goHome" aria-label="Open navigation menu"
@@ -91,8 +91,8 @@ export default {
             mobileNav: false,
             iconActive: false,
             userIsOnDesktop: false,
-            userIgnoredDesktopWarning: Cookies.get('acceptedDesktopWarning'),
-            userIsOnHome: false
+            // userIgnoredDesktopWarning: Cookies.get('acceptedDesktopWarning'),
+            userIsOnHome: false,
         }
     },
     props: {
@@ -114,10 +114,10 @@ export default {
                 }
             });
         },
-        ignoreDesktopWarning() {
-            this.userIsOnDesktop = false;
-            Cookies.set('acceptedDesktopWarning', 1, { expires: 14 });
-        },
+        // ignoreDesktopWarning() {
+        //     this.userIsOnDesktop = false;
+        //     Cookies.set('acceptedDesktopWarning', 1, { expires: 14 });
+        // },
         backToHome() {
             window.location.href = '/';
         },

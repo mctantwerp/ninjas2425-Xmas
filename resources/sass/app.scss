@@ -18,6 +18,13 @@ h2 {
     font-weight: 400;
     color: $color-turquoise-90;
 }
+h3 {
+    font-family: $braah-font;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    color: $color-turquoise-90;
+}
 p {
     font-family: $red-hat-font;
     font-size: 16px;
@@ -46,7 +53,11 @@ a {
     text-underline-offset: 4px;
     color: $color-turquoise-60;
 }
-button:not(.audio-wrapper button) {
+button:not(
+        .audio-wrapper button,
+        .cookie-comply button,
+        .cookie-comply__modal button
+    ) {
     background-color: $color-turquoise-10;
     color: $color-turquoise-90;
     font-family: $braah-font;
@@ -108,28 +119,28 @@ body {
     .candy,
     .snow {
         display: none;
+        outline: none;
     }
-    .footer {
-        display: none;
-    }
-}
-@media (max-height: 768px) {
     .footer {
         display: none;
     }
 }
 .footer {
     position: fixed;
-    bottom: -16px;
+    bottom: -8px;
     left: 0;
-    width: 100vw;
+    width: 100%;
     height: 185px;
     background-image: url("../../public/images/footer.png");
     background-repeat: repeat;
     background-position: center;
-    background-size: contain;
-    z-index: 10;
+    z-index: 1;
     pointer-events: none;
+}
+@media (max-height: 620px) {
+    .footer {
+        display: none;
+    }
 }
 .gingerman {
     position: fixed;
@@ -166,6 +177,11 @@ body {
     background-position: center; /* Centers the background image */
     background-repeat: no-repeat; /* Prevents the image from repeating */
     z-index: 10;
+}
+.gingerman,
+.candy,
+.snow {
+    -webkit-tap-highlight-color: transparent;
 }
 .content {
     padding: 1.5rem;

@@ -34,6 +34,8 @@ import treePage from './components/pages/treePage.vue';
 import hangmanPage from './components/pages/hangmanPage.vue';
 import discoDasco from './components/discoDasco.vue';
 
+import CookiePopup from './components/CookiePopup.vue';
+
 app.component('search-rebus', searchRebus);
 app.component('final-popup', finalPopup);
 app.component('first-popup', firstPopup);
@@ -54,6 +56,10 @@ app.component('hangman-game', hangmanGame);
 app.component('square-game-overview', squareGameOverview);
 app.component('audio-player', audioPlayer);
 app.component('disco-dasco', discoDasco);
+app.component('cookie-popup', CookiePopup);
+
+import VueCookieComply from 'vue-cookie-comply';
+app.use(VueCookieComply);
 
 
 app.mount('#app');
